@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_icon_size">90dp</dimen>
+    <dimen name="profile_picture_size">100dp</dimen>
+    <dimen name="profile_picture_border">3dp</dimen>
+
+    <dimen name="card_radius">3dp</dimen>
+    <dimen name="card_elevation">3dp</dimen>
+
+    <dimen name="social_media_vertical_padding">10dp</dimen>
+    <dimen name="icon_size">25dp</dimen>
+</resources>

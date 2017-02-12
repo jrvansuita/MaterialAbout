@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Material About</string>
+
+    <string name="dark_theme">Dark Theme</string>
+    <string name="light_theme">Light Theme</string>
+    <string name="custom_theme">Custom Theme</string>
+</resources>
