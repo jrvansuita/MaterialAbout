@@ -97,9 +97,11 @@ public class Main extends AppCompatActivity implements View.OnClickListener {
                     recreate();
                 }
                 break;
+
+            default:
+                break;
         }
     }
-
 
 
 }

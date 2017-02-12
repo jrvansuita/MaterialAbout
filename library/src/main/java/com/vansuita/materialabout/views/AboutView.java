@@ -49,6 +49,8 @@ public class AboutView extends FrameLayout {
 
     private Boolean isDarker;
     private int iconColor = 0;
+    private int animationDelay = 200;
+
 
     public AboutView(Context context) {
         this(context, null);
@@ -190,12 +192,10 @@ public class AboutView extends FrameLayout {
         }
     }
 
-    private int delay = 200;
-
     private void animate(final View v) {
         v.setVisibility(INVISIBLE);
 
-        delay += 20;
+        animationDelay += 20;
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -203,7 +203,7 @@ public class AboutView extends FrameLayout {
                 v.setVisibility(VISIBLE);
                 v.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.expand_in));
             }
-        }, delay);
+        }, animationDelay);
     }
 
     private void loadActions(AboutBuilder bundle) {
