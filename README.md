@@ -13,10 +13,7 @@ It was build to make your life easier when introducing you to your users, and al
 
 </br>
 
-####Note: If you're missing some feature please let me know. Or even better, create a pull request. Also, I'm needing someone to translate the strings.xml to other languages than English.
-
-</br>
-</br>
+##### Note: If you're missing some feature please let me know. Or even better, create a pull request. Also, I'm needing someone to translate the strings.xml to other languages than English.
 
 <!-- JitPack integration -->
 [![](https://jitpack.io/v/jrvansuita/MaterialAbout.svg)](https://jitpack.io/#jrvansuita/MaterialAbout)<a href="https://github.com/jrvansuita/MaterialAbout/releases/latest">
@@ -50,7 +47,7 @@ It was build to make your life easier when introducing you to your users, and al
 
 # Implementation
 
-#### Create a AboutView instance with AboutBuilder.
+Create a [AboutView](/library/src/main/java/com/vansuita/materialabout/views/AboutView.java) instance with [AboutBuilder](/library/src/main/java/com/vansuita/materialabout/builder/AboutBuilder.java).
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +63,7 @@ It was build to make your life easier when introducing you to your users, and al
                 .addGooglePlayStoreLink("8002078663318221363")
                 .addGitHubLink("user")
                 .addFacebookLink("user")
-		.addFiveStarsAction()
+                .addFiveStarsAction()
                 .setVersionAsAppTitle()
                 .addShareAction(R.string.app_name)
                 .build();
