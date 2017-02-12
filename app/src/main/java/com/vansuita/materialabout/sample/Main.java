@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.vansuita.materialabout.builder.AboutMe;
+import com.vansuita.materialabout.builder.AboutBuilder;
 
 
 public class Main extends AppCompatActivity implements View.OnClickListener {
@@ -33,7 +33,7 @@ public class Main extends AppCompatActivity implements View.OnClickListener {
         final FrameLayout flHolder = (FrameLayout) findViewById(R.id.aboutme);
 
         flHolder.addView(
-                AboutMe.with(this)
+                AboutBuilder.with(this)
                         .setAppIcon(R.mipmap.ic_launcher)
                         .setAppName(R.string.app_name)
                         .setPhoto(R.mipmap.profile_picture)

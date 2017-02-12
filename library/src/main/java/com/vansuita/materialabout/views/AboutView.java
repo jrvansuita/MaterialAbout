@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 import com.vansuita.library.Icon;
 import com.vansuita.materialabout.R;
-import com.vansuita.materialabout.builder.AboutMe;
+import com.vansuita.materialabout.builder.AboutBuilder;
 import com.vansuita.materialabout.builder.Item;
 import com.vansuita.materialabout.util.RippleUtil;
 
@@ -86,7 +86,7 @@ public class AboutView extends FrameLayout {
         appHolder = findViewById(R.id.app_holder);
     }
 
-    public void build(AboutMe bundle) {
+    public void build(AboutBuilder bundle) {
         tvName.setText(bundle.getName());
         tvSubTitle.setText(bundle.getSubTitle());
         tvBrief.setText(bundle.getBrief());
@@ -133,7 +133,7 @@ public class AboutView extends FrameLayout {
     }
 
     @SuppressWarnings("ResourceAsColor")
-    private void setDivider(AboutMe bundle, View holder) {
+    private void setDivider(AboutBuilder bundle, View holder) {
         if (bundle.isShowDivider()) {
 
             int color = bundle.getDividerColor();
@@ -181,7 +181,7 @@ public class AboutView extends FrameLayout {
         }
     }
 
-    private void loadLinks(AboutMe bundle) {
+    private void loadLinks(AboutBuilder bundle) {
         for (Item item : bundle.getLinks()) {
             View v = addItem(vLinks, R.layout.link, item);
 
@@ -206,7 +206,7 @@ public class AboutView extends FrameLayout {
         }, delay);
     }
 
-    private void loadActions(AboutMe bundle) {
+    private void loadActions(AboutBuilder bundle) {
         for (Item item : bundle.getActions()) {
             addItem(vActions, R.layout.action, item);
         }
