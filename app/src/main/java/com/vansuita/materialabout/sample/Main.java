@@ -30,7 +30,7 @@ public class Main extends AppCompatActivity implements View.OnClickListener {
     }
 
     public void loadAboutMe() {
-        FrameLayout flHolder = (FrameLayout) findViewById(R.id.aboutme);
+        final FrameLayout flHolder = (FrameLayout) findViewById(R.id.aboutme);
 
         flHolder.addView(
                 AboutMe.with(this)
@@ -99,6 +99,40 @@ public class Main extends AppCompatActivity implements View.OnClickListener {
                 break;
         }
     }
+
+/*
+
+    public static void save(View view) {
+        //Define a bitmap with the same size as the view
+        Bitmap returnedBitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
+        //Bind a canvas to it
+        Canvas canvas = new Canvas(returnedBitmap);
+        //Get the view's background
+        Drawable bgDrawable = view.getBackground();
+        if (bgDrawable != null)
+            //has background drawable, then draw it on the canvas
+            bgDrawable.draw(canvas);
+        else
+            //does not have background drawable, then draw white background on the canvas
+            canvas.drawColor(Color.WHITE);
+        // draw the view on the canvas
+        view.draw(canvas);
+        //return the bitmap
+
+
+        try {
+            String fileName = Environment.getExternalStorageDirectory() + "/test.png";
+            OutputStream stream = new FileOutputStream(fileName);
+            returnedBitmap.compress(Bitmap.CompressFormat.PNG, 80, stream);
+            stream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+*/
+
 
 /*
     @Override
