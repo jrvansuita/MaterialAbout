@@ -100,58 +100,6 @@ public class Main extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-/*
-
-    public static void save(View view) {
-        //Define a bitmap with the same size as the view
-        Bitmap returnedBitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
-        //Bind a canvas to it
-        Canvas canvas = new Canvas(returnedBitmap);
-        //Get the view's background
-        Drawable bgDrawable = view.getBackground();
-        if (bgDrawable != null)
-            //has background drawable, then draw it on the canvas
-            bgDrawable.draw(canvas);
-        else
-            //does not have background drawable, then draw white background on the canvas
-            canvas.drawColor(Color.WHITE);
-        // draw the view on the canvas
-        view.draw(canvas);
-        //return the bitmap
 
 
-        try {
-            String fileName = Environment.getExternalStorageDirectory() + "/test.png";
-            OutputStream stream = new FileOutputStream(fileName);
-            returnedBitmap.compress(Bitmap.CompressFormat.PNG, 80, stream);
-            stream.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-    }
-*/
-
-
-/*
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        View view = AboutMe.with(this)
-                .setPhoto(R.mipmap.profile_picture)
-                .setCover(R.mipmap.profile_cover)
-                .setName("Your Full Name")
-                .setSubTitle("Mobile Developer")
-                .setBrief("I'm warmed of mobile technologies. Ideas maker, curious and nature lover.")
-                .setAppIcon(R.mipmap.ic_launcher)
-                .setAppName(R.string.app_name)
-                .addGooglePlayStoreLink("8002078663318221363")
-                .addGitHubLink("user")
-                .addFacebookLink("user")
-                .build();
-
-        addContentView(view, layoutParams);
-    }*/
 }
