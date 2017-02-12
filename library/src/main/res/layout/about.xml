@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_holder"
     style="@style/Card"
     android:layout_margin="10dp">
@@ -30,12 +29,7 @@
                 android:layout_height="@dimen/profile_picture_size"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/profile_picture"
-                app:riv_border_color="@android:color/white"
-                app:riv_border_width="@dimen/profile_picture_border"
-                app:riv_corner_radius="5dip"
-                app:riv_mutate_background="true"
-                app:riv_oval="true" />
+                android:src="@mipmap/profile_picture" />
 
             <TextView
                 android:id="@+id/name"
