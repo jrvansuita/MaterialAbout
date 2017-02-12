@@ -11,6 +11,7 @@ import com.makeramen.roundedimageview.RoundedImageView;
  */
 
 public class CircleImageView extends RoundedImageView {
+
     public CircleImageView(Context context) {
         super(context);
     }
