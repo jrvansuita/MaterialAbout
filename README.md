@@ -33,24 +33,24 @@ It was build to make your life easier when introducing you to your users, and al
 # Setup
 
 #### Step #1. Add the JitPack repository to your build file:
-
+```gradle
     allprojects {
 		repositories {
 			...
 			maven { url "https://jitpack.io" }
 		}
 	}
-
+```
 #### Step #2. Add the dependency ([See latest release](https://jitpack.io/#jrvansuita/MaterialAbout)).
-
+```groovy
     dependencies {
            compile 'com.github.jrvansuita:MaterialAbout:+'
 	}
-
+```
 # Implementation
 
 Create a [AboutView](/library/src/main/java/com/vansuita/materialabout/views/AboutView.java) instance with [AboutBuilder](/library/src/main/java/com/vansuita/materialabout/builder/AboutBuilder.java).
-    
+```java
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +73,7 @@ Create a [AboutView](/library/src/main/java/com/vansuita/materialabout/views/Abo
 
         addContentView(view, layoutParams);
     }
+ ```
     
 # Sample app code.
  The library has a lot more customization and features than is able to show here. Please Check the sample app and feel to help with a pull request. You can take a look at the sample app [located on this project](/app/).
