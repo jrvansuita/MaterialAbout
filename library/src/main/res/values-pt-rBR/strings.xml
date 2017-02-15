@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="website">Site</string>
+    <string name="email">Email</string>
+    <string name="version">Versão %s</string>
+    <string name="error">Erro</string>
+
+    <string name="rate_five_stars">Avalie este app com 5 estrelas</string>
+    <string name="more_apps">Mais apps desenvolvidos por mim</string>
+    <string name="share_app">Compartilhe este aplicativo</string>
+    <string name="update_app">Atualize este aplicativo</string>
+    <string name="feedback_app">Faça um comentário</string>
+    <string name="introduce_app">Introduzir ao aplicativo</string>
+    <string name="changelog">Histórico de modificações</string>
+    <string name="remove_ads">Remover anúncios</string>
+    <string name="donate">Doar ao desenvolvedor</string>
+    <string name="help">Ajuda</string>
+</resources>
