@@ -10,13 +10,10 @@
 This is an [**Android**](https://developer.android.com) project. You, as a mobile developer, can use this library to show a material about screen in your apps.
 It was build to make your life easier when introducing you to your users, and also, to create a about screen pattern for material android apps. It's really simple and dynamic, check it out.
 
-
 </br>
-
-##### Note: If you're missing some feature please let me know. Or even better, create a pull request. Also, I'm needing someone to translate the strings.xml to other languages than English.
-
+##### Note: If you're missing some feature please let me know. Or even better, create a pull request. Also, I'm needing some help to translate the strings.xml to other languages.
+##### Supported Languages until now: 🇺🇸 🇧🇷 🇪🇸 
 </br>
-
 
 <!-- JitPack integration -->
 [![](https://jitpack.io/v/jrvansuita/MaterialAbout.svg)](https://jitpack.io/#jrvansuita/MaterialAbout)<a href="https://github.com/jrvansuita/MaterialAbout/releases/latest">
@@ -74,6 +71,7 @@ Create a [AboutView](/library/src/main/java/com/vansuita/materialabout/views/Abo
         addContentView(view, layoutParams);
     }
  ```
+   
     
 # Sample app code.
  The library has a lot more customization and features than is able to show here. Please Check the sample app and feel to help with a pull request. You can take a look at the sample app [located on this project](/app/).
