@@ -41,7 +41,7 @@ It was build to make your life easier when introducing you to your users, and al
 #### Step #2. Add the dependency ([See latest release](https://jitpack.io/#jrvansuita/MaterialAbout)).
 ```groovy
     dependencies {
-           compile 'com.github.jrvansuita:MaterialAbout:+'
+           compile 'com.github.jrvansuita:MaterialAbout:v0.0.6'
 	}
 ```
 # Implementation
