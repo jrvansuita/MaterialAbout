@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
 
     <string name="url_github">https://github.com/%s</string>
     <string name="url_bitbucket">https://bitbucket.org/%s</string>
@@ -34,7 +36,6 @@
     <string name="uri_play_store_app_website">https://play.google.com/store/apps/details?id=%s</string>
     <string name="uri_play_store_app">market://details?id=%s</string>
     <string name="uri_play_store_apps_list">market://search?q=pub:%s</string>
-
 
 
 </resources>
