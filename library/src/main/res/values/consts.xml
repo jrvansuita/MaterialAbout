@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="url_github">https://github.com/%s</string>
+    <string name="url_bitbucket">https://bitbucket.org/%s</string>
+
+    <string name="url_instagram_website">http://instagram.com/%s</string>
+    <string name="uri_instagram_app">http://instagram.com/_u/%s</string>
+    <string name="id_instagram_app">com.instagram.android</string>
+
+    <string name="url_facebook_website">https://www.facebook.com/%s</string>
+    <string name="uri_facebook_app">fb://page/%s</string>
+    <string name="id_facebook_app">com.facebook.katana</string>
+
+    <string name="url_twitter_website">https://twitter.com/%s</string>
+    <string name="uri_twitter_app">twitter://user?user_id=%s</string>
+    <string name="id_twitter_app">com.twitter.android</string>
+
+    <string name="url_google_plus_website">https://plus.google.com/%s</string>
+    <string name="uri_google_plus_app">https://plus.google.com/%s</string>
+    <string name="id_google_plus_app">com.google.android.apps.plus</string>
+
+    <string name="url_google_play_store_developer_page">https://play.google.com/store/apps/dev?id=%s</string>
+    <string name="url_youtube_website">https://www.youtube.com/user/%s</string>
+
+    <string name="url_linkedin_website">https://www.linkedin.com/in/%s</string>
+    <string name="uri_linkedin_app">linkedin://profile/%s</string>
+    <string name="id_linkedin_app">com.linkedin.android</string>
+
+    <string name="uri_skype_app">skype:%s</string>
+    <string name="id_skype_app">com.skype.raider</string>
+
+    <string name="uri_add_contact">tell:%s</string>
+    <string name="uri_play_store_app_website">https://play.google.com/store/apps/details?id=%s</string>
+    <string name="uri_play_store_app">market://details?id=%s</string>
+    <string name="uri_play_store_apps_list">market://search?q=pub:%s</string>
+
+
+
+</resources>
