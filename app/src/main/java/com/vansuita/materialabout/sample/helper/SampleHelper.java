@@ -1,39 +1,45 @@
-package com.vansuita.materialabout.sample;
+package com.vansuita.materialabout.sample.helper;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 
 import com.vansuita.materialabout.builder.AboutBuilder;
+import com.vansuita.materialabout.sample.R;
 
+/**
+ * Created by jrvansuita on 17/02/17.
+ */
 
-public class Main extends AppCompatActivity implements View.OnClickListener {
+public class SampleHelper implements View.OnClickListener{
 
+    private Activity activity;
     private static int theme = R.style.AppThemeDark;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        setTheme(theme);
-
-        setContentView(LayoutInflater.from(this).inflate(R.layout.main, null));
-
-        findViewById(R.id.dark).setOnClickListener(this);
-        findViewById(R.id.light).setOnClickListener(this);
-        findViewById(R.id.custom).setOnClickListener(this);
-
-        loadAboutMe();
+    private SampleHelper(Activity activity) {
+        this.activity = activity;
     }
 
-    public void loadAboutMe() {
-        final FrameLayout flHolder = (FrameLayout) findViewById(R.id.aboutme);
+    public static SampleHelper with(Activity activity){
+        return new SampleHelper(activity);
+    }
+
+    public SampleHelper init(){
+        activity.setTheme(theme);
+
+        activity.findViewById(R.id.dark).setOnClickListener(this);
+        activity.findViewById(R.id.light).setOnClickListener(this);
+        activity.findViewById(R.id.custom).setOnClickListener(this);
+
+        return this;
+    }
+
+    public void loadAbout() {
+        final FrameLayout flHolder = (FrameLayout) activity.findViewById(R.id.about);
 
         flHolder.addView(
-                AboutBuilder.with(this)
+                AboutBuilder.with(activity)
                         .setAppIcon(R.mipmap.ic_launcher)
                         .setAppName(R.string.app_name)
                         .setPhoto(R.mipmap.profile_picture)
@@ -75,26 +81,27 @@ public class Main extends AppCompatActivity implements View.OnClickListener {
                         .build());
     }
 
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.dark:
                 if (theme != R.style.AppThemeDark) {
                     theme = R.style.AppThemeDark;
-                    recreate();
+                    activity.recreate();
                 }
                 break;
             case R.id.light:
                 if (theme != R.style.AppThemeLight) {
                     theme = R.style.AppThemeLight;
-                    recreate();
+                    activity.recreate();
                 }
                 break;
 
             case R.id.custom:
                 if (theme != R.style.AppThemeCustom) {
                     theme = R.style.AppThemeCustom;
-                    recreate();
+                    activity.recreate();
                 }
                 break;
 
@@ -102,6 +109,4 @@ public class Main extends AppCompatActivity implements View.OnClickListener {
                 break;
         }
     }
-
-
 }
