@@ -68,6 +68,7 @@ public class AboutView extends FrameLayout {
     }
 
     private void init() {
+        setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         layoutInflater = LayoutInflater.from(getContext());
         layoutInflater.inflate(R.layout.about, this);
     }
