@@ -105,7 +105,7 @@
 
                         <TextView
                             android:id="@+id/app_title"
-                            style="@style/Text"
+                            style="@style/TextLabel"
                             android:gravity="left"
                             android:text="Just a sub title" />
 
