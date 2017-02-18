@@ -42,7 +42,7 @@ public class SampleHelper implements View.OnClickListener{
                 AboutBuilder.with(activity)
                         .setAppIcon(R.mipmap.ic_launcher)
                         .setAppName(R.string.app_name)
-                        .setPhoto(R.mipmap.profile_picture)
+                        .setPhoto(R.mipmap.testex)
                         .setCover(R.mipmap.profile_cover)
                         .setLinksAnimated(false)
                         .setDividerDashGap(13)

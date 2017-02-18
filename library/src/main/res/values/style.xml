@@ -20,7 +20,7 @@
     </style>
 
 
-    <style name="Text">
+    <style name="TextLabel">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:gravity">center</item>
@@ -29,7 +29,7 @@
         <item name="android:textColor">?android:textColorSecondary</item>
     </style>
 
-    <style name="Name" parent="Text">
+    <style name="Name" parent="@style/TextLabel">
         <item name="android:maxLines">2</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">21sp</item>
@@ -37,31 +37,29 @@
     </style>
 
 
-    <style name="SubTitle" parent="Text">
+    <style name="SubTitle" parent="@style/TextLabel">
         <item name="android:textSize">16sp</item>
         <item name="android:paddingLeft">30dp</item>
         <item name="android:paddingRight">30dp</item>
         <item name="android:paddingBottom">15dp</item>
-        <!--<item name="android:ems">3</item>-->
         <item name="android:textColor">?android:textColorSecondary</item>
     </style>
 
-    <style name="Brief" parent="Text">
+    <style name="Brief" parent="@style/TextLabel">
         <item name="android:textSize">16sp</item>
         <item name="android:paddingLeft">30dp</item>
         <item name="android:paddingRight">30dp</item>
         <item name="android:paddingBottom">15dp</item>
-        <!--<item name="android:ems">10</item>-->
     </style>
 
-    <style name="Social" parent="Text">
+    <style name="Social" parent="@style/TextLabel">
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center_horizontal</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_margin">0dp</item>
         <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:textSize">12sp</item>
         <item name="android:padding">3dp</item>
-        <!--<item name="android:ems">5</item>-->
     </style>
 
 
