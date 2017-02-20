@@ -7,8 +7,8 @@ android {
         applicationId "com.vansuita.materialabout.sample"
         minSdkVersion 11
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
     }
 
     buildTypes {
