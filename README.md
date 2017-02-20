@@ -17,7 +17,7 @@ It was build to make your life easier when introducing you to your users, and al
 
 <!-- JitPack integration -->
 [![JitPack](https://jitpack.io/v/jrvansuita/MaterialAbout.svg)](https://jitpack.io/#jrvansuita/MaterialAbout)
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MaterialAbout-green.svg?)](https://android-arsenal.com/details/1/4614) [![MaterialUp](https://img.shields.io/badge/MaterialUp-MaterialAbout-6ad0d9.svg?)](https://www.uplabs.com/posts/material-about)[![ghit.me](https://ghit.me/badge.svg?repo=jrvansuita/MaterialAbout)](https://ghit.me/repo/jrvansuita/MaterialAbout)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MaterialAbout-green.svg?)](https://android-arsenal.com/details/1/4614) [![MaterialUp](https://img.shields.io/badge/MaterialUp-MaterialAbout-6ad0d9.svg?)](https://www.uplabs.com/posts/material-about) [![ghit.me](https://ghit.me/badge.svg?repo=jrvansuita/MaterialAbout)](https://ghit.me/repo/jrvansuita/MaterialAbout)
 
 # Sample app
  This library has a lot more customization and features than is able to show here. Please check the sample app and feel free to help with a pull request. You can take a look at the sample app [located on this project](/app/).
