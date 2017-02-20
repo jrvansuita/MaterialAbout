@@ -22,7 +22,7 @@ It was build to make your life easier when introducing you to your users, and al
 # Sample app
  This library has a lot more customization and features than is able to show here. Please check the sample app and feel free to help with a pull request. You can take a look at the sample app [located on this project](/app/).
 
-<img src="images/screenshots/dark.png" height='auto' width='280'/><img src="images/screenshots/light.png" height='auto' width='280'/><img src="images/screenshots/custom.png" height='auto' width='280'/>
+<img src="images/screenshots/dark.jpg" height='auto' width='280'/><img src="images/screenshots/light.jpg" height='auto' width='280'/><img src="images/screenshots/custom.jpg" height='auto' width='280'/>
 
 [![Appetize.io](https://img.shields.io/badge/Apptize.io-Run%20Now-brightgreen.svg?)](https://appetize.io/embed/7j6x11afygur1cn94zbme5dp1w?device=nexus7&scale=50&autoplay=true&orientation=portrait&deviceColor=black) [![Demo](https://img.shields.io/badge/Demo-Download-blue.svg)](http://apk-dl.com/dl/com.vansuita.materialabout.sample) 
  [![Codacy Badge](https://api.codacy.com/project/badge/Grade/118bb89e3bed43e2b462201654224a60)](https://www.codacy.com/app/jrvansuita/MaterialAbout?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jrvansuita/MaterialAbout&amp;utm_campaign=Badge_Grade) 
