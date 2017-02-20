@@ -74,7 +74,7 @@ Create a [AboutView](/library/src/main/java/com/vansuita/materialabout/views/Abo
    
     
 # Sample app code.
- The library has a lot more customization and features than is able to show here. Please Check the sample app and feel to help with a pull request. You can take a look at the sample app [located on this project](/app/).
+ The library has a lot more customization and features than is able to show here. Please check the sample app and feel free to help with a pull request. You can take a look at the sample app [located on this project](/app/).
 
 #
 
