@@ -1,21 +1,5 @@
 <resources>
-    <string name="github">GitHub</string>
-    <string name="facebook">Facebook</string>
-    <string name="instagram">Instagram</string>
-    <string name="twitter">Twitter</string>
-    <string name="bitbucket">Bitbucket</string>
-    <string name="google">Google</string>
-    <string name="google_plus">Google +</string>
-    <string name="google_play_store">Play Store</string>
-    <string name="google_play_games">Play Games</string>
-    <string name="linkedin">LinkedIn</string>
-    <string name="whastapp">Whatsapp</string>
-    <string name="skype">Skype</string>
-    <string name="youtube">Youtube</string>
-    <string name="android">Android</string>
-    <string name="dribbble">Dribbble</string>
     <string name="website">Веб-сайт</string>
-    <string name="email">E-mail</string>
     <string name="version">Версия %s</string>
     <string name="error">Ошибка</string>
 
