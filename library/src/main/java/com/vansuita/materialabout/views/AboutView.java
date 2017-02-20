@@ -23,6 +23,7 @@ import com.vansuita.materialabout.R;
 import com.vansuita.materialabout.builder.AboutBuilder;
 import com.vansuita.materialabout.builder.Item;
 import com.vansuita.materialabout.util.RippleUtil;
+import com.vansuita.materialabout.util.VisibleUtil;
 
 /**
  * Created by jrvansuita on 10/02/17.
@@ -90,12 +91,16 @@ public class AboutView extends FrameLayout {
     }
 
     public void build(AboutBuilder bundle) {
+
         tvName.setText(bundle.getName());
-        tvName.setVisibility(bundle.getName() == null || bundle.getName().isEmpty() ? GONE : VISIBLE);
+        VisibleUtil.handle(tvName, bundle.getName());
+
         tvSubTitle.setText(bundle.getSubTitle());
-        tvSubTitle.setVisibility(bundle.getSubTitle() == null || bundle.getSubTitle().isEmpty() ? GONE : VISIBLE);
+        VisibleUtil.handle(tvSubTitle, bundle.getSubTitle());
+
         tvBrief.setText(bundle.getBrief());
-        tvBrief.setVisibility(bundle.getBrief() == null || bundle.getBrief().isEmpty() ? GONE : VISIBLE);
+        VisibleUtil.handle(tvBrief, bundle.getBrief());
+
         tvAppName.setText(bundle.getAppName());
         tvAppTitle.setText(bundle.getAppTitle());
 
@@ -112,7 +117,7 @@ public class AboutView extends FrameLayout {
         if (bundle.getBackgroundColor() != 0)
             cvHolder.setCardBackgroundColor(bundle.getBackgroundColor());
 
-        appHolder.setVisibility(bundle.getAppName() == null || bundle.getAppName().isEmpty() ? GONE : VISIBLE);
+        VisibleUtil.handle(appHolder, bundle.getAppName());
 
         if (appHolder.getVisibility() == VISIBLE)
             setDivider(bundle, appHolder);
