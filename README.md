@@ -16,65 +16,67 @@ It was build to make your life easier when introducing you to your users, and al
 </br>
 
 <!-- JitPack integration -->
-[![](https://jitpack.io/v/jrvansuita/MaterialAbout.svg)](https://jitpack.io/#jrvansuita/MaterialAbout)<a href="https://github.com/jrvansuita/MaterialAbout/releases/latest">
-  <img alt="Latest release" src="https://img.shields.io/github/release/jrvansuita/MaterialAbout.svg" />
-</a><!-- Android Arsenal -->
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MaterialAbout-green.svg?)](https://android-arsenal.com/details/1/4614) [![MaterialUp](https://img.shields.io/badge/MaterialUp-MaterialAbout-6ad0d9.svg?)](https://www.uplabs.com/posts/material-about)<!-- License -->
-<a target="_blank" href="/LICENSE.txt"><img src="http://img.shields.io/:License-MIT-yellow.svg" alt="MIT License" /></a><!-- Minimun Android Api -->
-<a target="_blank" href="https://developer.android.com/reference/android/os/Build.VERSION_CODES.html#GINGERBREAD"><img src="https://img.shields.io/badge/API-9%2B-blue.svg?style=flat" alt="API" /></a> [![Codacy Badge](https://api.codacy.com/project/badge/Grade/118bb89e3bed43e2b462201654224a60)](https://www.codacy.com/app/jrvansuita/MaterialAbout?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jrvansuita/MaterialAbout&amp;utm_campaign=Badge_Grade) <!-- Apptize.io -->[![Appetize.io](https://img.shields.io/badge/Apptize.io-Run%20Now-brightgreen.svg?)](https://appetize.io/embed/7j6x11afygur1cn94zbme5dp1w?device=nexus7&scale=50&autoplay=true&orientation=portrait&deviceColor=black) [![Demo](https://img.shields.io/badge/Demo-Download-blue.svg)](http://apk-dl.com/dl/com.vansuita.materialabout.sample) <!-- Hits Count -->[![ghit.me](https://ghit.me/badge.svg?repo=jrvansuita/MaterialAbout)](https://ghit.me/repo/jrvansuita/MaterialAbout)<!--Open Source --> [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/jrvansuita) [![Beerpay](https://beerpay.io/jrvansuita/MaterialAbout/badge.svg?style=flat)](https://beerpay.io/jrvansuita/MaterialAbout)
+[![JitPack](https://jitpack.io/v/jrvansuita/MaterialAbout.svg)](https://jitpack.io/#jrvansuita/MaterialAbout)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MaterialAbout-green.svg?)](https://android-arsenal.com/details/1/4614) [![MaterialUp](https://img.shields.io/badge/MaterialUp-MaterialAbout-6ad0d9.svg?)](https://www.uplabs.com/posts/material-about)[![ghit.me](https://ghit.me/badge.svg?repo=jrvansuita/MaterialAbout)](https://ghit.me/repo/jrvansuita/MaterialAbout)
 
-# Screenshots
+# Sample app
+ This library has a lot more customization and features than is able to show here. Please check the sample app and feel free to help with a pull request. You can take a look at the sample app [located on this project](/app/).
 
 <img src="images/screenshots/dark.png" height='auto' width='280'/><img src="images/screenshots/light.png" height='auto' width='280'/><img src="images/screenshots/custom.png" height='auto' width='280'/>
+
+[![Appetize.io](https://img.shields.io/badge/Apptize.io-Run%20Now-brightgreen.svg?)](https://appetize.io/embed/7j6x11afygur1cn94zbme5dp1w?device=nexus7&scale=50&autoplay=true&orientation=portrait&deviceColor=black) [![Demo](https://img.shields.io/badge/Demo-Download-blue.svg)](http://apk-dl.com/dl/com.vansuita.materialabout.sample) 
+ [![Codacy Badge](https://api.codacy.com/project/badge/Grade/118bb89e3bed43e2b462201654224a60)](https://www.codacy.com/app/jrvansuita/MaterialAbout?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jrvansuita/MaterialAbout&amp;utm_campaign=Badge_Grade) 
+ <a target="_blank" href="https://developer.android.com/reference/android/os/Build.VERSION_CODES.html#GINGERBREAD"><img src="https://img.shields.io/badge/API-9%2B-blue.svg?style=flat" alt="API" /></a>
+
 
 # Setup
 
 #### Step #1. Add the JitPack repository to your build file:
+
 ```gradle
-    allprojects {
-		repositories {
-			...
-			maven { url "https://jitpack.io" }
-		}
-	}
+allprojects {
+    repositories {
+	...
+	maven { url "https://jitpack.io" }
+    }
+}
 ```
+
 #### Step #2. Add the dependency ([See latest release](https://jitpack.io/#jrvansuita/MaterialAbout)).
+
 ```groovy
-    dependencies {
-           compile 'com.github.jrvansuita:MaterialAbout:+'
-	}
+dependencies {
+       compile 'com.github.jrvansuita:MaterialAbout:+'
+}
 ```
 # Implementation
 
 Create a [AboutView](/library/src/main/java/com/vansuita/materialabout/views/AboutView.java) instance with [AboutBuilder](/library/src/main/java/com/vansuita/materialabout/builder/AboutBuilder.java).
 ```java
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
 
-        View view = AboutBuilder.with(this)
-                .setPhoto(R.mipmap.profile_picture)
-                .setCover(R.mipmap.profile_cover)
-                .setName("Your Full Name")
-                .setSubTitle("Mobile Developer")
-                .setBrief("I'm warmed of mobile technologies. Ideas maker, curious and nature lover.")
-                .setAppIcon(R.mipmap.ic_launcher)
-                .setAppName(R.string.app_name)
-                .addGooglePlayStoreLink("8002078663318221363")
-                .addGitHubLink("user")
-                .addFacebookLink("user")
-                .addFiveStarsAction()
-                .setVersionAsAppTitle()
-                .addShareAction(R.string.app_name)
-                .build();
+    View view = AboutBuilder.with(this)
+            .setPhoto(R.mipmap.profile_picture)
+            .setCover(R.mipmap.profile_cover)
+            .setName("Your Full Name")
+            .setSubTitle("Mobile Developer")
+            .setBrief("I'm warmed of mobile technologies. Ideas maker, curious and nature lover.")
+            .setAppIcon(R.mipmap.ic_launcher)
+            .setAppName(R.string.app_name)
+            .addGooglePlayStoreLink("8002078663318221363")
+            .addGitHubLink("user")
+            .addFacebookLink("user")
+            .addFiveStarsAction()
+            .setVersionAsAppTitle()
+            .addShareAction(R.string.app_name)
+            .build();
 
-        addContentView(view, layoutParams);
-    }
- ```
+    addContentView(view, layoutParams);
+}
+```
    
-    
-# Sample app code.
- The library has a lot more customization and features than is able to show here. Please check the sample app and feel free to help with a pull request. You can take a look at the sample app [located on this project](/app/).
 
 #
 
