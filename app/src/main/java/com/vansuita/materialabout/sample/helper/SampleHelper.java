@@ -78,6 +78,7 @@ public class SampleHelper implements View.OnClickListener{
                         .addChangeLogAction((Intent) null)
                         .addRemoveAdsAction((Intent) null)
                         .addDonateAction((Intent) null)
+                        .setWrapScrollView(true)
                         .build());
     }
 

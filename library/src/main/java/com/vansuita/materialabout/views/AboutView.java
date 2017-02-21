@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.vansuita.library.Icon;
@@ -63,15 +64,27 @@ public class AboutView extends FrameLayout {
 
     public AboutView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
-        init();
-        bind();
     }
 
-    private void init() {
-        setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+    private void init(boolean wrapScrollView) {
         layoutInflater = LayoutInflater.from(getContext());
-        layoutInflater.inflate(R.layout.about, this);
+
+        ViewGroup holder = this;
+        ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        if (wrapScrollView) {
+            lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            ScrollView scrollView = new ScrollView(getContext());
+            scrollView.setLayoutParams(lp);
+            addView(scrollView);
+            holder = new FrameLayout(getContext());
+            holder.setLayoutParams(lp);
+            scrollView.addView(holder);
+        }
+
+        setLayoutParams(lp);
+
+        layoutInflater.inflate(R.layout.about, holder);
     }
 
     private void bind() {
@@ -91,6 +104,8 @@ public class AboutView extends FrameLayout {
     }
 
     public void build(AboutBuilder bundle) {
+        init(bundle.isWrapScrollView());
+        bind();
 
         tvName.setText(bundle.getName());
         VisibleUtil.handle(tvName, bundle.getName());

@@ -55,6 +55,8 @@ public class AboutBuilder {
     private int linksColumnsCount = 5;
     private int actionsColumnsCount = 2;
 
+    private boolean wrapScrollView = false;
+
     private List<Item> links = new ArrayList();
     private List<Item> actions = new ArrayList();
 
@@ -227,6 +229,11 @@ public class AboutBuilder {
 
     public AboutBuilder setShowDivider(boolean showDivider) {
         this.showDivider = showDivider;
+        return this;
+    }
+
+    public AboutBuilder setWrapScrollView(boolean wrapScrollView) {
+        this.wrapScrollView = wrapScrollView;
         return this;
     }
 
@@ -570,6 +577,10 @@ public class AboutBuilder {
         return addAction(icon, label, Uri.parse(url));
     }
 
+    public AboutBuilder addFiveStarsAction(int appId) {
+        return addFiveStarsAction(context.getString(appId));
+    }
+
     public AboutBuilder addFiveStarsAction(String appId) {
         return addAction(R.mipmap.star, R.string.rate_five_stars, util.openPlayStoreAppPage(appId));
     }
@@ -577,6 +588,11 @@ public class AboutBuilder {
     public AboutBuilder addFiveStarsAction() {
         return addFiveStarsAction(BuildConfig.APPLICATION_ID);
     }
+
+    public AboutBuilder addUpdateAction(int appId) {
+        return addUpdateAction(context.getString(appId));
+    }
+
 
     public AboutBuilder addUpdateAction(String appId) {
         return addAction(R.mipmap.update, R.string.update_app, util.openPlayStoreAppPage(appId));
@@ -586,8 +602,16 @@ public class AboutBuilder {
         return addUpdateAction(BuildConfig.APPLICATION_ID);
     }
 
+    public AboutBuilder addMoreFromMeAction(int userName) {
+        return addMoreFromMeAction(context.getString(userName));
+    }
+
     public AboutBuilder addMoreFromMeAction(String userName) {
         return addAction(R.mipmap.google_play_store, R.string.more_apps, util.openPlayStoreAppsList(userName));
+    }
+
+    public AboutBuilder addShareAction(int subject, int message) {
+        return addShareAction(context.getString(subject), context.getString(message));
     }
 
     public AboutBuilder addShareAction(String subject, String message) {
@@ -602,13 +626,26 @@ public class AboutBuilder {
         return addShareAction(context.getString(subject));
     }
 
+    public AboutBuilder addFeedbackAction(int email, int subject, int text) {
+        return addFeedbackAction(context.getString(email), context.getString(subject), context.getString(text));
+    }
+
     public AboutBuilder addFeedbackAction(String email, String subject, String text) {
         return addAction(R.mipmap.feedback, R.string.feedback_app, util.sendEmail(email, subject, text));
+    }
+
+    public AboutBuilder addFeedbackAction(int email, int subject) {
+        return addFeedbackAction(context.getString(email), context.getString(subject));
     }
 
     public AboutBuilder addFeedbackAction(String email, String subject) {
         return addFeedbackAction(email, subject, null);
     }
+
+    public AboutBuilder addFeedbackAction(int email) {
+        return addFeedbackAction(context.getString(email));
+    }
+
 
     public AboutBuilder addFeedbackAction(String email) {
         return addFeedbackAction(email, null);
@@ -654,6 +691,7 @@ public class AboutBuilder {
     public AboutBuilder addDonateAction(Intent intent) {
         return addDonateAction(util.clickIntent(intent));
     }
+
 
     public String getName() {
         return name;
@@ -737,6 +775,10 @@ public class AboutBuilder {
 
     public boolean isLinksAnimated() {
         return linksAnimated;
+    }
+
+    public boolean isWrapScrollView() {
+        return wrapScrollView;
     }
 
     public List<Item> getLinks() {
