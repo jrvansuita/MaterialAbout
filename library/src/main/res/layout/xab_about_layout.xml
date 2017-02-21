@@ -72,10 +72,11 @@
                 android:background="@drawable/social_media_divider"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:paddingBottom="@dimen/social_media_vertical_padding"
                 android:paddingTop="@dimen/social_media_vertical_padding">
 
                 <RelativeLayout
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center">

@@ -27,7 +27,7 @@ import static com.vansuita.materialabout.views.RoundedDrawable.TAG;
  * Created by jrvansuita on 10/02/17.
  */
 
-public class CircleImageView extends ImageView {
+public final class CircleImageView extends ImageView {
 
     public static final float DEFAULT_RADIUS = 0f;
     public static final float DEFAULT_BORDER_WIDTH = 0f;

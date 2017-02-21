@@ -7,7 +7,7 @@ import android.view.View;
  * Created by jrvansuita on 11/02/17.
  */
 
-public class Item {
+public final class Item {
 
     private String label;
     private Bitmap icon;

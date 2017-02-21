@@ -14,7 +14,6 @@ public class ActivitySample extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.sample_view);
-
         SampleHelper.with(this).init().loadAbout();
     }
 }

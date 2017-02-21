@@ -30,7 +30,7 @@ import com.vansuita.materialabout.util.VisibleUtil;
  * Created by jrvansuita on 10/02/17.
  */
 
-public class AboutView extends FrameLayout {
+public final class AboutView extends FrameLayout {
 
     private LayoutInflater layoutInflater;
 
@@ -84,7 +84,7 @@ public class AboutView extends FrameLayout {
 
         setLayoutParams(lp);
 
-        layoutInflater.inflate(R.layout.about, holder);
+        layoutInflater.inflate(R.layout.xab_about_layout, holder);
     }
 
     private void bind() {
@@ -209,7 +209,7 @@ public class AboutView extends FrameLayout {
 
     private void loadLinks(AboutBuilder bundle) {
         for (Item item : bundle.getLinks()) {
-            View v = addItem(vLinks, R.layout.link, item);
+            View v = addItem(vLinks, R.layout.xab_each_link, item);
 
             if (bundle.isLinksAnimated())
                 animate(v);
@@ -232,7 +232,7 @@ public class AboutView extends FrameLayout {
 
     private void loadActions(AboutBuilder bundle) {
         for (Item item : bundle.getActions()) {
-            addItem(vActions, R.layout.action, item);
+            addItem(vActions, R.layout.xab_each_action, item);
         }
     }
 

@@ -44,7 +44,7 @@ public class SampleHelper implements View.OnClickListener{
                         .setAppName(R.string.app_name)
                         .setPhoto(R.mipmap.profile_picture)
                         .setCover(R.mipmap.profile_cover)
-                        .setLinksAnimated(false)
+                        .setLinksAnimated(true)
                         .setDividerDashGap(13)
                         .setName("Your Full Name")
                         .setSubTitle("Mobile Developer")

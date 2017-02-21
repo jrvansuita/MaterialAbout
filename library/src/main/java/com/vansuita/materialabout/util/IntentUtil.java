@@ -14,7 +14,7 @@ import com.vansuita.materialabout.R;
  * Created by jrvansuita on 10/02/17.
  */
 
-public class IntentUtil {
+public final class IntentUtil {
 
 
     private Context context;

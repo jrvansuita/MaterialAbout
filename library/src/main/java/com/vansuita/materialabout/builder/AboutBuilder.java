@@ -24,7 +24,7 @@ import java.util.List;
  * Created by jrvansuita on 10/02/17.
  */
 
-public class AboutBuilder {
+public final class AboutBuilder {
 
     private Context context;
     private IntentUtil util;

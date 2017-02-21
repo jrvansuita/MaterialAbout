@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * Created by jrvansuita on 10/02/17.
  */
 
-public class AutoFitGridLayout extends ViewGroup {
+public final class AutoFitGridLayout extends ViewGroup {
 
     private int verticalSpace;
 
