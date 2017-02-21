@@ -227,9 +227,9 @@ public class AboutBuilder {
         return this;
     }
 
-
-    public void setShowDivider(boolean showDivider) {
+    public AboutBuilder setShowDivider(boolean showDivider) {
         this.showDivider = showDivider;
+        return this;
     }
 
     public AboutBuilder setWrapScrollView(boolean wrapScrollView) {
