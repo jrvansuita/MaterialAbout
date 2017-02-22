@@ -1,0 +1,33 @@
+<resources>
+    <string name="github">GitHub</string>
+    <string name="facebook">Facebook</string>
+    <string name="instagram">Instagram</string>
+    <string name="twitter">Twitter</string>
+    <string name="bitbucket">Bitbucket</string>
+    <string name="google">Google</string>
+    <string name="google_plus">Google +</string>
+    <string name="google_play_store">Play Store</string>
+    <string name="google_play_games">Play Games</string>
+    <string name="linkedin">LinkedIn</string>
+    <string name="whastapp">Whatsapp</string>
+    <string name="skype">Skype</string>
+    <string name="youtube">Youtube</string>
+    <string name="android">Android</string>
+    <string name="dribbble">Dribbble</string>
+    <string name="website">Website</string>
+    <string name="email">E-posta</string>
+    <string name="version">Versiyon %s</string>
+    <string name="error">Hata</string>
+
+    <string name="rate_five_stars">Bu uygulamaya 5 yıldız ver</string>
+    <string name="more_apps">Diğer uygulamalarım</string>
+    <string name="share_app">Uygulamayı paylaş</string>
+    <string name="update_app">Uygulamayı güncelle</string>
+    <string name="feedback_app">İstek, öneri gönder</string>
+    <string name="introduce_app">Uygulamayı tanıt</string>
+    <string name="changelog">Versiyon notları</string>
+    <string name="remove_ads">Reklamları kaldır</string>
+    <string name="donate">Bağış yap</string>
+    <string name="help">Yardım</string>
+
+</resources>
