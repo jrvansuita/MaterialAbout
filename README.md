@@ -73,6 +73,8 @@ protected void onCreate(Bundle savedInstanceState) {
             .addFiveStarsAction()
             .setVersionAsAppTitle()
             .addShareAction(R.string.app_name)
+            .setWrapScrollView(true)
+            .setLinksAnimated(true)
             .build();
 
     addContentView(view, layoutParams);
