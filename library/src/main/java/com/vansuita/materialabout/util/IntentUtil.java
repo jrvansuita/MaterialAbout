@@ -118,7 +118,7 @@ public final class IntentUtil {
 
     }
 
-    public Intent openLinkedin(String user) {
+    public Intent openLinkedIn(String user) {
         try {
             tryPackage(R.string.id_linkedin_app);
             return intent(R.string.uri_linkedin_app, user);

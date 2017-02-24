@@ -71,7 +71,7 @@ protected void onCreate(Bundle savedInstanceState) {
             .addGitHubLink("user")
             .addFacebookLink("user")
             .addFiveStarsAction()
-            .setVersionAsAppTitle()
+            .setVersionNameAsAppSubTitle()
             .addShareAction(R.string.app_name)
             .setWrapScrollView(true)
             .setLinksAnimated(true)
