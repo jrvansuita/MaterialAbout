@@ -1080,6 +1080,40 @@ public final class AboutBuilder {
      * @param message the contect of the e-mail
      * @return the same {@link AboutBuilder} instance
      */
+    public AboutBuilder addEmailLink(int email, String subject, String message) {
+        return addEmailLink(context.getString(email), subject, message);
+    }
+
+    /**
+     * Adds a e-mail link on the links section
+     *
+     * @param email   addressee e-mail
+     * @param subject the subject of the e-mail
+     * @return the same {@link AboutBuilder} instance
+     */
+    public AboutBuilder addEmailLink(int email, String subject) {
+        return addEmailLink(context.getString(email), subject, null);
+    }
+
+    /**
+     * Adds a e-mail link on the links section
+     *
+     * @param email   addressee e-mail
+     * @param subject the subject of the e-mail
+     * @return the same {@link AboutBuilder} instance
+     */
+    public AboutBuilder addEmailLink(int email, int subject) {
+        return addEmailLink(context.getString(email), context.getString(subject), null);
+    }
+
+    /**
+     * Adds a e-mail link on the links section
+     *
+     * @param email   addressee e-mail
+     * @param subject the subject of the e-mail
+     * @param message the contect of the e-mail
+     * @return the same {@link AboutBuilder} instance
+     */
     public AboutBuilder addEmailLink(String email, String subject, String message) {
         return addLink(R.mipmap.email, R.string.email, util.sendEmail(email, subject, message));
     }
@@ -1541,6 +1575,18 @@ public final class AboutBuilder {
      * @param content the e-mail content
      * @return the same {@link AboutBuilder} instance
      */
+    public AboutBuilder addFeedbackAction(int email, String subject, String content) {
+        return addAction(R.mipmap.feedback, R.string.feedback_app, util.sendEmail(context.getString(email), subject, content));
+    }
+
+    /**
+     * Adds a feedback action button
+     *
+     * @param email   the developer e-mail
+     * @param subject the subject
+     * @param content the e-mail content
+     * @return the same {@link AboutBuilder} instance
+     */
     public AboutBuilder addFeedbackAction(String email, String subject, String content) {
         return addAction(R.mipmap.feedback, R.string.feedback_app, util.sendEmail(email, subject, content));
     }
@@ -1566,6 +1612,19 @@ public final class AboutBuilder {
     public AboutBuilder addFeedbackAction(String email, String subject) {
         return addFeedbackAction(email, subject, null);
     }
+
+
+    /**
+     * Adds a feedback action button. No content message will be placed
+     *
+     * @param email   the developer e-mail
+     * @param subject the subject
+     * @return the same {@link AboutBuilder} instance
+     */
+    public AboutBuilder addFeedbackAction(int email, String subject) {
+        return addFeedbackAction(context.getString(email), subject, null);
+    }
+
 
     /**
      * Adds a feedback action button. No subject or content message will be placed
