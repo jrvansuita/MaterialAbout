@@ -79,6 +79,7 @@ public class SampleHelper implements View.OnClickListener{
                         .addRemoveAdsAction((Intent) null)
                         .addDonateAction((Intent) null)
                         .setWrapScrollView(true)
+                        .setShowAsCard(true)
                         .build());
     }
 

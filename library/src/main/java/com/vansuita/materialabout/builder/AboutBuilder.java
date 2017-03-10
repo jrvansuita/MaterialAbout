@@ -57,6 +57,7 @@ public final class AboutBuilder {
     private int actionsColumnsCount = 2;
 
     private boolean wrapScrollView = false;
+    private boolean showAsCard = true;
 
     private List<Item> links = new ArrayList();
     private List<Item> actions = new ArrayList();
@@ -1748,6 +1749,21 @@ public final class AboutBuilder {
         return addDonateAction(util.clickIntent(intent));
     }
 
+    /**
+     * Wraps the content in a {@link android.support.v7.widget.CardView}
+     *
+     * @param useCardView true if show in a CardView
+     * @return the same {@link AboutBuilder} instance
+     */
+
+    public AboutBuilder setShowAsCard(boolean showAsCard) {
+        this.showAsCard = showAsCard;
+        return this;
+    }
+
+    public boolean isShowAsCard() {
+        return showAsCard;
+    }
 
     public String getName() {
         return name;
@@ -1845,7 +1861,7 @@ public final class AboutBuilder {
         return actions;
     }
 
-    public View build() {
+    public AboutView build() {
         AboutView aboutView = new AboutView(context);
         aboutView.build(this);
         return aboutView;

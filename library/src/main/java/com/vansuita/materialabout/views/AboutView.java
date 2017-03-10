@@ -66,13 +66,13 @@ public final class AboutView extends FrameLayout {
         super(context, attrs, defStyleAttr);
     }
 
-    private void init(boolean wrapScrollView) {
+    private void init(AboutBuilder bundle) {
         layoutInflater = LayoutInflater.from(getContext());
 
         ViewGroup holder = this;
         ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        if (wrapScrollView) {
+        if (bundle.isWrapScrollView()) {
             lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
             ScrollView scrollView = new ScrollView(getContext());
             scrollView.setLayoutParams(lp);
@@ -84,7 +84,7 @@ public final class AboutView extends FrameLayout {
 
         setLayoutParams(lp);
 
-        layoutInflater.inflate(R.layout.xab_about_layout, holder);
+        layoutInflater.inflate(R.layout.xab_about_layout_card, holder);
     }
 
     private void bind() {
@@ -104,8 +104,10 @@ public final class AboutView extends FrameLayout {
     }
 
     public void build(AboutBuilder bundle) {
-        init(bundle.isWrapScrollView());
+        init(bundle);
         bind();
+
+        setupCard(bundle);
 
         tvName.setText(bundle.getName());
         VisibleUtil.handle(tvName, bundle.getName());
@@ -251,6 +253,22 @@ public final class AboutView extends FrameLayout {
         holder.addView(view);
         return view;
     }
+
+    private void setupCard(AboutBuilder bundle){
+        if (!bundle.isShowAsCard()){
+            cvHolder.setCardElevation(0);
+            cvHolder.setRadius(0);
+            cvHolder.setUseCompatPadding(false);
+            cvHolder.setMaxCardElevation(0);
+            cvHolder.setPreventCornerOverlap(false);
+        }
+    }
+
+    public CardView getHolder(){
+        return cvHolder;
+    }
+
+
 
 
 }

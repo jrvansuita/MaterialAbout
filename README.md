@@ -75,6 +75,7 @@ protected void onCreate(Bundle savedInstanceState) {
             .addShareAction(R.string.app_name)
             .setWrapScrollView(true)
             .setLinksAnimated(true)
+            .setShowAsCard(true)
             .build();
 
     addContentView(view, layoutParams);

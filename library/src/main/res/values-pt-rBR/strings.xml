@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="website">Site</string>
-    <string name="email">Email</string>
+    <string name="email">E-mail</string>
     <string name="version">Versão %s</string>
     <string name="error">Erro</string>
 
