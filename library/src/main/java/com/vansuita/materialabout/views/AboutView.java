@@ -240,6 +240,8 @@ public final class AboutView extends FrameLayout {
 
     private View addItem(ViewGroup holder, int layout, Item item) {
         View view = layoutInflater.inflate(layout, null);
+        view.setId(item.getId());
+
         TextView tvLabel = (TextView) view.findViewById(R.id.label);
         ImageView ivIcon = (ImageView) view.findViewById(R.id.icon);
 
@@ -254,8 +256,8 @@ public final class AboutView extends FrameLayout {
         return view;
     }
 
-    private void setupCard(AboutBuilder bundle){
-        if (!bundle.isShowAsCard()){
+    private void setupCard(AboutBuilder bundle) {
+        if (!bundle.isShowAsCard()) {
             cvHolder.setCardElevation(0);
             cvHolder.setRadius(0);
             cvHolder.setUseCompatPadding(false);
@@ -264,11 +266,18 @@ public final class AboutView extends FrameLayout {
         }
     }
 
-    public CardView getHolder(){
+    public CardView getHolder() {
         return cvHolder;
     }
 
 
+    public View findItem(int id) {
+        return cvHolder.findViewById(id);
+    }
+
+    public View findItem(Item item) {
+        return findItem(item.getId());
+    }
 
 
 }

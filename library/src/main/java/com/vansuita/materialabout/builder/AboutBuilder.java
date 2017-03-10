@@ -16,7 +16,7 @@ import com.vansuita.materialabout.util.IconUtil;
 import com.vansuita.materialabout.util.IntentUtil;
 import com.vansuita.materialabout.views.AboutView;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import static com.vansuita.materialabout.R.mipmap.share;
@@ -59,8 +59,8 @@ public final class AboutBuilder {
     private boolean wrapScrollView = false;
     private boolean showAsCard = true;
 
-    private List<Item> links = new ArrayList();
-    private List<Item> actions = new ArrayList();
+    private LinkedList<Item> links = new LinkedList();
+    private LinkedList<Item> actions = new LinkedList();
 
     AboutBuilder(Context context) {
         this.context = context;
@@ -77,6 +77,34 @@ public final class AboutBuilder {
 
     private PackageInfo getPackageInfo() throws PackageManager.NameNotFoundException {
         return context.getPackageManager().getPackageInfo(getApplicationID(), 0);
+    }
+
+    /**
+     * Gets the id of the last action added
+     */
+    public int getLastActionId() {
+        return getLastAction().getId();
+    }
+
+    /**
+     * Gets the last action item added
+     */
+    public Item getLastAction() {
+        return actions.getLast();
+    }
+
+    /**
+     * Gets the id of the last link added
+     */
+    public int getLastLinkId() {
+        return getLastLink().getId();
+    }
+
+    /**
+     * Gets the last link item added
+     */
+    public Item getLastLink() {
+        return links.getLast();
     }
 
     /**
@@ -1853,11 +1881,11 @@ public final class AboutBuilder {
         return wrapScrollView;
     }
 
-    public List<Item> getLinks() {
+    public LinkedList<Item> getLinks() {
         return links;
     }
 
-    public List<Item> getActions() {
+    public LinkedList<Item> getActions() {
         return actions;
     }
 
