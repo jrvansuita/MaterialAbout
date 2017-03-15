@@ -14,10 +14,10 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.DimenRes;
 import android.support.annotation.DrawableRes;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.vansuita.materialabout.R;
 
@@ -27,7 +27,7 @@ import static com.vansuita.materialabout.views.RoundedDrawable.TAG;
  * Created by jrvansuita on 10/02/17.
  */
 
-public final class CircleImageView extends ImageView {
+public final class CircleImageView extends AppCompatImageView {
 
     public static final float DEFAULT_RADIUS = 0f;
     public static final float DEFAULT_BORDER_WIDTH = 0f;
