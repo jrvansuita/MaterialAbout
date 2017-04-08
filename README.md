@@ -89,22 +89,22 @@ protected void onCreate(Bundle savedInstanceState) {
 ### Getting the list of actions or links from AboutBuilder.
 
 ```java
-    AboutBuilder aboutBuilder = AboutBuilder.with(this);
+AboutBuilder aboutBuilder = AboutBuilder.with(this);
 
-    List<Item> actions = aboutBuilder.getActions();
-    List<Item> links = aboutBuilder.getActions();
+List<Item> actions = aboutBuilder.getActions();
+List<Item> links = aboutBuilder.getActions();
 ```
 
 
 #### Getting the view instance of any action or link from AboutView?
 
 ```java
-   AboutView view = AboutBuilder.with(this)
-                    ...
-                    .build();
+AboutView view = AboutBuilder.with(this)
+                 ...
+                 .build();
 
-   View lastLinkView = view.findItem(builder.getLastLink());
-   View lastActionView = view.findItem(builder.getLastAction());
+View lastLinkView = view.findItem(builder.getLastLink());
+View lastActionView = view.findItem(builder.getLastAction());
 ```
 
 #
