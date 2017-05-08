@@ -3,12 +3,15 @@ package com.vansuita.materialabout.builder;
 import android.graphics.Bitmap;
 import android.view.View;
 
+import com.vansuita.materialabout.views.ViewIdGenerator;
+
 /**
  * Created by jrvansuita on 11/02/17.
  */
 
-public class Item {
+public final class Item {
 
+    private int id;
     private String label;
     private Bitmap icon;
     private View.OnClickListener onClick;
@@ -37,7 +40,12 @@ public class Item {
         this.onClick = onClick;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public Item(Bitmap icon, String label, View.OnClickListener onClick) {
+        this.id = ViewIdGenerator.generateViewId();
         this.label = label;
         this.icon = icon;
         this.onClick = onClick;

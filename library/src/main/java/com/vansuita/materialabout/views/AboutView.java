@@ -30,7 +30,7 @@ import com.vansuita.materialabout.util.VisibleUtil;
  * Created by jrvansuita on 10/02/17.
  */
 
-public class AboutView extends FrameLayout {
+public final class AboutView extends FrameLayout {
 
     private LayoutInflater layoutInflater;
 
@@ -66,13 +66,13 @@ public class AboutView extends FrameLayout {
         super(context, attrs, defStyleAttr);
     }
 
-    private void init(boolean wrapScrollView) {
+    private void init(AboutBuilder bundle) {
         layoutInflater = LayoutInflater.from(getContext());
 
         ViewGroup holder = this;
         ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        if (wrapScrollView) {
+        if (bundle.isWrapScrollView()) {
             lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
             ScrollView scrollView = new ScrollView(getContext());
             scrollView.setLayoutParams(lp);
@@ -84,7 +84,7 @@ public class AboutView extends FrameLayout {
 
         setLayoutParams(lp);
 
-        layoutInflater.inflate(R.layout.about, holder);
+        layoutInflater.inflate(R.layout.xab_about_layout_card, holder);
     }
 
     private void bind() {
@@ -104,8 +104,10 @@ public class AboutView extends FrameLayout {
     }
 
     public void build(AboutBuilder bundle) {
-        init(bundle.isWrapScrollView());
+        init(bundle);
         bind();
+
+        setupCard(bundle);
 
         tvName.setText(bundle.getName());
         VisibleUtil.handle(tvName, bundle.getName());
@@ -209,7 +211,7 @@ public class AboutView extends FrameLayout {
 
     private void loadLinks(AboutBuilder bundle) {
         for (Item item : bundle.getLinks()) {
-            View v = addItem(vLinks, R.layout.link, item);
+            View v = addItem(vLinks, R.layout.xab_each_link, item);
 
             if (bundle.isLinksAnimated())
                 animate(v);
@@ -232,12 +234,14 @@ public class AboutView extends FrameLayout {
 
     private void loadActions(AboutBuilder bundle) {
         for (Item item : bundle.getActions()) {
-            addItem(vActions, R.layout.action, item);
+            addItem(vActions, R.layout.xab_each_action, item);
         }
     }
 
     private View addItem(ViewGroup holder, int layout, Item item) {
         View view = layoutInflater.inflate(layout, null);
+        view.setId(item.getId());
+
         TextView tvLabel = (TextView) view.findViewById(R.id.label);
         ImageView ivIcon = (ImageView) view.findViewById(R.id.icon);
 
@@ -250,6 +254,29 @@ public class AboutView extends FrameLayout {
 
         holder.addView(view);
         return view;
+    }
+
+    private void setupCard(AboutBuilder bundle) {
+        if (!bundle.isShowAsCard()) {
+            cvHolder.setCardElevation(0);
+            cvHolder.setRadius(0);
+            cvHolder.setUseCompatPadding(false);
+            cvHolder.setMaxCardElevation(0);
+            cvHolder.setPreventCornerOverlap(false);
+        }
+    }
+
+    public CardView getHolder() {
+        return cvHolder;
+    }
+
+
+    public View findItem(int id) {
+        return cvHolder.findViewById(id);
+    }
+
+    public View findItem(Item item) {
+        return findItem(item.getId());
     }
 
 

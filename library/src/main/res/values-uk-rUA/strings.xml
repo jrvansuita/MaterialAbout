@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="website">Веб-сайт</string>
+    <string name="email">Е-скринька</string>
+    <string name="version">Версія %s</string>
+    <string name="error">Помилка</string>
+
+    <string name="rate_five_stars">Оцініть цей застосунок на 5 зірок</string>
+    <string name="more_apps">Більше моїх застосунків</string>
+    <string name="share_app">Поділитися застосунком</string>
+    <string name="update_app">Оновити застосунок</string>
+    <string name="feedback_app">Залишити мені відгук</string>
+    <string name="introduce_app">Познайомити зі застосунком</string>
+    <string name="changelog">Список змін</string>
+    <string name="remove_ads">Прибрати рекламу</string>
+    <string name="donate">Підтримати</string>
+    <string name="help">Допомога</string>
+</resources>

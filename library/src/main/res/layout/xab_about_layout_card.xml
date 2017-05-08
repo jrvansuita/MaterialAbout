@@ -2,9 +2,9 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/card_holder"
     style="@style/Card"
+    android:layout_margin="10dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="10dp">
+    android:layout_height="wrap_content">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -72,13 +72,14 @@
                 android:background="@drawable/social_media_divider"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:paddingBottom="@dimen/social_media_vertical_padding"
                 android:paddingTop="@dimen/social_media_vertical_padding">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center">
+                    android:layout_gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp">
 
                     <ImageView
                         android:id="@+id/app_icon"
@@ -126,4 +127,6 @@
         </LinearLayout>
 
     </FrameLayout>
+
+
 </android.support.v7.widget.CardView>

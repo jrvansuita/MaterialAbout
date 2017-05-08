@@ -1,0 +1,18 @@
+<resources>
+    <string name="google_play_games">Play Spiele</string>
+    <string name="website">Webseite</string>
+    <string name="error">Fehler</string>
+
+
+    <string name="rate_five_stars">Bewerte die App mit 5 Sternen</string>
+    <string name="more_apps">Mehr Apps von mir</string>
+    <string name="share_app">Teile die App</string>
+    <string name="update_app">Aktualisiere die App</string>
+    <string name="feedback_app">Gib mir Feedback</string>
+    <string name="introduce_app">Einführung in die App</string>
+    <string name="changelog">Änderungsprotokoll</string>
+    <string name="remove_ads">Werbung entfernen</string>
+    <string name="donate">Spenden</string>
+    <string name="help">Hilfe</string>
+
+</resources>

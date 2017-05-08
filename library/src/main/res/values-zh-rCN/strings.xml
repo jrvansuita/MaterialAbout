@@ -1,0 +1,18 @@
+<resources>
+    <string name="email">E-mail</string>
+    <string name="website">Website</string>
+    <string name="version">版本 %s</string>
+    <string name="error">Error</string>
+
+    <string name="rate_five_stars">评价</string>
+    <string name="more_apps">更多APP</string>
+    <string name="share_app">分享</string>
+    <string name="update_app">检查更新</string>
+    <string name="feedback_app">反馈</string>
+    <string name="introduce_app">功能介绍</string>
+    <string name="changelog">更新日志</string>
+    <string name="remove_ads">去除广告</string>
+    <string name="donate">捐赠我们</string>
+    <string name="help">帮助</string>
+
+</resources>

@@ -14,7 +14,7 @@ import com.vansuita.materialabout.R;
  * Created by jrvansuita on 10/02/17.
  */
 
-public class IntentUtil {
+public final class IntentUtil {
 
 
     private Context context;
@@ -118,7 +118,7 @@ public class IntentUtil {
 
     }
 
-    public Intent openLinkedin(String user) {
+    public Intent openLinkedIn(String user) {
         try {
             tryPackage(R.string.id_linkedin_app);
             return intent(R.string.uri_linkedin_app, user);

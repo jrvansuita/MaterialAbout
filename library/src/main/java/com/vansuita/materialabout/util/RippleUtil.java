@@ -20,7 +20,7 @@ import java.util.Arrays;
  * Created by jrvansuita on 10/02/17.
  */
 
-public class RippleUtil {
+public final class RippleUtil {
 
     public static void background(View v, Drawable d) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
