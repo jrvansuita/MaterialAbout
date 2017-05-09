@@ -73,6 +73,7 @@ public class SampleHelper implements View.OnClickListener{
                 .addUpdateAction()
                 .setActionsColumnsCount(2)
                 .addFeedbackAction("vansuita.jr@gmail.com")
+                .addPrivacyPolicyAction("http://www.docracy.com/2d0kis6uc2")
                 .addIntroduceAction((Intent) null)
                 .addHelpAction((Intent) null)
                 .addChangeLogAction((Intent) null)
