@@ -1789,6 +1789,36 @@ public final class AboutBuilder {
         return this;
     }
 
+    /**
+     * Adds a privacy policy action button
+     *
+     * @param url the url to privacy policy web page
+     * @return the same {@link AboutBuilder} instance
+     */
+    public AboutBuilder addPrivacyPolicyAction(String url) {
+        return addAction(R.mipmap.privacy, R.string.privacy, util.intent(url));
+    }
+
+    /**
+     * Adds a privacy policy action button
+     *
+     * @param onClickListener the click callback
+     * @return the same {@link AboutBuilder} instance
+     */
+    public AboutBuilder addPrivacyPolicyAction(View.OnClickListener onClickListener) {
+        return addAction(R.mipmap.privacy, R.string.privacy, onClickListener);
+    }
+
+    /**
+     * Adds a privacy policy action button
+     *
+     * @param intent the action intent
+     * @return the same {@link AboutBuilder} instance
+     */
+    public AboutBuilder addPrivacyPolicyAction(Intent intent) {
+        return addAction(R.mipmap.privacy, R.string.privacy, util.clickIntent(intent));
+    }
+
     public boolean isShowAsCard() {
         return showAsCard;
     }
