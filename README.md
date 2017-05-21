@@ -11,6 +11,7 @@ This is an [**Android**](https://developer.android.com) project. You, as a mobil
 It was build to make your life easier when introducing you to your users, and also, to create a about screen pattern for material android apps. It's really simple and dynamic, check it out.
 
 </br>
+
 ##### Note: If you're missing some feature please let me know. Or even better, create a pull request. Also, I'm needing some help to translate the strings.xml to other languages.
 
 ##### Supported Languages until now: 🇺🇸 🇧🇷 🇪🇸 🇮🇹 🇷🇺 🇩🇪 :cn: :tr: 🇺🇦
@@ -24,7 +25,7 @@ It was build to make your life easier when introducing you to your users, and al
 # Sample app
  This library has a lot more customization and features than is able to show here. Please check the sample app and feel free to help with a pull request. You can take a look at the sample app [located on this project](/app/).
 
-<img src="images/screenshots/dark.jpg" height='auto' width='280'/><img src="images/screenshots/light.jpg" height='auto' width='280'/><img src="images/screenshots/custom.jpg" height='auto' width='280'/>
+<img src="images/screenshots/dark.jpg" height='auto' width='270'/><img src="images/screenshots/light.jpg" height='auto' width='270'/><img src="images/screenshots/custom.jpg" height='auto' width='270'/>
 
 [![Appetize.io](https://img.shields.io/badge/Apptize.io-Run%20Now-brightgreen.svg?)](https://appetize.io/embed/3b4dpd5kv90mpa67mp5h8mugc0?device=nexus7&scale=50&autoplay=true&orientation=portrait&deviceColor=black) [![Demo](https://img.shields.io/badge/Demo-Download-blue.svg)](http://apk-dl.com/dl/com.vansuita.materialabout.sample) 
  [![Codacy Badge](https://api.codacy.com/project/badge/Grade/118bb89e3bed43e2b462201654224a60)](https://www.codacy.com/app/jrvansuita/MaterialAbout?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jrvansuita/MaterialAbout&amp;utm_campaign=Badge_Grade) 
@@ -88,22 +89,22 @@ protected void onCreate(Bundle savedInstanceState) {
 ### Getting the list of actions or links from AboutBuilder.
 
 ```java
-    AboutBuilder aboutBuilder = AboutBuilder.with(this);
+AboutBuilder aboutBuilder = AboutBuilder.with(this);
 
-    List<Item> actions = aboutBuilder.getActions();
-    List<Item> links = aboutBuilder.getActions();
+List<Item> actions = aboutBuilder.getActions();
+List<Item> links = aboutBuilder.getActions();
 ```
 
 
 #### Getting the view instance of any action or link from AboutView?
 
 ```java
-   AboutView view = AboutBuilder.with(this)
-                    ...
-                    .build();
+AboutView view = AboutBuilder.with(this)
+                 ...
+                 .build();
 
-   View lastLinkView = view.findItem(builder.getLastLink());
-   View lastActionView = view.findItem(builder.getLastAction());
+View lastLinkView = view.findItem(builder.getLastLink());
+View lastActionView = view.findItem(builder.getLastAction());
 ```
 
 #

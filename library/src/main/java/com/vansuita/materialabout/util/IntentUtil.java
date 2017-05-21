@@ -27,12 +27,20 @@ public final class IntentUtil {
         return Uri.parse(context.getString(res, user));
     }
 
+    public Uri uri(String url) {
+        return Uri.parse(url);
+    }
+
     public Intent intent(Uri uri) {
         return new Intent(Intent.ACTION_VIEW, uri);
     }
 
     public Intent intent(int res, String user) {
         return intent(uri(res, user));
+    }
+
+    public Intent intent(String url) {
+        return intent(uri(url));
     }
 
     public View.OnClickListener clickUri(Uri uri) {

@@ -59,8 +59,8 @@ public final class AboutBuilder {
     private boolean wrapScrollView = false;
     private boolean showAsCard = true;
 
-    private LinkedList<Item> links = new LinkedList();
-    private LinkedList<Item> actions = new LinkedList();
+    private LinkedList<Item> links = new LinkedList<>();
+    private LinkedList<Item> actions = new LinkedList<>();
 
     AboutBuilder(Context context) {
         this.context = context;
@@ -1780,13 +1780,43 @@ public final class AboutBuilder {
     /**
      * Wraps the content in a {@link android.support.v7.widget.CardView}
      *
-     * @param useCardView true if show in a CardView
+     * @param showAsCard true if show in a CardView
      * @return the same {@link AboutBuilder} instance
      */
 
     public AboutBuilder setShowAsCard(boolean showAsCard) {
         this.showAsCard = showAsCard;
         return this;
+    }
+
+    /**
+     * Adds a privacy policy action button
+     *
+     * @param url the url to privacy policy web page
+     * @return the same {@link AboutBuilder} instance
+     */
+    public AboutBuilder addPrivacyPolicyAction(String url) {
+        return addAction(R.mipmap.privacy, R.string.privacy, util.intent(url));
+    }
+
+    /**
+     * Adds a privacy policy action button
+     *
+     * @param onClickListener the click callback
+     * @return the same {@link AboutBuilder} instance
+     */
+    public AboutBuilder addPrivacyPolicyAction(View.OnClickListener onClickListener) {
+        return addAction(R.mipmap.privacy, R.string.privacy, onClickListener);
+    }
+
+    /**
+     * Adds a privacy policy action button
+     *
+     * @param intent the action intent
+     * @return the same {@link AboutBuilder} instance
+     */
+    public AboutBuilder addPrivacyPolicyAction(Intent intent) {
+        return addAction(R.mipmap.privacy, R.string.privacy, util.clickIntent(intent));
     }
 
     public boolean isShowAsCard() {

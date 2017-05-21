@@ -9,10 +9,11 @@
     <string name="share_app">Teile die App</string>
     <string name="update_app">Aktualisiere die App</string>
     <string name="feedback_app">Gib mir Feedback</string>
-    <string name="introduce_app">Einfürung in die App</string>
+    <string name="introduce_app">Einführung in die App</string>
     <string name="changelog">Änderungsprotokoll</string>
     <string name="remove_ads">Werbung entfernen</string>
     <string name="donate">Spenden</string>
     <string name="help">Hilfe</string>
+    <string name="privacy">Datenschutz-Bestimmungen</string>
 
 </resources>
