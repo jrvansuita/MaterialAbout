@@ -17,7 +17,6 @@ import com.vansuita.materialabout.util.IntentUtil;
 import com.vansuita.materialabout.views.AboutView;
 
 import java.util.LinkedList;
-import java.util.List;
 
 import static com.vansuita.materialabout.R.mipmap.share;
 
@@ -59,8 +58,8 @@ public final class AboutBuilder {
     private boolean wrapScrollView = false;
     private boolean showAsCard = true;
 
-    private LinkedList<Item> links = new LinkedList<>();
-    private LinkedList<Item> actions = new LinkedList<>();
+    private LinkedList<Item> links = new LinkedList();
+    private LinkedList<Item> actions = new LinkedList();
 
     AboutBuilder(Context context) {
         this.context = context;
@@ -1915,7 +1914,7 @@ public final class AboutBuilder {
         return links;
     }
 
-    public LinkedList<Item> Rea() {
+    public LinkedList<Item> getActions() {
         return actions;
     }
 
