@@ -224,7 +224,7 @@ public final class AboutBuilder {
      */
     public AboutBuilder setVersionNameAsAppSubTitle() {
         try {
-            return setAppTitle(context.getString(R.string.version, getPackageInfo().versionName));
+            return setAppTitle(context.getString(com.vansuita.materialabout.R.string.version, getPackageInfo().versionName));
         } catch (PackageManager.NameNotFoundException e) {
             return setAppTitle(R.string.error);
         }
@@ -1885,7 +1885,7 @@ public final class AboutBuilder {
         return links;
     }
 
-    public LinkedList<Item> getActions() {
+    public LinkedList<Item> Rea() {
         return actions;
     }
 
