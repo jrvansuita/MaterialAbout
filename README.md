@@ -107,6 +107,12 @@ View lastLinkView = view.findItem(builder.getLastLink());
 View lastActionView = view.findItem(builder.getLastAction());
 ```
 
+# Used libraries
+
+* com.android.support:appcompat-v7
+* com.android.support:cardview-v7
+* com.github.jrvansuita:IconHandler
+
 #
 
 <a href="https://plus.google.com/+JuniorVansuita" target="_blank">
