@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help">Aide</string>
+    <string name="introduce_app">Présenter l\'application</string>
+    <string name="more_apps">Mes autres applications</string>
+    <string name="privacy">Politique de confidentalité</string>
+    <string name="rate_five_stars">Noter cette application 5 étoiles</string>
+    <string name="remove_ads">Supprimer les publicités</string>
+    <string name="share_app">Partager l\'application</string>
+    <string name="update_app">Mettre à jour l\'application</string>
+    <string name="website">Site</string>
+    <string name="changelog">Dernières modifications</string>
+    <string name="donate">Dons</string>
+    <string name="email">Mail</string>
+    <string name="error">Erreur</string>
+    <string name="feedback_app">Votre avis</string>
+    <string name="google_play_games">Google Play Games</string>
+</resources>
