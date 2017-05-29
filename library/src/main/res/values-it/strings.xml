@@ -6,9 +6,9 @@
 
     <string name="rate_five_stars">Valuta questa app con 5 stelle</string>
     <string name="more_apps">Altre mie app</string>
-    <string name="share_app">Condividi questa app</string>
+    <string name="share_app">Condividi app</string>
     <string name="update_app">Aggiorna l\'app</string>
-    <string name="feedback_app">Dai un feedback</string>
+    <string name="feedback_app">Fornisci feedback</string>
     <string name="introduce_app">Introduzione all\'app</string>
     <string name="changelog">ChangeLog</string>
     <string name="remove_ads">Rimuovi pubblicità</string>
