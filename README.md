@@ -14,7 +14,7 @@ It was build to make your life easier when introducing you to your users, and al
 
 ##### Note: If you're missing some feature please let me know. Or even better, create a pull request. Also, I'm needing some help to translate the strings.xml to other languages.
 
-##### Supported Languages until now: 🇺🇸 🇧🇷 🇪🇸 🇮🇹 🇷🇺 🇩🇪 :cn: :tr: 🇺🇦
+##### Supported Languages until now: 🇺🇸 🇧🇷 🇪🇸 🇮🇹 🇷🇺 🇩🇪 :cn: :tr: 🇺🇦 🇫🇷 
 
 </br>
 
@@ -106,6 +106,12 @@ AboutView view = AboutBuilder.with(this)
 View lastLinkView = view.findItem(builder.getLastLink());
 View lastActionView = view.findItem(builder.getLastAction());
 ```
+
+# Used libraries
+
+* com.android.support:appcompat-v7
+* com.android.support:cardview-v7
+* com.github.jrvansuita:IconHandler
 
 #
 
