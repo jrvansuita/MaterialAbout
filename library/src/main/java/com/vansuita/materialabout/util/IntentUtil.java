@@ -119,11 +119,18 @@ public final class IntentUtil {
 
     public Intent openYoutubeChannel(String user) {
         try {
-            return intent(R.string.url_youtube_website, user);
+            return intent(R.string.url_youtube_channel_website, user);
         } catch (Exception e) {
-            return intent(R.string.url_youtube_website, user);
+            return intent(R.string.url_youtube_channel_website, user);
         }
+    }
 
+    public Intent openYoutubeUser(String user) {
+        try {
+            return intent(R.string.url_youtube_user_website, user);
+        } catch (Exception e) {
+            return intent(R.string.url_youtube_user_website, user);
+        }
     }
 
     public Intent openLinkedIn(String user) {

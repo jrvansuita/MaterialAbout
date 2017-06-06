@@ -968,6 +968,27 @@ public final class AboutBuilder {
         return addLink(R.mipmap.youtube, R.string.youtube, util.openYoutubeChannel(user));
     }
 
+
+    /**
+     * Adds a Youtube user link on the links section
+     *
+     * @param user a Youtube user name
+     * @return the same {@link AboutBuilder} instance
+     */
+    public AboutBuilder addYoutubeUserLink(int user) {
+        return addYoutubeUserLink(context.getString(user));
+    }
+
+    /**
+     * Adds a Youtube user link on the links section
+     *
+     * @param user a Youtube user name
+     * @return the same {@link AboutBuilder} instance
+     */
+    public AboutBuilder addYoutubeUserLink(String user) {
+        return addLink(R.mipmap.youtube, R.string.youtube, util.openYoutubeUser(user));
+    }
+
     /**
      * Adds a LinkedIn profile link on the links section
      *

@@ -23,7 +23,8 @@
     <string name="id_google_plus_app">com.google.android.apps.plus</string>
 
     <string name="url_google_play_store_developer_page">https://play.google.com/store/apps/dev?id=%s</string>
-    <string name="url_youtube_website">https://www.youtube.com/user/%s</string>
+    <string name="url_youtube_user_website">https://www.youtube.com/user/%s</string>
+    <string name="url_youtube_channel_website">https://www.youtube.com/channel/%s</string>
 
     <string name="url_linkedin_website">https://www.linkedin.com/in/%s</string>
     <string name="uri_linkedin_app">linkedin://profile/%s</string>
