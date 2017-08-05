@@ -1,0 +1,34 @@
+<resources>
+    <string name="github">깃헙</string>
+    <string name="facebook">페이스북</string>
+    <string name="instagram">인스타그램</string>
+    <string name="twitter">트위터</string>
+    <string name="bitbucket">빗버켓</string>
+    <string name="google">구글</string>
+    <string name="google_plus">구글플러스</string>
+    <string name="google_play_store">플레이스토어</string>
+    <string name="google_play_games">게임 플레이</string>
+    <string name="linkedin">링크드인</string>
+    <string name="whastapp">왓츠앱</string>
+    <string name="skype">스카이프</string>
+    <string name="youtube">유튜브</string>
+    <string name="android">안드로이드</string>
+    <string name="dribbble">드리블</string>
+    <string name="website">웹사이트</string>
+    <string name="email">이메일</string>
+    <string name="version">버전 %s</string>
+    <string name="error">에러</string>
+
+    <string name="rate_five_stars">별점 남기기</string>
+    <string name="more_apps">더 많은 앱 보기</string>
+    <string name="share_app">앱 추천하기</string>
+    <string name="update_app">업데이트 체크</string>
+    <string name="feedback_app">피드백 남기기</string>
+    <string name="introduce_app">앱 소개하기</string>
+    <string name="changelog">앱 변경내역</string>
+    <string name="remove_ads">광고 제거</string>
+    <string name="donate">기부하기</string>
+    <string name="help">도움말</string>
+    <string name="privacy">개인정보 정책</string>
+
+</resources>
