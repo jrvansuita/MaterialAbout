@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="github">جِت هب</string>
+    <string name="facebook">فيسبوك</string>
+    <string name="instagram">انستاغرام</string>
+    <string name="twitter">تويتر</string>
+    <string name="bitbucket">بِت بكيت</string>
+    <string name="google">جوجل</string>
+    <string name="google_plus">جوجل بلس</string>
+    <string name="google_play_store">متجر جوجل بلاي</string>
+    <string name="google_play_games">ألعاب جوجل بلاي</string>
+    <string name="linkedin">لِنكد إن</string>
+    <string name="whastapp">وتساب</string>
+    <string name="skype">سكايب</string>
+    <string name="youtube">يوتيوب</string>
+    <string name="android">أندرويد</string>
+    <string name="dribbble">دريبيل</string>
+    <string name="website">موقع إلكتروني</string>
+    <string name="email">بريد إلكتروني</string>
+    <string name="version">إصدار %s</string>
+    <string name="error">خطأ</string>
+
+    <string name="rate_five_stars">قيّم هذا التطبيق ب5 نجوم</string>
+    <string name="more_apps">تطبيقات أخرى عن طريقي</string>
+    <string name="share_app">شارك هذا التطبيق</string>
+    <string name="update_app">حدّث هذا التطبيق</string>
+    <string name="feedback_app">أرسل تغذية راجعة</string>
+    <string name="introduce_app">عن التطبيق</string>
+    <string name="changelog">سِجل التغيير</string>
+    <string name="remove_ads">أوقِف الإعلانات</string>
+    <string name="donate">تبرع</string>
+    <string name="help">مساعدة</string>
+    <string name="privacy">سياسة الخصوصية</string>
+
+</resources>
