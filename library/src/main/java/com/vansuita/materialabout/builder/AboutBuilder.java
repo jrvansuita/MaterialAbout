@@ -1736,6 +1736,26 @@ public final class AboutBuilder {
     }
 
     /**
+     * Adds an license action button
+     *
+     * @param onClickListener the click callback
+     * @return the same {@link AboutBuilder} instance
+     */
+    public AboutBuilder addLicenseAction(View.OnClickListener onClickListener) {
+        return addAction(R.mipmap.license, R.string.license, onClickListener);
+    }
+
+    /**
+     * Adds an license action button
+     *
+     * @param intent the action intent
+     * @return the same {@link AboutBuilder} instance
+     */
+    public AboutBuilder addLicenseAction(Intent intent) {
+        return addLicenseAction(util.clickIntent(intent));
+    }
+
+    /**
      * Adds an changelog action button
      *
      * @param onClickListener the click callback
