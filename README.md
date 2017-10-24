@@ -34,6 +34,8 @@ It was build to make your life easier when introducing you to your users, and al
 
 # Setup
 
+This library requires `minSdkVersion` to be set to `14` or above, like the [Official Support Library](https://developer.android.com/topic/libraries/support-library/index.html#api-versions).
+
 #### Step #1. Add the JitPack repository to your build file:
 
 ```gradle
@@ -109,9 +111,9 @@ View lastActionView = view.findItem(builder.getLastAction());
 
 # Used libraries
 
-* com.android.support:appcompat-v7
-* com.android.support:cardview-v7
-* com.github.jrvansuita:IconHandler
+* [com.android.support:appcompat-v7](https://developer.android.com/topic/libraries/support-library/packages.html#v7-appcompat)
+* [com.android.support:cardview-v7](https://developer.android.com/topic/libraries/support-library/packages.html#v7-cardview)
+* [com.github.jrvansuita:IconHandler](https://github.com/jrvansuita/IconHandler)
 
 #
 
