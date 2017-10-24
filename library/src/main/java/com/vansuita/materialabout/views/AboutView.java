@@ -270,7 +270,6 @@ public final class AboutView extends FrameLayout {
         return cvHolder;
     }
 
-
     public View findItem(int id) {
         return cvHolder.findViewById(id);
     }
@@ -278,6 +277,5 @@ public final class AboutView extends FrameLayout {
     public View findItem(Item item) {
         return findItem(item.getId());
     }
-
 
 }

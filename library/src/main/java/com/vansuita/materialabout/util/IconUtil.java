@@ -8,17 +8,17 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 
 /**
- * Created by jrvansuita on 10/02/17.
+ * Static utilities.
  */
-
+@SuppressWarnings("unused")
 public final class IconUtil {
 
     public static Bitmap getBitmap(Context context, int res) {
         return BitmapFactory.decodeResource(context.getResources(), res);
     }
 
-    public static Bitmap getBitmap(Context context, Drawable drawable) {
-        return ((BitmapDrawable) drawable).getBitmap();
+    public static Bitmap getBitmap(BitmapDrawable drawable) {
+        return drawable.getBitmap();
     }
 
     public static Drawable getDrawable(Context context, Bitmap bitmap) {
