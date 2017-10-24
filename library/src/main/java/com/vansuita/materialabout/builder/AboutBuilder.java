@@ -21,9 +21,9 @@ import java.util.LinkedList;
 import static com.vansuita.materialabout.R.mipmap.share;
 
 /**
- * Created by jrvansuita on 10/02/17.
+ * Used to build an {@link AboutView}.
  */
-
+@SuppressWarnings({"WeakerAccess", "unused"})
 public final class AboutBuilder {
 
     private Context context;
@@ -58,15 +58,20 @@ public final class AboutBuilder {
     private boolean wrapScrollView = false;
     private boolean showAsCard = true;
 
-    private LinkedList<Item> links = new LinkedList();
-    private LinkedList<Item> actions = new LinkedList();
+    private LinkedList<Item> links = new LinkedList<>();
+    private LinkedList<Item> actions = new LinkedList<>();
 
+    /**
+     * @deprecated Used {@link #with(Context)} instead.
+     */
+    @Deprecated
     AboutBuilder(Context context) {
         this.context = context;
         this.util = new IntentUtil(context);
     }
 
     public static AboutBuilder with(Context context) {
+        //noinspection deprecation
         return new AboutBuilder(context);
     }
 
