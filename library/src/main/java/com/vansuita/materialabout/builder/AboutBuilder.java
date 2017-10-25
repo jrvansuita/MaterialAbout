@@ -1,12 +1,11 @@
 package com.vansuita.materialabout.builder;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.view.View;
 
@@ -21,9 +20,9 @@ import java.util.LinkedList;
 import static com.vansuita.materialabout.R.mipmap.share;
 
 /**
- * Created by jrvansuita on 10/02/17.
+ * Used to build an {@link AboutView}.
  */
-
+@SuppressWarnings({"WeakerAccess", "unused"})
 public final class AboutBuilder {
 
     private Context context;
@@ -58,15 +57,20 @@ public final class AboutBuilder {
     private boolean wrapScrollView = false;
     private boolean showAsCard = true;
 
-    private LinkedList<Item> links = new LinkedList();
-    private LinkedList<Item> actions = new LinkedList();
+    private LinkedList<Item> links = new LinkedList<>();
+    private LinkedList<Item> actions = new LinkedList<>();
 
+    /**
+     * @deprecated Used {@link #with(Context)} instead.
+     */
+    @Deprecated
     AboutBuilder(Context context) {
         this.context = context;
         this.util = new IntentUtil(context);
     }
 
     public static AboutBuilder with(Context context) {
+        //noinspection deprecation
         return new AboutBuilder(context);
     }
 
@@ -127,7 +131,6 @@ public final class AboutBuilder {
         return setName(context.getString(text));
     }
 
-
     /**
      * Sets the sub title. It will be place below the developer name
      *
@@ -160,7 +163,6 @@ public final class AboutBuilder {
         return this;
     }
 
-
     /**
      * Sets a personal brief
      *
@@ -170,7 +172,6 @@ public final class AboutBuilder {
     public AboutBuilder setBrief(int text) {
         return setBrief(context.getString(text));
     }
-
 
     /**
      * Sets the app name
@@ -193,14 +194,12 @@ public final class AboutBuilder {
         return setAppName(context.getString(text));
     }
 
-
     /**
      * Sets the app title
      *
      * @param text the title
      * @return the same {@link AboutBuilder} instance
      */
-
     public AboutBuilder setAppTitle(String text) {
         this.appTitle = text;
         return this;
@@ -256,8 +255,8 @@ public final class AboutBuilder {
      * @param photo the image
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder setPhoto(Drawable photo) {
-        return setPhoto(IconUtil.getBitmap(context, photo));
+    public AboutBuilder setPhoto(BitmapDrawable photo) {
+        return setPhoto(IconUtil.getBitmap(photo));
     }
 
     /**
@@ -287,8 +286,8 @@ public final class AboutBuilder {
      * @param cover the image
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder setCover(Drawable cover) {
-        return setCover(IconUtil.getBitmap(context, cover));
+    public AboutBuilder setCover(BitmapDrawable cover) {
+        return setCover(IconUtil.getBitmap(cover));
     }
 
     /**
@@ -318,8 +317,8 @@ public final class AboutBuilder {
      * @param icon the app icon
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder setAppIcon(Drawable icon) {
-        return setAppIcon(IconUtil.getBitmap(context, icon));
+    public AboutBuilder setAppIcon(BitmapDrawable icon) {
+        return setAppIcon(IconUtil.getBitmap(icon));
     }
 
     /**
@@ -586,7 +585,6 @@ public final class AboutBuilder {
         return addLink(IconUtil.getBitmap(context, icon), context.getString(label), onClickListener);
     }
 
-
     /**
      * Adds an link on the links section.
      *
@@ -679,8 +677,8 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addLink(Drawable icon, int label, View.OnClickListener onClickListener) {
-        return addLink(IconUtil.getBitmap(context, icon), context.getString(label), onClickListener);
+    public AboutBuilder addLink(BitmapDrawable icon, int label, View.OnClickListener onClickListener) {
+        return addLink(IconUtil.getBitmap(icon), context.getString(label), onClickListener);
     }
 
     /**
@@ -691,7 +689,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addLink(Drawable icon, int label, Intent intent) {
+    public AboutBuilder addLink(BitmapDrawable icon, int label, Intent intent) {
         return addLink(icon, label, util.clickIntent(intent));
     }
 
@@ -703,7 +701,7 @@ public final class AboutBuilder {
      * @param uri   the action uri
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addLink(Drawable icon, int label, Uri uri) {
+    public AboutBuilder addLink(BitmapDrawable icon, int label, Uri uri) {
         return addLink(icon, label, util.clickUri(uri));
     }
 
@@ -715,7 +713,7 @@ public final class AboutBuilder {
      * @param url   any url
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addLink(Drawable icon, int label, String url) {
+    public AboutBuilder addLink(BitmapDrawable icon, int label, String url) {
         return addLink(icon, label, Uri.parse(url));
     }
 
@@ -727,8 +725,8 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addLink(Drawable icon, String label, View.OnClickListener onClickListener) {
-        return addLink(IconUtil.getBitmap(context, icon), label, onClickListener);
+    public AboutBuilder addLink(BitmapDrawable icon, String label, View.OnClickListener onClickListener) {
+        return addLink(IconUtil.getBitmap(icon), label, onClickListener);
     }
 
     /**
@@ -739,7 +737,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addLink(Drawable icon, String label, Intent intent) {
+    public AboutBuilder addLink(BitmapDrawable icon, String label, Intent intent) {
         return addLink(icon, label, util.clickIntent(intent));
     }
 
@@ -751,7 +749,7 @@ public final class AboutBuilder {
      * @param uri   the action uri
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addLink(Drawable icon, String label, Uri uri) {
+    public AboutBuilder addLink(BitmapDrawable icon, String label, Uri uri) {
         return addLink(icon, label, util.clickUri(uri));
     }
 
@@ -763,7 +761,7 @@ public final class AboutBuilder {
      * @param url   any url
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addLink(Drawable icon, String label, String url) {
+    public AboutBuilder addLink(BitmapDrawable icon, String label, String url) {
         return addLink(icon, label, Uri.parse(url));
     }
 
@@ -967,7 +965,6 @@ public final class AboutBuilder {
     public AboutBuilder addYoutubeChannelLink(String user) {
         return addLink(R.mipmap.youtube, R.string.youtube, util.openYoutubeChannel(user));
     }
-
 
     /**
      * Adds a Youtube user link on the links section
@@ -1187,7 +1184,6 @@ public final class AboutBuilder {
         return addLink(R.mipmap.email, R.string.email, util.sendEmail(email, null, null));
     }
 
-
     /**
      * Adds an action button on the actions section.
      *
@@ -1213,7 +1209,6 @@ public final class AboutBuilder {
         return addAction(icon, label, util.clickIntent(intent));
     }
 
-
     /**
      * Adds an action button on the actions section.
      *
@@ -1234,7 +1229,6 @@ public final class AboutBuilder {
      * @param url   any url to browse
      * @return the same {@link AboutBuilder} instance
      */
-
     public AboutBuilder addAction(Bitmap icon, String label, String url) {
         return addAction(icon, label, Uri.parse(url));
     }
@@ -1391,8 +1385,8 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addAction(Drawable icon, int label, View.OnClickListener onClickListener) {
-        return addAction(IconUtil.getBitmap(context, icon), context.getString(label), onClickListener);
+    public AboutBuilder addAction(BitmapDrawable icon, int label, View.OnClickListener onClickListener) {
+        return addAction(IconUtil.getBitmap(icon), context.getString(label), onClickListener);
     }
 
     /**
@@ -1403,7 +1397,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addAction(Drawable icon, int label, Intent intent) {
+    public AboutBuilder addAction(BitmapDrawable icon, int label, Intent intent) {
         return addAction(icon, label, util.clickIntent(intent));
     }
 
@@ -1415,7 +1409,7 @@ public final class AboutBuilder {
      * @param uri   the action uri
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addAction(Drawable icon, int label, Uri uri) {
+    public AboutBuilder addAction(BitmapDrawable icon, int label, Uri uri) {
         return addAction(icon, label, util.clickUri(uri));
     }
 
@@ -1427,7 +1421,7 @@ public final class AboutBuilder {
      * @param url   any url to browse
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addAction(Drawable icon, int label, String url) {
+    public AboutBuilder addAction(BitmapDrawable icon, int label, String url) {
         return addAction(icon, label, Uri.parse(url));
     }
 
@@ -1439,8 +1433,8 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addAction(Drawable icon, String label, View.OnClickListener onClickListener) {
-        return addAction(IconUtil.getBitmap(context, icon), label, onClickListener);
+    public AboutBuilder addAction(BitmapDrawable icon, String label, View.OnClickListener onClickListener) {
+        return addAction(IconUtil.getBitmap(icon), label, onClickListener);
     }
 
     /**
@@ -1451,7 +1445,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addAction(Drawable icon, String label, Intent intent) {
+    public AboutBuilder addAction(BitmapDrawable icon, String label, Intent intent) {
         return addAction(icon, label, util.clickIntent(intent));
     }
 
@@ -1463,7 +1457,7 @@ public final class AboutBuilder {
      * @param uri   the action uri
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addAction(Drawable icon, String label, Uri uri) {
+    public AboutBuilder addAction(BitmapDrawable icon, String label, Uri uri) {
         return addAction(icon, label, util.clickUri(uri));
     }
 
@@ -1475,10 +1469,9 @@ public final class AboutBuilder {
      * @param url   any url to browse
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addAction(Drawable icon, String label, String url) {
+    public AboutBuilder addAction(BitmapDrawable icon, String label, String url) {
         return addAction(icon, label, Uri.parse(url));
     }
-
 
     /**
      * Adds an action button to rate the app on Google Play Store
@@ -1662,7 +1655,6 @@ public final class AboutBuilder {
         return addFeedbackAction(email, subject, null);
     }
 
-
     /**
      * Adds a feedback action button. No content message will be placed
      *
@@ -1673,7 +1665,6 @@ public final class AboutBuilder {
     public AboutBuilder addFeedbackAction(int email, String subject) {
         return addFeedbackAction(context.getString(email), subject, null);
     }
-
 
     /**
      * Adds a feedback action button. No subject or content message will be placed
@@ -1795,7 +1786,6 @@ public final class AboutBuilder {
     public AboutBuilder addRemoveAdsAction(Intent intent) {
         return addRemoveAdsAction(util.clickIntent(intent));
     }
-
 
     /**
      * Adds an donate action button

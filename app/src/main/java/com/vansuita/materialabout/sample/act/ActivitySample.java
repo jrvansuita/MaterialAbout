@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import com.vansuita.materialabout.sample.R;
 import com.vansuita.materialabout.sample.helper.SampleHelper;
 
-
+/**
+ *
+ */
 public class ActivitySample extends AppCompatActivity {
 
     @Override
