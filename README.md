@@ -14,7 +14,7 @@ It was build to make your life easier when introducing you to your users, and al
 
 ##### Note: If you're missing some feature please let me know. Or even better, create a pull request. Also, I'm needing some help to translate the strings.xml to other languages.
 
-##### Supported Languages until now: 🇺🇸 🇧🇷 🇪🇸 🇮🇹 🇷🇺 🇩🇪 :cn: :tr: 🇺🇦 🇫🇷 🇦🇪 🇰🇷
+##### Supported Languages: 🇺🇸 🇧🇷 🇪🇸 🇮🇹 🇷🇺 🇩🇪 :cn: :tr: 🇺🇦 🇫🇷 🇦🇪 🇰🇷
 
 </br>
 
