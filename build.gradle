@@ -24,6 +24,8 @@ ext {
     targetSdkVersion = compileSdkVersion
 
     supportLibVersion = '26.1.0'
+    iconHandlerVersion = 'v2.0.0'
+    butterKnifeVersion = '8.5.1'
 }
 
 task clean(type: Delete) {
