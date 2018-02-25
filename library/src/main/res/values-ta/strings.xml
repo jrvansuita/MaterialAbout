@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="website">இணையதளம்</string>
+    <string name="email">மின்னஞ்சல்</string>
+    <string name="version">பதிப்பு %s</string>
+    <string name="error">பிழை</string>
+
+    <string name="rate_five_stars">இந்த பயன்பாட்டை 5 நட்சத்திரங்கள் மதிப்பிடுங்கள்</string>
+    <string name="more_apps">என்னைவிட அதிகமான பயன்பாடுகள்</string>
+    <string name="share_app">இந்த பயன்பாட்டைப் பகிரவும்</string>
+    <string name="update_app">இந்த பயன்பாட்டைப் புதுப்பிக்கவும்</string>
+    <string name="feedback_app">எனக்கு சில கருத்துகளை கொடுங்கள்</string>
+    <string name="introduce_app">பயன்பாட்டை அறிமுகப்படுத்துங்கள்</string>
+    <string name="changelog">பதிவு மாற்ற</string>
+    <string name="license">உரிமம்</string>
+    <string name="remove_ads">விளம்பரங்களை அகற்று</string>
+    <string name="donate">நன்கொடை</string>
+    <string name="help">உதவு</string>
+    <string name="privacy">தனியுரிமை கொள்கை</string>
+</resources>
