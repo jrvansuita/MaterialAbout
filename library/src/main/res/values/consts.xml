@@ -15,7 +15,7 @@
     <string name="id_facebook_app">com.facebook.katana</string>
 
     <string name="url_twitter_website">https://twitter.com/%s</string>
-    <string name="uri_twitter_app">twitter://user?user_id=%s</string>
+    <string name="uri_twitter_app">twitter://user?screen_name=%s</string>
     <string name="id_twitter_app">com.twitter.android</string>
 
     <string name="url_google_plus_website">https://plus.google.com/%s</string>
