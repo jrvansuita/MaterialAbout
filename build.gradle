@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.0.1'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
 }
@@ -19,13 +19,13 @@ allprojects {
 }
 
 ext {
-    compileSdkVersion = 26
+    compileSdkVersion = 27
     buildToolsVersion = '26.0.2'
     targetSdkVersion = compileSdkVersion
 
-    supportLibVersion = '26.1.0'
+    supportLibVersion = '27.1.0'
     iconHandlerVersion = 'v2.0.0'
-    butterKnifeVersion = '8.5.1'
+    butterKnifeVersion = '8.8.1'
 }
 
 task clean(type: Delete) {
