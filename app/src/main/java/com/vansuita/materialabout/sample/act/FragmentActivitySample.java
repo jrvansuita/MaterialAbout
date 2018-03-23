@@ -15,16 +15,17 @@ import com.vansuita.materialabout.sample.helper.SampleHelper;
 /**
  * Created by jrvansuita on 17/02/17.
  */
-
-public class FragmentActivitySample extends AppCompatActivity{
-
+public class FragmentActivitySample extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(new LinearLayout(this));
 
-        getSupportFragmentManager().beginTransaction().replace(android.R.id.content, new FragmentSample()).commit();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(android.R.id.content, new FragmentSample())
+                .commit();
     }
 
     public static class FragmentSample extends Fragment {
@@ -32,13 +33,14 @@ public class FragmentActivitySample extends AppCompatActivity{
         @Nullable
         @Override
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.sample_view, null);
+            return inflater.inflate(R.layout.sample_view, container, false);
         }
 
         @Override
         public void onActivityCreated(@Nullable Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
             setRetainInstance(true);
+
             SampleHelper.with(getActivity()).init().loadAbout();
         }
     }

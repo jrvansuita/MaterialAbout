@@ -8,7 +8,6 @@ import com.vansuita.materialabout.views.ViewIdGenerator;
 /**
  * Created by jrvansuita on 11/02/17.
  */
-
 public final class Item {
 
     private int id;
