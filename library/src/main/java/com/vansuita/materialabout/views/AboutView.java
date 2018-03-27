@@ -90,18 +90,18 @@ public final class AboutView extends FrameLayout {
     }
 
     private void bind() {
-        cvHolder = (CardView) findViewById(R.id.card_holder);
-        ivPhoto = (CircleImageView) findViewById(R.id.photo);
-        ivCover = (ImageView) findViewById(R.id.cover);
-        tvName = (TextView) findViewById(R.id.name);
-        tvSubTitle = (TextView) findViewById(R.id.sub_title);
-        tvBrief = (TextView) findViewById(R.id.brief);
-        tvAppName = (TextView) findViewById(R.id.app_name);
-        tvAppTitle = (TextView) findViewById(R.id.app_title);
-        ivAppIcon = (ImageView) findViewById(R.id.app_icon);
+        cvHolder = findViewById(R.id.card_holder);
+        ivPhoto = findViewById(R.id.photo);
+        ivCover = findViewById(R.id.cover);
+        tvName = findViewById(R.id.name);
+        tvSubTitle = findViewById(R.id.sub_title);
+        tvBrief = findViewById(R.id.brief);
+        tvAppName = findViewById(R.id.app_name);
+        tvAppTitle = findViewById(R.id.app_title);
+        ivAppIcon = findViewById(R.id.app_icon);
 
-        vLinks = (AutoFitGridLayout) findViewById(R.id.links);
-        vActions = (AutoFitGridLayout) findViewById(R.id.actions);
+        vLinks = findViewById(R.id.links);
+        vActions = findViewById(R.id.actions);
         appHolder = findViewById(R.id.app_holder);
     }
 
@@ -244,8 +244,8 @@ public final class AboutView extends FrameLayout {
         View view = layoutInflater.inflate(layout, null);
         view.setId(item.getId());
 
-        TextView tvLabel = (TextView) view.findViewById(R.id.label);
-        ImageView ivIcon = (ImageView) view.findViewById(R.id.icon);
+        TextView tvLabel = view.findViewById(R.id.label);
+        ImageView ivIcon = view.findViewById(R.id.icon);
 
         Icon.on(ivIcon).bitmap(item.getIcon()).color(getIconColor()).put();
 

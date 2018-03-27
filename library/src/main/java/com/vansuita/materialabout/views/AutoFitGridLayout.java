@@ -37,7 +37,7 @@ public final class AutoFitGridLayout extends ViewGroup {
 
     private void refreshNotGoneChildList() {
         if (notGoneViewList == null) {
-            notGoneViewList = new ArrayList<View>();
+            notGoneViewList = new ArrayList<>();
         }
         notGoneViewList.clear();
         int childCount = getChildCount();
