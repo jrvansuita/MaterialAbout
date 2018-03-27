@@ -34,6 +34,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.ImageView.ScaleType;
 
@@ -49,11 +50,14 @@ public final class RoundedDrawable extends Drawable {
   private final RectF mBounds = new RectF();
   private final RectF mDrawableRect = new RectF();
   private final RectF mBitmapRect = new RectF();
+  @NonNull
   private final Bitmap mBitmap;
+  @NonNull
   private final Paint mBitmapPaint;
   private final int mBitmapWidth;
   private final int mBitmapHeight;
   private final RectF mBorderRect = new RectF();
+  @NonNull
   private final Paint mBorderPaint;
   private final Matrix mShaderMatrix = new Matrix();
   private final RectF mSquareCornersRect = new RectF();
@@ -68,7 +72,9 @@ public final class RoundedDrawable extends Drawable {
 
   private boolean mOval = false;
   private float mBorderWidth = 0;
+  @NonNull
   private ColorStateList mBorderColor = ColorStateList.valueOf(DEFAULT_BORDER_COLOR);
+  @Nullable
   private ScaleType mScaleType = ScaleType.FIT_CENTER;
 
   public RoundedDrawable(Bitmap bitmap) {
@@ -89,7 +95,8 @@ public final class RoundedDrawable extends Drawable {
     mBorderPaint.setStrokeWidth(mBorderWidth);
   }
 
-  public static RoundedDrawable fromBitmap(Bitmap bitmap) {
+  @Nullable
+  public static RoundedDrawable fromBitmap(@Nullable Bitmap bitmap) {
     if (bitmap != null) {
       return new RoundedDrawable(bitmap);
     } else {
@@ -97,7 +104,8 @@ public final class RoundedDrawable extends Drawable {
     }
   }
 
-  public static Drawable fromDrawable(Drawable drawable) {
+  @Nullable
+  public static Drawable fromDrawable(@Nullable Drawable drawable) {
     if (drawable != null) {
       if (drawable instanceof RoundedDrawable) {
         // just return if it's already a RoundedDrawable
@@ -123,6 +131,7 @@ public final class RoundedDrawable extends Drawable {
     return drawable;
   }
 
+  @Nullable
   public static Bitmap drawableToBitmap(Drawable drawable) {
     if (drawable instanceof BitmapDrawable) {
       return ((BitmapDrawable) drawable).getBitmap();
@@ -145,6 +154,7 @@ public final class RoundedDrawable extends Drawable {
     return bitmap;
   }
 
+  @NonNull
   public Bitmap getSourceBitmap() {
     return mBitmap;
   }
@@ -308,7 +318,7 @@ public final class RoundedDrawable extends Drawable {
     }
   }
 
-  private void redrawBitmapForSquareCorners(Canvas canvas) {
+  private void redrawBitmapForSquareCorners(@NonNull Canvas canvas) {
     if (all(mCornersRounded)) {
       // no square corners
       return;
@@ -345,7 +355,7 @@ public final class RoundedDrawable extends Drawable {
     }
   }
 
-  private void redrawBorderForSquareCorners(Canvas canvas) {
+  private void redrawBorderForSquareCorners(@NonNull Canvas canvas) {
     if (all(mCornersRounded)) {
       // no square corners
       return;
@@ -453,6 +463,7 @@ public final class RoundedDrawable extends Drawable {
    * @param radius the radius.
    * @return the {@link RoundedDrawable} for chaining.
    */
+  @NonNull
   public RoundedDrawable setCornerRadius(float radius) {
     setCornerRadius(radius, radius, radius, radius);
     return this;
@@ -465,6 +476,7 @@ public final class RoundedDrawable extends Drawable {
    * @param radius the radius.
    * @return the {@link RoundedDrawable} for chaining.
    */
+  @NonNull
   public RoundedDrawable setCornerRadius(@Corner int corner, float radius) {
     if (radius != 0 && mCornerRadius != 0 && mCornerRadius != radius) {
       throw new IllegalArgumentException("Multiple nonzero corner radii not yet supported.");
@@ -490,12 +502,13 @@ public final class RoundedDrawable extends Drawable {
    *
    * @param topLeft top left corner radius.
    * @param topRight top right corner radius
-   * @param bottomRight bototm right corner radius.
+   * @param bottomRight bottom right corner radius.
    * @param bottomLeft bottom left corner radius.
    * @return the {@link RoundedDrawable} for chaining.
    */
+  @NonNull
   public RoundedDrawable setCornerRadius(float topLeft, float topRight, float bottomRight,
-      float bottomLeft) {
+                                         float bottomLeft) {
     Set<Float> radiusSet = new HashSet<>(4);
     radiusSet.add(topLeft);
     radiusSet.add(topRight);
@@ -529,6 +542,7 @@ public final class RoundedDrawable extends Drawable {
     return mBorderWidth;
   }
 
+  @NonNull
   public RoundedDrawable setBorderWidth(float width) {
     mBorderWidth = width;
     mBorderPaint.setStrokeWidth(mBorderWidth);
@@ -539,15 +553,18 @@ public final class RoundedDrawable extends Drawable {
     return mBorderColor.getDefaultColor();
   }
 
+  @NonNull
   public RoundedDrawable setBorderColor(@ColorInt int color) {
     return setBorderColor(ColorStateList.valueOf(color));
   }
 
+  @NonNull
   public ColorStateList getBorderColors() {
     return mBorderColor;
   }
 
-  public RoundedDrawable setBorderColor(ColorStateList colors) {
+  @NonNull
+  public RoundedDrawable setBorderColor(@Nullable ColorStateList colors) {
     mBorderColor = colors != null ? colors : ColorStateList.valueOf(0);
     mBorderPaint.setColor(mBorderColor.getColorForState(getState(), DEFAULT_BORDER_COLOR));
     return this;
@@ -557,16 +574,19 @@ public final class RoundedDrawable extends Drawable {
     return mOval;
   }
 
+  @NonNull
   public RoundedDrawable setOval(boolean oval) {
     mOval = oval;
     return this;
   }
 
+  @Nullable
   public ScaleType getScaleType() {
     return mScaleType;
   }
 
-  public RoundedDrawable setScaleType(ScaleType scaleType) {
+  @NonNull
+  public RoundedDrawable setScaleType(@Nullable ScaleType scaleType) {
     if (scaleType == null) {
       scaleType = ScaleType.FIT_CENTER;
     }
@@ -581,6 +601,7 @@ public final class RoundedDrawable extends Drawable {
     return mTileModeX;
   }
 
+  @NonNull
   public RoundedDrawable setTileModeX(Shader.TileMode tileModeX) {
     if (mTileModeX != tileModeX) {
       mTileModeX = tileModeX;
@@ -594,6 +615,7 @@ public final class RoundedDrawable extends Drawable {
     return mTileModeY;
   }
 
+  @NonNull
   public RoundedDrawable setTileModeY(Shader.TileMode tileModeY) {
     if (mTileModeY != tileModeY) {
       mTileModeY = tileModeY;
@@ -626,6 +648,7 @@ public final class RoundedDrawable extends Drawable {
     return true;
   }
 
+  @Nullable
   public Bitmap toBitmap() {
     return drawableToBitmap(this);
   }

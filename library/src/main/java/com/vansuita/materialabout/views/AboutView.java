@@ -8,6 +8,8 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -54,15 +56,15 @@ public final class AboutView extends FrameLayout {
     private int animationDelay = 200;
 
 
-    public AboutView(Context context) {
+    public AboutView(@NonNull Context context) {
         this(context, null);
     }
 
-    public AboutView(Context context, AttributeSet attrs) {
+    public AboutView(@NonNull Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public AboutView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public AboutView(@NonNull Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -103,7 +105,7 @@ public final class AboutView extends FrameLayout {
         appHolder = findViewById(R.id.app_holder);
     }
 
-    public void build(AboutBuilder bundle) {
+    public void build(@NonNull AboutBuilder bundle) {
         init(bundle);
         bind();
 
@@ -155,13 +157,13 @@ public final class AboutView extends FrameLayout {
     }
 
 
-    private void setTextColor(TextView tv, int color) {
+    private void setTextColor(@NonNull TextView tv, int color) {
         if (color != 0)
             tv.setTextColor(color);
     }
 
     @SuppressWarnings("ResourceAsColor")
-    private void setDivider(AboutBuilder bundle, View holder) {
+    private void setDivider(AboutBuilder bundle, @NonNull View holder) {
         if (bundle.isShowDivider()) {
 
             int color = bundle.getDividerColor();
@@ -201,7 +203,7 @@ public final class AboutView extends FrameLayout {
         return iconColor;
     }
 
-    private void setBitmap(ImageView iv, Bitmap bitmap) {
+    private void setBitmap(@NonNull ImageView iv, @Nullable Bitmap bitmap) {
         if (bitmap == null) {
             iv.setVisibility(GONE);
         } else {
