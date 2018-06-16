@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="github">GitHub</string>
+    <string name="facebook">Facebook</string>
+    <string name="instagram">Instagram</string>
+    <string name="twitter">Twitter</string>
+    <string name="bitbucket">Bitbucket</string>
+    <string name="google">Google</string>
+    <string name="google_plus">Google +</string>
+    <string name="google_play_store">Play Store</string>
+    <string name="google_play_games">Play Games</string>
+    <string name="linkedin">LinkedIn</string>
+    <string name="whastapp">Whatsapp</string>
+    <string name="skype">Skype</string>
+    <string name="youtube">Youtube</string>
+    <string name="android">Android</string>
+    <string name="dribbble">Dribbble</string>
+    <string name="website">Website</string>
+    <string name="email">Email</string>
+    <string name="version">Verzija %s</string>
+    <string name="error">Error</string>
+
+    <string name="rate_five_stars">Ocenite aplikaciju sa 5 zvezdica</string>
+    <string name="more_apps">Više mojih aplikacija</string>
+    <string name="share_app">Podelite aplikaciju</string>
+    <string name="update_app">Ažurirajte aplikaciju</string>
+    <string name="feedback_app">Ostavite utisak</string>
+    <string name="introduce_app">Više o aplikaciji</string>
+    <string name="changelog">Promene</string>
+    <string name="license">Licence</string>
+    <string name="remove_ads">Uklonite reklame</string>
+    <string name="donate">Donirajte</string>
+    <string name="help">Pomoć</string>
+    <string name="privacy">Zaštita podataka</string>
+</resources>
