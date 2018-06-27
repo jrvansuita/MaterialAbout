@@ -23,13 +23,13 @@ import android.view.ViewGroup;
 
 import com.vansuita.materialabout.R;
 
-import static com.vansuita.materialabout.views.RoundedDrawable.TAG;
-
 /**
  * Created by jrvansuita on 10/02/17.
  */
 
 public final class CircleImageView extends AppCompatImageView {
+
+    private static final String TAG = "CircleImageView";
 
     public static final float DEFAULT_RADIUS = 0f;
     public static final float DEFAULT_BORDER_WIDTH = 0f;

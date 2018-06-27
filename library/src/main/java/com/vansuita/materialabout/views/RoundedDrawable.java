@@ -44,7 +44,7 @@ import java.util.Set;
 @SuppressWarnings("UnusedDeclaration")
 public final class RoundedDrawable extends Drawable {
 
-    static final String TAG = "RoundedDrawable";
+    private static final String TAG = "RoundedDrawable";
     public static final int DEFAULT_BORDER_COLOR = Color.BLACK;
 
     private final RectF mBounds = new RectF();
@@ -587,11 +587,14 @@ public final class RoundedDrawable extends Drawable {
 
     @NonNull
     public RoundedDrawable setScaleType(@Nullable ScaleType scaleType) {
+        ScaleType type;
         if (scaleType == null) {
-            scaleType = ScaleType.FIT_CENTER;
+            type = ScaleType.FIT_CENTER;
+        } else {
+            type = scaleType;
         }
-        if (mScaleType != scaleType) {
-            mScaleType = scaleType;
+        if (mScaleType != type) {
+            mScaleType = type;
             updateShaderMatrix();
         }
         return this;

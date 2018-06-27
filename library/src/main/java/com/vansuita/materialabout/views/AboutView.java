@@ -123,13 +123,9 @@ public final class AboutView extends FrameLayout {
         tvAppName.setText(bundle.getAppName());
         tvAppTitle.setText(bundle.getAppTitle());
 
-        setBitmap(ivCover, bundle.getCover());
-        setBitmap(ivPhoto, bundle.getPhoto());
-        setBitmap(ivAppIcon, bundle.getAppIcon());
+        setupBitmaps(bundle);
 
-        setTextColor(tvName, bundle.getNameColor());
-        setTextColor(tvSubTitle, bundle.getSubTitleColor());
-        setTextColor(tvBrief, bundle.getBriefColor());
+        setupTextColors(bundle);
 
         this.iconColor = bundle.getIconColor();
 
@@ -156,6 +152,11 @@ public final class AboutView extends FrameLayout {
         loadActions(bundle);
     }
 
+    private void setupTextColors(AboutBuilder bundle) {
+        setTextColor(tvName, bundle.getNameColor());
+        setTextColor(tvSubTitle, bundle.getSubTitleColor());
+        setTextColor(tvBrief, bundle.getBriefColor());
+    }
 
     private void setTextColor(@NonNull TextView tv, int color) {
         if (color != 0)
@@ -201,6 +202,12 @@ public final class AboutView extends FrameLayout {
             iconColor = isDarker() ? Color.WHITE : getNameColor();
 
         return iconColor;
+    }
+
+    private void setupBitmaps(AboutBuilder bundle) {
+        setBitmap(ivCover, bundle.getCover());
+        setBitmap(ivPhoto, bundle.getPhoto());
+        setBitmap(ivAppIcon, bundle.getAppIcon());
     }
 
     private void setBitmap(@NonNull ImageView iv, @Nullable Bitmap bitmap) {
