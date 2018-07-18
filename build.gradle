@@ -24,7 +24,7 @@ ext {
     buildToolsVersion = '28.0.0 rc1'
     targetSdkVersion = compileSdkVersion
 
-    supportLibVersion = '27.1.0'
+    supportLibVersion = '27.1.1'
     iconHandlerVersion = 'v2.0.0'
     butterKnifeVersion = '8.8.1'
 }
