@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.view.View;
 
 import com.vansuita.materialabout.R;
@@ -116,6 +117,7 @@ public final class AboutBuilder {
      * @param text the name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setName(String text) {
         this.name = text;
         return this;
@@ -127,6 +129,7 @@ public final class AboutBuilder {
      * @param text the name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setName(int text) {
         return setName(context.getString(text));
     }
@@ -137,6 +140,7 @@ public final class AboutBuilder {
      * @param text the sub title
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setSubTitle(String text) {
         this.subTitle = text;
         return this;
@@ -148,6 +152,7 @@ public final class AboutBuilder {
      * @param text the sub title
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setSubTitle(int text) {
         return setSubTitle(context.getString(text));
     }
@@ -158,6 +163,7 @@ public final class AboutBuilder {
      * @param text the brief
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setBrief(String text) {
         this.brief = text;
         return this;
@@ -169,6 +175,7 @@ public final class AboutBuilder {
      * @param text the brief
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setBrief(int text) {
         return setBrief(context.getString(text));
     }
@@ -179,6 +186,7 @@ public final class AboutBuilder {
      * @param text the app name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setAppName(String text) {
         this.appName = text;
         return this;
@@ -190,6 +198,7 @@ public final class AboutBuilder {
      * @param text the app name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setAppName(int text) {
         return setAppName(context.getString(text));
     }
@@ -200,6 +209,7 @@ public final class AboutBuilder {
      * @param text the title
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setAppTitle(String text) {
         this.appTitle = text;
         return this;
@@ -211,6 +221,7 @@ public final class AboutBuilder {
      * @param text the title
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setAppTitle(int text) {
         return setAppTitle(context.getString(text));
     }
@@ -220,6 +231,7 @@ public final class AboutBuilder {
      *
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setVersionNameAsAppSubTitle() {
         try {
             return setAppTitle(context.getString(com.vansuita.materialabout.R.string.version, getPackageInfo().versionName));
@@ -234,6 +246,7 @@ public final class AboutBuilder {
      * @param photo the image
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setPhoto(Bitmap photo) {
         this.photo = photo;
         return this;
@@ -245,6 +258,7 @@ public final class AboutBuilder {
      * @param photo the image
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setPhoto(int photo) {
         return setPhoto(IconUtil.getBitmap(context, photo));
     }
@@ -255,7 +269,8 @@ public final class AboutBuilder {
      * @param photo the image
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder setPhoto(BitmapDrawable photo) {
+    @NonNull
+    public AboutBuilder setPhoto(@NonNull BitmapDrawable photo) {
         return setPhoto(IconUtil.getBitmap(photo));
     }
 
@@ -265,6 +280,7 @@ public final class AboutBuilder {
      * @param cover the image
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setCover(Bitmap cover) {
         this.cover = cover;
         return this;
@@ -276,6 +292,7 @@ public final class AboutBuilder {
      * @param cover the image
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setCover(int cover) {
         return setCover(IconUtil.getBitmap(context, cover));
     }
@@ -286,7 +303,8 @@ public final class AboutBuilder {
      * @param cover the image
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder setCover(BitmapDrawable cover) {
+    @NonNull
+    public AboutBuilder setCover(@NonNull BitmapDrawable cover) {
         return setCover(IconUtil.getBitmap(cover));
     }
 
@@ -296,6 +314,7 @@ public final class AboutBuilder {
      * @param icon the app icon
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setAppIcon(Bitmap icon) {
         this.appIcon = icon;
         return this;
@@ -307,6 +326,7 @@ public final class AboutBuilder {
      * @param icon the app icon
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setAppIcon(int icon) {
         return setAppIcon(IconUtil.getBitmap(context, icon));
     }
@@ -317,7 +337,8 @@ public final class AboutBuilder {
      * @param icon the app icon
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder setAppIcon(BitmapDrawable icon) {
+    @NonNull
+    public AboutBuilder setAppIcon(@NonNull BitmapDrawable icon) {
         return setAppIcon(IconUtil.getBitmap(icon));
     }
 
@@ -327,6 +348,7 @@ public final class AboutBuilder {
      * @param color the color resource or the real color.
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setNameColor(int color) {
         this.nameColor = ColorUtil.get(context, color);
         return this;
@@ -338,6 +360,7 @@ public final class AboutBuilder {
      * @param color the color resource or the real color.
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setSubTitleColor(int color) {
         this.subTitleColor = ColorUtil.get(context, color);
         return this;
@@ -349,6 +372,7 @@ public final class AboutBuilder {
      * @param color the color resource or the real color.
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setBriefColor(int color) {
         this.briefColor = ColorUtil.get(context, color);
         return this;
@@ -360,6 +384,7 @@ public final class AboutBuilder {
      * @param color the color resource or the real color.
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setDividerColor(int color) {
         this.dividerColor = ColorUtil.get(context, color);
         return this;
@@ -371,6 +396,7 @@ public final class AboutBuilder {
      * @param color the color resource or the real color.
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setIconColor(int color) {
         this.iconColor = ColorUtil.get(context, color);
         return this;
@@ -382,6 +408,7 @@ public final class AboutBuilder {
      * @param color the color resource or the real color.
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setBackgroundColor(int color) {
         this.backgroundColor = ColorUtil.get(context, color);
         return this;
@@ -393,6 +420,7 @@ public final class AboutBuilder {
      * @param count number of columns
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setActionsColumnsCount(int count) {
         this.actionsColumnsCount = count;
         return this;
@@ -405,6 +433,7 @@ public final class AboutBuilder {
      * @param count number of columns
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setLinksColumnsCount(int count) {
         this.linksColumnsCount = count;
         return this;
@@ -416,6 +445,7 @@ public final class AboutBuilder {
      * @param animate true if you want it
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setLinksAnimated(boolean animate) {
         this.linksAnimated = animate;
         return this;
@@ -427,6 +457,7 @@ public final class AboutBuilder {
      * @param dividerHeight size of the height
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setDividerHeight(int dividerHeight) {
         this.dividerHeight = dividerHeight;
         return this;
@@ -438,6 +469,7 @@ public final class AboutBuilder {
      * @param dividerDashWidth size of the width
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setDividerDashWidth(int dividerDashWidth) {
         this.dividerDashWidth = dividerDashWidth;
         return this;
@@ -449,6 +481,7 @@ public final class AboutBuilder {
      * @param dividerDashGap size of the gap
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setDividerDashGap(int dividerDashGap) {
         this.dividerDashGap = dividerDashGap;
         return this;
@@ -460,6 +493,7 @@ public final class AboutBuilder {
      * @param showDivider true if you want it
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setShowDivider(boolean showDivider) {
         this.showDivider = showDivider;
         return this;
@@ -471,6 +505,7 @@ public final class AboutBuilder {
      * @param wrapScrollView true if you want to wrap
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder setWrapScrollView(boolean wrapScrollView) {
         this.wrapScrollView = wrapScrollView;
         return this;
@@ -484,6 +519,7 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLink(Bitmap icon, String label, View.OnClickListener onClickListener) {
         links.add(new Item(icon, label, onClickListener));
         return this;
@@ -497,6 +533,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLink(Bitmap icon, String label, Intent intent) {
         return addLink(icon, label, util.clickIntent(intent));
     }
@@ -509,6 +546,7 @@ public final class AboutBuilder {
      * @param uri   the action uri
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLink(Bitmap icon, String label, Uri uri) {
         return addLink(icon, label, util.clickUri(uri));
     }
@@ -521,6 +559,7 @@ public final class AboutBuilder {
      * @param url   any url
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLink(Bitmap icon, String label, String url) {
         return addLink(icon, label, Uri.parse(url));
     }
@@ -533,6 +572,7 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLink(Bitmap icon, int label, View.OnClickListener onClickListener) {
         return addLink(icon, context.getString(label), onClickListener);
     }
@@ -545,6 +585,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLink(Bitmap icon, int label, Intent intent) {
         return addLink(icon, label, util.clickIntent(intent));
     }
@@ -557,6 +598,7 @@ public final class AboutBuilder {
      * @param uri   the action uri
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLink(Bitmap icon, int label, Uri uri) {
         return addLink(icon, label, util.clickUri(uri));
     }
@@ -569,6 +611,7 @@ public final class AboutBuilder {
      * @param url   any url
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLink(Bitmap icon, int label, String url) {
         return addLink(icon, label, Uri.parse(url));
     }
@@ -581,6 +624,7 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLink(int icon, int label, View.OnClickListener onClickListener) {
         return addLink(IconUtil.getBitmap(context, icon), context.getString(label), onClickListener);
     }
@@ -593,6 +637,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLink(int icon, int label, Intent intent) {
         return addLink(icon, label, util.clickIntent(intent));
     }
@@ -605,6 +650,7 @@ public final class AboutBuilder {
      * @param uri   the action uri
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLink(int icon, int label, Uri uri) {
         return addLink(icon, label, util.clickUri(uri));
     }
@@ -617,6 +663,7 @@ public final class AboutBuilder {
      * @param url   any url
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLink(int icon, int label, String url) {
         return addLink(icon, label, Uri.parse(url));
     }
@@ -629,6 +676,7 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLink(int icon, String label, View.OnClickListener onClickListener) {
         return addLink(IconUtil.getBitmap(context, icon), label, onClickListener);
     }
@@ -641,6 +689,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLink(int icon, String label, Intent intent) {
         return addLink(icon, label, util.clickIntent(intent));
     }
@@ -653,6 +702,7 @@ public final class AboutBuilder {
      * @param uri   the action uri
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLink(int icon, String label, Uri uri) {
         return addLink(icon, label, util.clickUri(uri));
     }
@@ -665,6 +715,7 @@ public final class AboutBuilder {
      * @param url   any url
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLink(int icon, String label, String url) {
         return addLink(icon, label, Uri.parse(url));
     }
@@ -677,7 +728,8 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addLink(BitmapDrawable icon, int label, View.OnClickListener onClickListener) {
+    @NonNull
+    public AboutBuilder addLink(@NonNull BitmapDrawable icon, int label, View.OnClickListener onClickListener) {
         return addLink(IconUtil.getBitmap(icon), context.getString(label), onClickListener);
     }
 
@@ -689,7 +741,8 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addLink(BitmapDrawable icon, int label, Intent intent) {
+    @NonNull
+    public AboutBuilder addLink(@NonNull BitmapDrawable icon, int label, Intent intent) {
         return addLink(icon, label, util.clickIntent(intent));
     }
 
@@ -701,7 +754,8 @@ public final class AboutBuilder {
      * @param uri   the action uri
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addLink(BitmapDrawable icon, int label, Uri uri) {
+    @NonNull
+    public AboutBuilder addLink(@NonNull BitmapDrawable icon, int label, Uri uri) {
         return addLink(icon, label, util.clickUri(uri));
     }
 
@@ -713,7 +767,8 @@ public final class AboutBuilder {
      * @param url   any url
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addLink(BitmapDrawable icon, int label, String url) {
+    @NonNull
+    public AboutBuilder addLink(@NonNull BitmapDrawable icon, int label, String url) {
         return addLink(icon, label, Uri.parse(url));
     }
 
@@ -725,7 +780,8 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addLink(BitmapDrawable icon, String label, View.OnClickListener onClickListener) {
+    @NonNull
+    public AboutBuilder addLink(@NonNull BitmapDrawable icon, String label, View.OnClickListener onClickListener) {
         return addLink(IconUtil.getBitmap(icon), label, onClickListener);
     }
 
@@ -737,7 +793,8 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addLink(BitmapDrawable icon, String label, Intent intent) {
+    @NonNull
+    public AboutBuilder addLink(@NonNull BitmapDrawable icon, String label, Intent intent) {
         return addLink(icon, label, util.clickIntent(intent));
     }
 
@@ -749,7 +806,8 @@ public final class AboutBuilder {
      * @param uri   the action uri
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addLink(BitmapDrawable icon, String label, Uri uri) {
+    @NonNull
+    public AboutBuilder addLink(@NonNull BitmapDrawable icon, String label, Uri uri) {
         return addLink(icon, label, util.clickUri(uri));
     }
 
@@ -761,7 +819,8 @@ public final class AboutBuilder {
      * @param url   any url
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addLink(BitmapDrawable icon, String label, String url) {
+    @NonNull
+    public AboutBuilder addLink(@NonNull BitmapDrawable icon, String label, String url) {
         return addLink(icon, label, Uri.parse(url));
     }
 
@@ -772,6 +831,7 @@ public final class AboutBuilder {
      * @param user a GitHub user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addGitHubLink(int user) {
         return addGitHubLink(context.getString(user));
     }
@@ -782,6 +842,7 @@ public final class AboutBuilder {
      * @param user a GitHub user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addGitHubLink(String user) {
         return addLink(R.mipmap.github, R.string.github, util.uri(R.string.url_github, user));
     }
@@ -792,6 +853,7 @@ public final class AboutBuilder {
      * @param user a Bitbucket user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addBitbucketLink(int user) {
         return addBitbucketLink(context.getString(user));
     }
@@ -802,6 +864,7 @@ public final class AboutBuilder {
      * @param user a Bitbucket user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addBitbucketLink(String user) {
         return addLink(R.mipmap.bitbucket, R.string.bitbucket, util.uri(R.string.url_bitbucket, user));
     }
@@ -812,6 +875,7 @@ public final class AboutBuilder {
      * @param user a Facebook user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addFacebookLink(int user) {
         return addFacebookLink(context.getString(user));
     }
@@ -822,6 +886,7 @@ public final class AboutBuilder {
      * @param user a Facebook user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addFacebookLink(String user) {
         return addLink(R.mipmap.facebook, R.string.facebook, util.openFacebook(user));
     }
@@ -832,6 +897,7 @@ public final class AboutBuilder {
      * @param user a Instagram user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addInstagramLink(int user) {
         return addInstagramLink(context.getString(user));
     }
@@ -842,6 +908,7 @@ public final class AboutBuilder {
      * @param user a Instagram user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addInstagramLink(String user) {
         return addLink(R.mipmap.instagram, R.string.instagram, util.openInstagram(user));
     }
@@ -852,6 +919,7 @@ public final class AboutBuilder {
      * @param user a Twitter user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addTwitterLink(int user) {
         return addTwitterLink(context.getString(user));
     }
@@ -862,6 +930,7 @@ public final class AboutBuilder {
      * @param user a Twitter user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addTwitterLink(String user) {
         return addLink(R.mipmap.twitter, R.string.twitter, util.openTwitter(user));
     }
@@ -872,6 +941,7 @@ public final class AboutBuilder {
      * @param url any url
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addGoogleLink(int url) {
         return addGoogleLink(context.getString(url));
     }
@@ -882,6 +952,7 @@ public final class AboutBuilder {
      * @param url any url
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addGoogleLink(String url) {
         return addLink(R.mipmap.google, R.string.google, url);
     }
@@ -892,6 +963,7 @@ public final class AboutBuilder {
      * @param user a Google Plus user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addGooglePlusLink(int user) {
         return addGooglePlusLink(context.getString(user));
     }
@@ -902,6 +974,7 @@ public final class AboutBuilder {
      * @param user a Google Plus user name or id
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addGooglePlusLink(String user) {
         return addLink(R.mipmap.google_plus, R.string.google_plus, util.openGooglePlus(user));
     }
@@ -912,6 +985,7 @@ public final class AboutBuilder {
      * @param user a Google Play Store user name or id
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addGooglePlayStoreLink(int user) {
         return addGooglePlayStoreLink(context.getString(user));
     }
@@ -922,6 +996,7 @@ public final class AboutBuilder {
      * @param user a Google Play Store user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addGooglePlayStoreLink(String user) {
         return addLink(R.mipmap.google_play_store, R.string.google_play_store, util.openGooglePlayDev(user));
     }
@@ -932,6 +1007,7 @@ public final class AboutBuilder {
      * @param url any url
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addGoogleGamesLink(int url) {
         return addGoogleGamesLink(context.getString(url));
     }
@@ -942,6 +1018,7 @@ public final class AboutBuilder {
      * @param url any url
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addGoogleGamesLink(String url) {
         return addLink(R.mipmap.google_play_games, R.string.google_play_games, url);
     }
@@ -952,6 +1029,7 @@ public final class AboutBuilder {
      * @param user a Youtube channel name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addYoutubeChannelLink(int user) {
         return addYoutubeChannelLink(context.getString(user));
     }
@@ -962,6 +1040,7 @@ public final class AboutBuilder {
      * @param user a Youtube channel name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addYoutubeChannelLink(String user) {
         return addLink(R.mipmap.youtube, R.string.youtube, util.openYoutubeChannel(user));
     }
@@ -972,6 +1051,7 @@ public final class AboutBuilder {
      * @param user a Youtube user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addYoutubeUserLink(int user) {
         return addYoutubeUserLink(context.getString(user));
     }
@@ -982,6 +1062,7 @@ public final class AboutBuilder {
      * @param user a Youtube user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addYoutubeUserLink(String user) {
         return addLink(R.mipmap.youtube, R.string.youtube, util.openYoutubeUser(user));
     }
@@ -992,6 +1073,7 @@ public final class AboutBuilder {
      * @param user a LinkedIn user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLinkedInLink(int user) {
         return addLinkedInLink(context.getString(user));
     }
@@ -1002,6 +1084,7 @@ public final class AboutBuilder {
      * @param user a LinkedIn user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLinkedInLink(String user) {
         return addLink(R.mipmap.linkedin, R.string.linkedin, util.openLinkedIn(user));
     }
@@ -1012,6 +1095,7 @@ public final class AboutBuilder {
      * @param phone a valid skype phone number
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addSkypeLink(int phone) {
         return addSkypeLink(context.getString(phone));
     }
@@ -1022,6 +1106,7 @@ public final class AboutBuilder {
      * @param phone a valid skype phone number
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addSkypeLink(String phone) {
         return addLink(R.mipmap.skype, R.string.skype, util.openSkype(phone));
     }
@@ -1032,6 +1117,7 @@ public final class AboutBuilder {
      * @param phone any phone number
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addWhatsappLink(int name, int phone) {
         return addWhatsappLink(context.getString(name), context.getString(phone));
     }
@@ -1042,6 +1128,7 @@ public final class AboutBuilder {
      * @param phone any phone number
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addWhatsappLink(String name, String phone) {
         return addLink(R.mipmap.whatsapp, R.string.whastapp, util.openAddContact(name, phone));
     }
@@ -1052,6 +1139,7 @@ public final class AboutBuilder {
      * @param url any url
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAndroidLink(int url) {
         return addAndroidLink(context.getString(url));
     }
@@ -1062,6 +1150,7 @@ public final class AboutBuilder {
      * @param url any url
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAndroidLink(String url) {
         return addLink(R.mipmap.android, R.string.android, url);
     }
@@ -1072,6 +1161,7 @@ public final class AboutBuilder {
      * @param url any url
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addDribbbleLink(int url) {
         return addDribbbleLink(context.getString(url));
     }
@@ -1082,6 +1172,7 @@ public final class AboutBuilder {
      * @param url any url
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addDribbbleLink(String url) {
         return addLink(R.mipmap.dribbble, R.string.dribbble, url);
     }
@@ -1092,6 +1183,7 @@ public final class AboutBuilder {
      * @param url any url
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addWebsiteLink(int url) {
         return addWebsiteLink(context.getString(url));
     }
@@ -1102,6 +1194,7 @@ public final class AboutBuilder {
      * @param url any url
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addWebsiteLink(String url) {
         return addLink(R.mipmap.website, R.string.website, url);
     }
@@ -1114,6 +1207,7 @@ public final class AboutBuilder {
      * @param message the contect of the e-mail
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addEmailLink(int email, int subject, int message) {
         return addEmailLink(context.getString(email), context.getString(subject), context.getString(message));
     }
@@ -1126,6 +1220,7 @@ public final class AboutBuilder {
      * @param message the contect of the e-mail
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addEmailLink(int email, String subject, String message) {
         return addEmailLink(context.getString(email), subject, message);
     }
@@ -1137,6 +1232,7 @@ public final class AboutBuilder {
      * @param subject the subject of the e-mail
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addEmailLink(int email, String subject) {
         return addEmailLink(context.getString(email), subject, null);
     }
@@ -1148,6 +1244,7 @@ public final class AboutBuilder {
      * @param subject the subject of the e-mail
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addEmailLink(int email, int subject) {
         return addEmailLink(context.getString(email), context.getString(subject), null);
     }
@@ -1160,6 +1257,7 @@ public final class AboutBuilder {
      * @param message the contect of the e-mail
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addEmailLink(String email, String subject, String message) {
         return addLink(R.mipmap.email, R.string.email, util.sendEmail(email, subject, message));
     }
@@ -1170,6 +1268,7 @@ public final class AboutBuilder {
      * @param email addressee e-mail
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addEmailLink(int email) {
         return addEmailLink(context.getString(email));
     }
@@ -1180,6 +1279,7 @@ public final class AboutBuilder {
      * @param email addressee e-mail
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addEmailLink(String email) {
         return addLink(R.mipmap.email, R.string.email, util.sendEmail(email, null, null));
     }
@@ -1192,6 +1292,7 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAction(Bitmap icon, String label, View.OnClickListener onClickListener) {
         actions.add(new Item(icon, label, onClickListener));
         return this;
@@ -1205,6 +1306,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAction(Bitmap icon, String label, Intent intent) {
         return addAction(icon, label, util.clickIntent(intent));
     }
@@ -1217,6 +1319,7 @@ public final class AboutBuilder {
      * @param uri   the action uri
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAction(Bitmap icon, String label, Uri uri) {
         return addAction(icon, label, util.clickUri(uri));
     }
@@ -1229,6 +1332,7 @@ public final class AboutBuilder {
      * @param url   any url to browse
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAction(Bitmap icon, String label, String url) {
         return addAction(icon, label, Uri.parse(url));
     }
@@ -1241,6 +1345,7 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAction(Bitmap icon, int label, View.OnClickListener onClickListener) {
         return addAction(icon, context.getString(label), onClickListener);
     }
@@ -1253,6 +1358,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAction(Bitmap icon, int label, Intent intent) {
         return addAction(icon, label, util.clickIntent(intent));
     }
@@ -1265,6 +1371,7 @@ public final class AboutBuilder {
      * @param uri   the action uri
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAction(Bitmap icon, int label, Uri uri) {
         return addAction(icon, label, util.clickUri(uri));
     }
@@ -1277,6 +1384,7 @@ public final class AboutBuilder {
      * @param url   any url to browse
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAction(Bitmap icon, int label, String url) {
         return addAction(icon, label, Uri.parse(url));
     }
@@ -1289,6 +1397,7 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAction(int icon, int label, View.OnClickListener onClickListener) {
         return addAction(IconUtil.getBitmap(context, icon), context.getString(label), onClickListener);
     }
@@ -1301,6 +1410,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAction(int icon, int label, Intent intent) {
         return addAction(icon, label, util.clickIntent(intent));
     }
@@ -1313,6 +1423,7 @@ public final class AboutBuilder {
      * @param uri   the action uri
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAction(int icon, int label, Uri uri) {
         return addAction(icon, label, util.clickUri(uri));
     }
@@ -1325,6 +1436,7 @@ public final class AboutBuilder {
      * @param url   any url to browse
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAction(int icon, int label, String url) {
         return addAction(icon, label, Uri.parse(url));
     }
@@ -1337,6 +1449,7 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAction(int icon, String label, View.OnClickListener onClickListener) {
         return addAction(IconUtil.getBitmap(context, icon), label, onClickListener);
     }
@@ -1349,6 +1462,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAction(int icon, String label, Intent intent) {
         return addAction(icon, label, util.clickIntent(intent));
     }
@@ -1361,6 +1475,7 @@ public final class AboutBuilder {
      * @param uri   the action uri
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAction(int icon, String label, Uri uri) {
         return addAction(icon, label, util.clickUri(uri));
     }
@@ -1373,6 +1488,7 @@ public final class AboutBuilder {
      * @param url   any url to browse
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addAction(int icon, String label, String url) {
         return addAction(icon, label, Uri.parse(url));
     }
@@ -1385,7 +1501,8 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addAction(BitmapDrawable icon, int label, View.OnClickListener onClickListener) {
+    @NonNull
+    public AboutBuilder addAction(@NonNull BitmapDrawable icon, int label, View.OnClickListener onClickListener) {
         return addAction(IconUtil.getBitmap(icon), context.getString(label), onClickListener);
     }
 
@@ -1397,7 +1514,8 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addAction(BitmapDrawable icon, int label, Intent intent) {
+    @NonNull
+    public AboutBuilder addAction(@NonNull BitmapDrawable icon, int label, Intent intent) {
         return addAction(icon, label, util.clickIntent(intent));
     }
 
@@ -1409,7 +1527,8 @@ public final class AboutBuilder {
      * @param uri   the action uri
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addAction(BitmapDrawable icon, int label, Uri uri) {
+    @NonNull
+    public AboutBuilder addAction(@NonNull BitmapDrawable icon, int label, Uri uri) {
         return addAction(icon, label, util.clickUri(uri));
     }
 
@@ -1421,7 +1540,8 @@ public final class AboutBuilder {
      * @param url   any url to browse
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addAction(BitmapDrawable icon, int label, String url) {
+    @NonNull
+    public AboutBuilder addAction(@NonNull BitmapDrawable icon, int label, String url) {
         return addAction(icon, label, Uri.parse(url));
     }
 
@@ -1433,7 +1553,8 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addAction(BitmapDrawable icon, String label, View.OnClickListener onClickListener) {
+    @NonNull
+    public AboutBuilder addAction(@NonNull BitmapDrawable icon, String label, View.OnClickListener onClickListener) {
         return addAction(IconUtil.getBitmap(icon), label, onClickListener);
     }
 
@@ -1445,7 +1566,8 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addAction(BitmapDrawable icon, String label, Intent intent) {
+    @NonNull
+    public AboutBuilder addAction(@NonNull BitmapDrawable icon, String label, Intent intent) {
         return addAction(icon, label, util.clickIntent(intent));
     }
 
@@ -1457,7 +1579,8 @@ public final class AboutBuilder {
      * @param uri   the action uri
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addAction(BitmapDrawable icon, String label, Uri uri) {
+    @NonNull
+    public AboutBuilder addAction(@NonNull BitmapDrawable icon, String label, Uri uri) {
         return addAction(icon, label, util.clickUri(uri));
     }
 
@@ -1469,7 +1592,8 @@ public final class AboutBuilder {
      * @param url   any url to browse
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder addAction(BitmapDrawable icon, String label, String url) {
+    @NonNull
+    public AboutBuilder addAction(@NonNull BitmapDrawable icon, String label, String url) {
         return addAction(icon, label, Uri.parse(url));
     }
 
@@ -1479,6 +1603,7 @@ public final class AboutBuilder {
      * @param appId the application id
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addFiveStarsAction(int appId) {
         return addFiveStarsAction(context.getString(appId));
     }
@@ -1489,6 +1614,7 @@ public final class AboutBuilder {
      * @param appId the application id
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addFiveStarsAction(String appId) {
         return addAction(R.mipmap.star, R.string.rate_five_stars, util.openPlayStoreAppPage(appId));
     }
@@ -1499,6 +1625,7 @@ public final class AboutBuilder {
      *
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addFiveStarsAction() {
         return addFiveStarsAction(getApplicationID());
     }
@@ -1509,6 +1636,7 @@ public final class AboutBuilder {
      * @param appId the application id
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addUpdateAction(int appId) {
         return addUpdateAction(context.getString(appId));
     }
@@ -1520,6 +1648,7 @@ public final class AboutBuilder {
      * @param appId the application id
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addUpdateAction(String appId) {
         return addAction(R.mipmap.update, R.string.update_app, util.openPlayStoreAppPage(appId));
     }
@@ -1530,6 +1659,7 @@ public final class AboutBuilder {
      *
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addUpdateAction() {
         return addUpdateAction(getApplicationID());
     }
@@ -1540,6 +1670,7 @@ public final class AboutBuilder {
      * @param userName the developer user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addMoreFromMeAction(int userName) {
         return addMoreFromMeAction(context.getString(userName));
     }
@@ -1550,6 +1681,7 @@ public final class AboutBuilder {
      * @param userName the developer user name
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addMoreFromMeAction(String userName) {
         return addAction(R.mipmap.google_play_store, R.string.more_apps, util.openPlayStoreAppsList(userName));
     }
@@ -1561,6 +1693,7 @@ public final class AboutBuilder {
      * @param message the content message
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addShareAction(int subject, int message) {
         return addShareAction(context.getString(subject), context.getString(message));
     }
@@ -1572,6 +1705,7 @@ public final class AboutBuilder {
      * @param message the content message
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addShareAction(String subject, String message) {
         return addAction(share, R.string.share_app, util.shareThisApp(subject, message));
     }
@@ -1582,6 +1716,7 @@ public final class AboutBuilder {
      * @param subject the subject
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addShareAction(String subject) {
         return addShareAction(subject, context.getString(R.string.uri_play_store_app_website, context.getPackageName()));
     }
@@ -1592,6 +1727,7 @@ public final class AboutBuilder {
      * @param subject the subject
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addShareAction(int subject) {
         return addShareAction(context.getString(subject));
     }
@@ -1605,6 +1741,7 @@ public final class AboutBuilder {
      * @param content the e-mail content
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addFeedbackAction(int email, int subject, int content) {
         return addFeedbackAction(context.getString(email), context.getString(subject), context.getString(content));
     }
@@ -1617,6 +1754,7 @@ public final class AboutBuilder {
      * @param content the e-mail content
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addFeedbackAction(int email, String subject, String content) {
         return addAction(R.mipmap.feedback, R.string.feedback_app, util.sendEmail(context.getString(email), subject, content));
     }
@@ -1629,6 +1767,7 @@ public final class AboutBuilder {
      * @param content the e-mail content
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addFeedbackAction(String email, String subject, String content) {
         return addAction(R.mipmap.feedback, R.string.feedback_app, util.sendEmail(email, subject, content));
     }
@@ -1640,6 +1779,7 @@ public final class AboutBuilder {
      * @param subject the subject
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addFeedbackAction(int email, int subject) {
         return addFeedbackAction(context.getString(email), context.getString(subject));
     }
@@ -1651,6 +1791,7 @@ public final class AboutBuilder {
      * @param subject the subject
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addFeedbackAction(String email, String subject) {
         return addFeedbackAction(email, subject, null);
     }
@@ -1662,6 +1803,7 @@ public final class AboutBuilder {
      * @param subject the subject
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addFeedbackAction(int email, String subject) {
         return addFeedbackAction(context.getString(email), subject, null);
     }
@@ -1672,6 +1814,7 @@ public final class AboutBuilder {
      * @param email the developer e-mail
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addFeedbackAction(int email) {
         return addFeedbackAction(context.getString(email));
     }
@@ -1682,6 +1825,7 @@ public final class AboutBuilder {
      * @param email the developer e-mail
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addFeedbackAction(String email) {
         return addFeedbackAction(email, null);
     }
@@ -1692,6 +1836,7 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addIntroduceAction(View.OnClickListener onClickListener) {
         return addAction(R.mipmap.intrduce, R.string.introduce_app, onClickListener);
     }
@@ -1702,6 +1847,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addIntroduceAction(Intent intent) {
         return addIntroduceAction(util.clickIntent(intent));
     }
@@ -1712,6 +1858,7 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addHelpAction(View.OnClickListener onClickListener) {
         return addAction(R.mipmap.help, R.string.help, onClickListener);
     }
@@ -1722,6 +1869,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addHelpAction(Intent intent) {
         return addHelpAction(util.clickIntent(intent));
     }
@@ -1732,6 +1880,7 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLicenseAction(View.OnClickListener onClickListener) {
         return addAction(R.mipmap.license, R.string.license, onClickListener);
     }
@@ -1742,6 +1891,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addLicenseAction(Intent intent) {
         return addLicenseAction(util.clickIntent(intent));
     }
@@ -1752,6 +1902,7 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addChangeLogAction(View.OnClickListener onClickListener) {
         return addAction(R.mipmap.changelog, R.string.changelog, onClickListener);
     }
@@ -1762,6 +1913,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addChangeLogAction(Intent intent) {
         return addChangeLogAction(util.clickIntent(intent));
     }
@@ -1772,6 +1924,7 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addRemoveAdsAction(View.OnClickListener onClickListener) {
         return addAction(R.mipmap.ads, R.string.remove_ads, onClickListener);
     }
@@ -1783,6 +1936,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addRemoveAdsAction(Intent intent) {
         return addRemoveAdsAction(util.clickIntent(intent));
     }
@@ -1793,6 +1947,7 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addDonateAction(View.OnClickListener onClickListener) {
         return addAction(R.mipmap.donate, R.string.donate, onClickListener);
     }
@@ -1803,6 +1958,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addDonateAction(Intent intent) {
         return addDonateAction(util.clickIntent(intent));
     }
@@ -1814,6 +1970,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
 
+    @NonNull
     public AboutBuilder setShowAsCard(boolean showAsCard) {
         this.showAsCard = showAsCard;
         return this;
@@ -1825,6 +1982,7 @@ public final class AboutBuilder {
      * @param url the url to privacy policy web page
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addPrivacyPolicyAction(String url) {
         return addAction(R.mipmap.privacy, R.string.privacy, util.intent(url));
     }
@@ -1835,6 +1993,7 @@ public final class AboutBuilder {
      * @param onClickListener the click callback
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addPrivacyPolicyAction(View.OnClickListener onClickListener) {
         return addAction(R.mipmap.privacy, R.string.privacy, onClickListener);
     }
@@ -1845,6 +2004,7 @@ public final class AboutBuilder {
      * @param intent the action intent
      * @return the same {@link AboutBuilder} instance
      */
+    @NonNull
     public AboutBuilder addPrivacyPolicyAction(Intent intent) {
         return addAction(R.mipmap.privacy, R.string.privacy, util.clickIntent(intent));
     }
@@ -1941,14 +2101,17 @@ public final class AboutBuilder {
         return wrapScrollView;
     }
 
+    @NonNull
     public LinkedList<Item> getLinks() {
         return links;
     }
 
+    @NonNull
     public LinkedList<Item> getActions() {
         return actions;
     }
 
+    @NonNull
     public AboutView build() {
         AboutView aboutView = new AboutView(context);
         aboutView.build(this);

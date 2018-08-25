@@ -2,6 +2,7 @@ package com.vansuita.materialabout.util;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 
 
@@ -11,7 +12,7 @@ import android.support.v4.content.ContextCompat;
 
 public final class ColorUtil {
 
-    public static int get(Context context, int res) {
+    public static int get(@NonNull Context context, int res) {
         try {
             return ContextCompat.getColor(context, res);
         } catch (Resources.NotFoundException e) {
