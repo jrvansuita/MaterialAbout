@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/card_holder"
     style="@style/Card"
     android:layout_margin="10dp"
@@ -129,4 +129,4 @@
     </FrameLayout>
 
 
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>

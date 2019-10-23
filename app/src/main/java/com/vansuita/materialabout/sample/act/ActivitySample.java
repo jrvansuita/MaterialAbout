@@ -1,7 +1,7 @@
 package com.vansuita.materialabout.sample.act;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.vansuita.materialabout.sample.R;
 import com.vansuita.materialabout.sample.helper.SampleHelper;
