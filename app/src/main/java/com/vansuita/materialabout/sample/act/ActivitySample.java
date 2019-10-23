@@ -15,6 +15,7 @@ public class ActivitySample extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setTheme(SampleHelper.theme);
         setContentView(R.layout.sample_view);
         SampleHelper.with(this).init().loadAbout();
     }
