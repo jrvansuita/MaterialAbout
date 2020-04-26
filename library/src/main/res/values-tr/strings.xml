@@ -1,7 +1,7 @@
 <resources>
     <string name="website">Website</string>
     <string name="email">E-posta</string>
-    <string name="version">Versiyon %s</string>
+    <string name="version">Sürüm %s</string>
     <string name="error">Hata</string>
 
     <string name="rate_five_stars">Bu uygulamaya 5 yıldız ver</string>
@@ -10,7 +10,7 @@
     <string name="update_app">Uygulamayı güncelle</string>
     <string name="feedback_app">İstek, öneri gönder</string>
     <string name="introduce_app">Uygulamayı tanıt</string>
-    <string name="changelog">Versiyon notları</string>
+    <string name="changelog">Sürüm notları</string>
     <string name="remove_ads">Reklamları kaldır</string>
     <string name="donate">Bağış yap</string>
     <string name="help">Yardım</string>
