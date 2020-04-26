@@ -15,7 +15,7 @@ import com.vansuita.materialabout.views.AboutView;
 public class SampleHelper implements View.OnClickListener {
 
     private Activity activity;
-    private int theme = R.style.AppThemeDark;
+    public static int theme = R.style.AppThemeDark;
 
     private SampleHelper(Activity activity) {
         this.activity = activity;
@@ -26,7 +26,6 @@ public class SampleHelper implements View.OnClickListener {
     }
 
     public SampleHelper init() {
-        activity.setTheme(theme);
 
         activity.findViewById(R.id.dark).setOnClickListener(this);
         activity.findViewById(R.id.light).setOnClickListener(this);
