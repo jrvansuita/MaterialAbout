@@ -7,8 +7,10 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
+
+import androidx.cardview.widget.CardView;
 
 import com.vansuita.materialabout.R;
 import com.vansuita.materialabout.util.ColorUtil;
@@ -1964,7 +1966,7 @@ public final class AboutBuilder {
     }
 
     /**
-     * Wraps the content in a {@link android.support.v7.widget.CardView}
+     * Wraps the content in a {@link CardView}
      *
      * @param showAsCard true if show in a CardView
      * @return the same {@link AboutBuilder} instance
