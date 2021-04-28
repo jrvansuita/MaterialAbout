@@ -24,7 +24,7 @@
             style="@style/TextLabel"
             android:layout_width="wrap_content"
             android:ems="8"
-            android:gravity="left"
+            android:gravity="start"
             android:text="@string/rate_five_stars"
             android:textSize="14sp" />
 
