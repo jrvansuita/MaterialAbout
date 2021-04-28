@@ -116,13 +116,13 @@ public final class AboutView extends FrameLayout {
         setupCard(bundle);
 
         tvName.setText(bundle.getName());
-        VisibleUtil.handle(tvName, bundle.getName());
+        VisibleUtil.handle(tvName, bundle.getName().toString());
 
         tvSubTitle.setText(bundle.getSubTitle());
-        VisibleUtil.handle(tvSubTitle, bundle.getSubTitle());
+        VisibleUtil.handle(tvSubTitle, bundle.getSubTitle().toString());
 
         tvBrief.setText(bundle.getBrief());
-        VisibleUtil.handle(tvBrief, bundle.getBrief());
+        VisibleUtil.handle(tvBrief, bundle.getBrief().toString());
 
         tvAppName.setText(bundle.getAppName());
         tvAppTitle.setText(bundle.getAppTitle());
@@ -136,7 +136,7 @@ public final class AboutView extends FrameLayout {
         if (bundle.getBackgroundColor() != 0)
             cvHolder.setCardBackgroundColor(bundle.getBackgroundColor());
 
-        VisibleUtil.handle(appHolder, bundle.getAppName());
+        VisibleUtil.handle(appHolder, bundle.getAppName().toString());
 
         if (appHolder.getVisibility() == VISIBLE)
             setDivider(bundle, appHolder);

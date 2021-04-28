@@ -14,16 +14,16 @@ import com.vansuita.materialabout.views.ViewIdGenerator;
 public final class Item {
 
     private int id;
-    private String label;
+    private CharSequence label;
     private Bitmap icon;
     private View.OnClickListener onClick;
 
     @Nullable
-    public String getLabel() {
+    public CharSequence getLabel() {
         return label;
     }
 
-    public void setLabel(@Nullable String label) {
+    public void setLabel(@Nullable CharSequence label) {
         this.label = label;
     }
 
@@ -49,7 +49,7 @@ public final class Item {
         return id;
     }
 
-    public Item(@Nullable Bitmap icon, @Nullable String label, @Nullable View.OnClickListener onClick) {
+    public Item(@Nullable Bitmap icon, @Nullable CharSequence label, @Nullable View.OnClickListener onClick) {
         this.id = ViewIdGenerator.generateViewId();
         this.label = label;
         this.icon = icon;

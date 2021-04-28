@@ -19,6 +19,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.cardview.widget.CardView;
+import androidx.core.text.HtmlCompat;
 
 import com.vansuita.materialabout.R;
 import com.vansuita.materialabout.util.ColorUtil;
@@ -39,11 +40,11 @@ public final class AboutBuilder {
     private Context context;
     private IntentUtil util;
 
-    private String name;
-    private String subTitle;
-    private String brief;
-    private String appName;
-    private String appTitle;
+    private CharSequence name;
+    private CharSequence subTitle;
+    private CharSequence brief;
+    private CharSequence appName;
+    private CharSequence appTitle;
 
     private Bitmap photo;
     private Bitmap cover;
@@ -133,7 +134,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder setName(@Nullable String text) {
+    public AboutBuilder setName(@Nullable CharSequence text) {
         this.name = text;
         return this;
     }
@@ -156,7 +157,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder setSubTitle(@Nullable String text) {
+    public AboutBuilder setSubTitle(@Nullable CharSequence text) {
         this.subTitle = text;
         return this;
     }
@@ -179,7 +180,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder setBrief(@Nullable String text) {
+    public AboutBuilder setBrief(@Nullable CharSequence text) {
         this.brief = text;
         return this;
     }
@@ -202,7 +203,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder setAppName(@Nullable String text) {
+    public AboutBuilder setAppName(@Nullable CharSequence text) {
         this.appName = text;
         return this;
     }
@@ -225,7 +226,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder setAppTitle(@Nullable String text) {
+    public AboutBuilder setAppTitle(@Nullable CharSequence text) {
         this.appTitle = text;
         return this;
     }
@@ -535,7 +536,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addLink(@Nullable Bitmap icon,@Nullable String label,@Nullable View.OnClickListener onClickListener) {
+    public AboutBuilder addLink(@Nullable Bitmap icon,@Nullable CharSequence label,@Nullable View.OnClickListener onClickListener) {
         links.add(new Item(icon, label, onClickListener));
         return this;
     }
@@ -549,7 +550,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addLink(@Nullable Bitmap icon,@Nullable String label,@Nullable Intent intent) {
+    public AboutBuilder addLink(@Nullable Bitmap icon,@Nullable CharSequence label,@Nullable Intent intent) {
         return addLink(icon, label, util.clickIntent(intent));
     }
 
@@ -562,7 +563,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addLink(@Nullable Bitmap icon,@Nullable String label,@NonNull Uri uri) {
+    public AboutBuilder addLink(@Nullable Bitmap icon,@Nullable CharSequence label,@NonNull Uri uri) {
         return addLink(icon, label, util.clickUri(uri));
     }
 
@@ -575,7 +576,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addLink(@Nullable Bitmap icon,@Nullable String label,@NonNull String url) {
+    public AboutBuilder addLink(@Nullable Bitmap icon,@Nullable CharSequence label,@NonNull String url) {
         return addLink(icon, label, Uri.parse(url));
     }
 
@@ -692,7 +693,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addLink(@DrawableRes int icon,@Nullable String label,@Nullable View.OnClickListener onClickListener) {
+    public AboutBuilder addLink(@DrawableRes int icon,@Nullable CharSequence label,@Nullable View.OnClickListener onClickListener) {
         return addLink(IconUtil.getBitmap(context, icon), label, onClickListener);
     }
 
@@ -705,7 +706,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addLink(@DrawableRes int icon,@Nullable String label,@Nullable Intent intent) {
+    public AboutBuilder addLink(@DrawableRes int icon,@Nullable CharSequence label,@Nullable Intent intent) {
         return addLink(icon, label, util.clickIntent(intent));
     }
 
@@ -718,7 +719,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addLink(@DrawableRes int icon,@Nullable String label,@NonNull Uri uri) {
+    public AboutBuilder addLink(@DrawableRes int icon,@Nullable CharSequence label,@NonNull Uri uri) {
         return addLink(icon, label, util.clickUri(uri));
     }
 
@@ -731,7 +732,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addLink(@DrawableRes int icon,@Nullable String label,@NonNull String url) {
+    public AboutBuilder addLink(@DrawableRes int icon,@Nullable CharSequence label,@NonNull String url) {
         return addLink(icon, label, Uri.parse(url));
     }
 
@@ -796,7 +797,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addLink(@Nullable BitmapDrawable icon,@Nullable String label,@Nullable View.OnClickListener onClickListener) {
+    public AboutBuilder addLink(@Nullable BitmapDrawable icon,@Nullable CharSequence label,@Nullable View.OnClickListener onClickListener) {
         return addLink(IconUtil.getBitmap(icon), label, onClickListener);
     }
 
@@ -809,7 +810,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addLink(@Nullable BitmapDrawable icon,@Nullable String label,@Nullable Intent intent) {
+    public AboutBuilder addLink(@Nullable BitmapDrawable icon,@Nullable CharSequence label,@Nullable Intent intent) {
         return addLink(icon, label, util.clickIntent(intent));
     }
 
@@ -822,7 +823,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addLink(@Nullable BitmapDrawable icon,@Nullable String label,@NonNull Uri uri) {
+    public AboutBuilder addLink(@Nullable BitmapDrawable icon,@Nullable CharSequence label,@NonNull Uri uri) {
         return addLink(icon, label, util.clickUri(uri));
     }
 
@@ -1366,7 +1367,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addAction(@Nullable Bitmap icon,@Nullable String label,@Nullable View.OnClickListener onClickListener) {
+    public AboutBuilder addAction(@Nullable Bitmap icon,@Nullable CharSequence label,@Nullable View.OnClickListener onClickListener) {
         actions.add(new Item(icon, label, onClickListener));
         return this;
     }
@@ -1380,7 +1381,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addAction(@Nullable Bitmap icon,@Nullable String label,@Nullable Intent intent) {
+    public AboutBuilder addAction(@Nullable Bitmap icon,@Nullable CharSequence label,@Nullable Intent intent) {
         return addAction(icon, label, util.clickIntent(intent));
     }
 
@@ -1393,7 +1394,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addAction(@Nullable Bitmap icon,@Nullable String label,@NonNull Uri uri) {
+    public AboutBuilder addAction(@Nullable Bitmap icon,@Nullable CharSequence label,@NonNull Uri uri) {
         return addAction(icon, label, util.clickUri(uri));
     }
 
@@ -1406,7 +1407,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addAction(@Nullable Bitmap icon,@Nullable String label,@NonNull String url) {
+    public AboutBuilder addAction(@Nullable Bitmap icon,@Nullable CharSequence label,@NonNull String url) {
         return addAction(icon, label, Uri.parse(url));
     }
 
@@ -1523,7 +1524,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addAction(@DrawableRes int icon,@Nullable String label,@Nullable View.OnClickListener onClickListener) {
+    public AboutBuilder addAction(@DrawableRes int icon,@Nullable CharSequence label,@Nullable View.OnClickListener onClickListener) {
         return addAction(IconUtil.getBitmap(context, icon), label, onClickListener);
     }
 
@@ -1536,7 +1537,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addAction(@DrawableRes int icon,@Nullable String label,@Nullable Intent intent) {
+    public AboutBuilder addAction(@DrawableRes int icon,@Nullable CharSequence label,@Nullable Intent intent) {
         return addAction(icon, label, util.clickIntent(intent));
     }
 
@@ -1549,7 +1550,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addAction(@DrawableRes int icon,@Nullable String label,@NonNull Uri uri) {
+    public AboutBuilder addAction(@DrawableRes int icon,@Nullable CharSequence label,@NonNull Uri uri) {
         return addAction(icon, label, util.clickUri(uri));
     }
 
@@ -1562,7 +1563,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addAction(@DrawableRes int icon,@Nullable String label,@NonNull String url) {
+    public AboutBuilder addAction(@DrawableRes int icon,@Nullable CharSequence label,@NonNull String url) {
         return addAction(icon, label, Uri.parse(url));
     }
 
@@ -1627,7 +1628,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addAction(@Nullable BitmapDrawable icon,@Nullable String label,@Nullable View.OnClickListener onClickListener) {
+    public AboutBuilder addAction(@Nullable BitmapDrawable icon,@Nullable CharSequence label,@Nullable View.OnClickListener onClickListener) {
         return addAction(IconUtil.getBitmap(icon), label, onClickListener);
     }
 
@@ -1640,7 +1641,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addAction(@Nullable BitmapDrawable icon,@Nullable String label,@Nullable Intent intent) {
+    public AboutBuilder addAction(@Nullable BitmapDrawable icon,@Nullable CharSequence label,@Nullable Intent intent) {
         return addAction(icon, label, util.clickIntent(intent));
     }
 
@@ -1653,7 +1654,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addAction(@Nullable BitmapDrawable icon,@Nullable String label,@NonNull Uri uri) {
+    public AboutBuilder addAction(@Nullable BitmapDrawable icon,@Nullable CharSequence label,@NonNull Uri uri) {
         return addAction(icon, label, util.clickUri(uri));
     }
 
@@ -1666,7 +1667,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addAction(@Nullable BitmapDrawable icon,@Nullable String label,@NonNull String url) {
+    public AboutBuilder addAction(@Nullable BitmapDrawable icon,@Nullable CharSequence label,@NonNull String url) {
         return addAction(icon, label, Uri.parse(url));
     }
 
@@ -2086,23 +2087,23 @@ public final class AboutBuilder {
         return showAsCard;
     }
 
-    public String getName() {
+    public CharSequence getName() {
         return name;
     }
 
-    public String getSubTitle() {
+    public CharSequence getSubTitle() {
         return subTitle;
     }
 
-    public String getBrief() {
+    public CharSequence getBrief() {
         return brief;
     }
 
-    public String getAppName() {
+    public CharSequence getAppName() {
         return appName;
     }
 
-    public String getAppTitle() {
+    public CharSequence getAppTitle() {
         return appTitle;
     }
 
