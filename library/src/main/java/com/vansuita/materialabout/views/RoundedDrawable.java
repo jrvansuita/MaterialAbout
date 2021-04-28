@@ -77,7 +77,7 @@ public final class RoundedDrawable extends Drawable {
     @Nullable
     private ScaleType mScaleType = ScaleType.FIT_CENTER;
 
-    public RoundedDrawable(Bitmap bitmap) {
+    public RoundedDrawable(@NonNull Bitmap bitmap) {
         mBitmap = bitmap;
 
         mBitmapWidth = bitmap.getWidth();
@@ -132,7 +132,7 @@ public final class RoundedDrawable extends Drawable {
     }
 
     @Nullable
-    public static Bitmap drawableToBitmap(Drawable drawable) {
+    public static Bitmap drawableToBitmap(@NonNull Drawable drawable) {
         if (drawable instanceof BitmapDrawable) {
             return ((BitmapDrawable) drawable).getBitmap();
         }
@@ -628,7 +628,7 @@ public final class RoundedDrawable extends Drawable {
         return this;
     }
 
-    private static boolean only(int index, boolean[] booleans) {
+    private static boolean only(int index,@NonNull boolean[] booleans) {
         for (int i = 0, len = booleans.length; i < len; i++) {
             if (booleans[i] != (i == index)) {
                 return false;
@@ -637,7 +637,7 @@ public final class RoundedDrawable extends Drawable {
         return true;
     }
 
-    private static boolean any(boolean[] booleans) {
+    private static boolean any(@NonNull boolean[] booleans) {
         for (boolean b : booleans) {
             if (b) {
                 return true;
@@ -646,7 +646,7 @@ public final class RoundedDrawable extends Drawable {
         return false;
     }
 
-    private static boolean all(boolean[] booleans) {
+    private static boolean all(@NonNull boolean[] booleans) {
         for (boolean b : booleans) {
             if (b) {
                 return false;

@@ -1,6 +1,9 @@
 package com.vansuita.materialabout.util;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import android.text.TextUtils;
 import android.view.View;
 
 /**
@@ -9,7 +12,7 @@ import android.view.View;
 
 public final class VisibleUtil {
 
-    public static void handle(View v, @Nullable String s) {
-        v.setVisibility(s == null || s.isEmpty() ? View.GONE : View.VISIBLE);
+    public static void handle(@NonNull View v, @Nullable String s) {
+        v.setVisibility(TextUtils.isEmpty(s) ? View.GONE : View.VISIBLE);
     }
 }

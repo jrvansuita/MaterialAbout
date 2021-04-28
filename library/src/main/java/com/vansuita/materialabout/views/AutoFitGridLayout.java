@@ -5,6 +5,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import java.util.ArrayList;
 
 /**
@@ -23,15 +26,15 @@ public final class AutoFitGridLayout extends ViewGroup {
 
     private ArrayList<View> notGoneViewList;
 
-    public AutoFitGridLayout(Context context) {
+    public AutoFitGridLayout(@NonNull Context context) {
         super(context);
     }
 
-    public AutoFitGridLayout(Context context, AttributeSet attrs) {
+    public AutoFitGridLayout(@NonNull Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public AutoFitGridLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public AutoFitGridLayout(@NonNull Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -154,17 +157,20 @@ public final class AutoFitGridLayout extends ViewGroup {
     }
 
     @Override
+    @NonNull
     protected LayoutParams generateDefaultLayoutParams() {
         return new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
     }
 
     @Override
-    public LayoutParams generateLayoutParams(AttributeSet attrs) {
+    @NonNull
+    public LayoutParams generateLayoutParams(@Nullable AttributeSet attrs) {
         return new LayoutParams(getContext(), attrs);
     }
 
     @Override
-    protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
+    @NonNull
+    protected LayoutParams generateLayoutParams(@NonNull ViewGroup.LayoutParams p) {
         return new LayoutParams(p);
     }
 

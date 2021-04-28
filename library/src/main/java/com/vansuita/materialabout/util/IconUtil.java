@@ -16,19 +16,22 @@ import androidx.core.content.ContextCompat;
 @SuppressWarnings("unused")
 public final class IconUtil {
 
-    public static Bitmap getBitmap(Context context, int res) {
+    @Nullable
+    public static Bitmap getBitmap(@NonNull Context context, @DrawableRes int res) {
         return BitmapFactory.decodeResource(context.getResources(), res);
     }
 
-    public static Bitmap getBitmap(BitmapDrawable drawable) {
-        return drawable.getBitmap();
+    @Nullable
+    public static Bitmap getBitmap(@Nullable BitmapDrawable drawable) {
+        return drawable == null ? null : drawable.getBitmap();
     }
 
-    public static Drawable getDrawable(Context context, Bitmap bitmap) {
+    @NonNull
+    public static Drawable getDrawable(@NonNull Context context,@NonNull  Bitmap bitmap) {
         return new BitmapDrawable(context.getResources(), bitmap);
     }
 
-    @Nullable
+    @NonNull
     public static Drawable getDrawable(@NonNull Context context, @DrawableRes int res) {
         return ContextCompat.getDrawable(context, res);
     }

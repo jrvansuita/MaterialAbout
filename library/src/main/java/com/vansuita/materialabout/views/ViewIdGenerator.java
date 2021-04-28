@@ -16,7 +16,7 @@ public class ViewIdGenerator {
     @SuppressLint("NewApi")
     public static int generateViewId() {
 
-        if (Build.VERSION.SDK_INT < 17) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
             for (;;) {
                 final int result = sNextGeneratedId.get();
                 // aapt-generated IDs have the high byte nonzero; clamp to the range under that.

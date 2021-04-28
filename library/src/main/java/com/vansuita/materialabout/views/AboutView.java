@@ -8,8 +8,14 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Handler;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.IdRes;
+import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -38,14 +44,14 @@ public final class AboutView extends FrameLayout {
 
     private CardView cvHolder;
     private CircleImageView ivPhoto;
-    private ImageView ivCover;
-    private TextView tvName;
-    private TextView tvSubTitle;
-    private TextView tvBrief;
+    private AppCompatImageView ivCover;
+    private AppCompatTextView tvName;
+    private AppCompatTextView tvSubTitle;
+    private AppCompatTextView tvBrief;
 
-    private TextView tvAppName;
-    private TextView tvAppTitle;
-    private ImageView ivAppIcon;
+    private AppCompatTextView tvAppName;
+    private AppCompatTextView tvAppTitle;
+    private AppCompatImageView ivAppIcon;
 
     private View appHolder;
     private AutoFitGridLayout vLinks;
@@ -68,7 +74,7 @@ public final class AboutView extends FrameLayout {
         super(context, attrs, defStyleAttr);
     }
 
-    private void init(AboutBuilder bundle) {
+    private void init(@NonNull AboutBuilder bundle) {
         layoutInflater = LayoutInflater.from(getContext());
 
         ViewGroup holder = this;
@@ -112,13 +118,13 @@ public final class AboutView extends FrameLayout {
         setupCard(bundle);
 
         tvName.setText(bundle.getName());
-        VisibleUtil.handle(tvName, bundle.getName());
+        VisibleUtil.handle(tvName, bundle.getName().toString());
 
         tvSubTitle.setText(bundle.getSubTitle());
-        VisibleUtil.handle(tvSubTitle, bundle.getSubTitle());
+        VisibleUtil.handle(tvSubTitle, bundle.getSubTitle().toString());
 
         tvBrief.setText(bundle.getBrief());
-        VisibleUtil.handle(tvBrief, bundle.getBrief());
+        VisibleUtil.handle(tvBrief, bundle.getBrief().toString());
 
         tvAppName.setText(bundle.getAppName());
         tvAppTitle.setText(bundle.getAppTitle());
@@ -132,7 +138,7 @@ public final class AboutView extends FrameLayout {
         if (bundle.getBackgroundColor() != 0)
             cvHolder.setCardBackgroundColor(bundle.getBackgroundColor());
 
-        VisibleUtil.handle(appHolder, bundle.getAppName());
+        VisibleUtil.handle(appHolder, bundle.getAppName().toString());
 
         if (appHolder.getVisibility() == VISIBLE)
             setDivider(bundle, appHolder);
@@ -152,19 +158,19 @@ public final class AboutView extends FrameLayout {
         loadActions(bundle);
     }
 
-    private void setupTextColors(AboutBuilder bundle) {
+    private void setupTextColors(@NonNull AboutBuilder bundle) {
         setTextColor(tvName, bundle.getNameColor());
         setTextColor(tvSubTitle, bundle.getSubTitleColor());
         setTextColor(tvBrief, bundle.getBriefColor());
     }
 
-    private void setTextColor(@NonNull TextView tv, int color) {
+    private void setTextColor(@NonNull AppCompatTextView tv, @ColorInt int color) {
         if (color != 0)
             tv.setTextColor(color);
     }
 
     @SuppressWarnings("ResourceAsColor")
-    private void setDivider(AboutBuilder bundle, @NonNull View holder) {
+    private void setDivider(@NonNull AboutBuilder bundle, @NonNull View holder) {
         if (bundle.isShowDivider()) {
 
             int color = bundle.getDividerColor();
@@ -204,13 +210,13 @@ public final class AboutView extends FrameLayout {
         return iconColor;
     }
 
-    private void setupBitmaps(AboutBuilder bundle) {
+    private void setupBitmaps(@NonNull AboutBuilder bundle) {
         setBitmap(ivCover, bundle.getCover());
         setBitmap(ivPhoto, bundle.getPhoto());
         setBitmap(ivAppIcon, bundle.getAppIcon());
     }
 
-    private void setBitmap(@NonNull ImageView iv, @Nullable Bitmap bitmap) {
+    private void setBitmap(@NonNull AppCompatImageView iv, @Nullable Bitmap bitmap) {
         if (bitmap == null) {
             iv.setVisibility(GONE);
         } else {
@@ -218,7 +224,7 @@ public final class AboutView extends FrameLayout {
         }
     }
 
-    private void loadLinks(AboutBuilder bundle) {
+    private void loadLinks(@NonNull AboutBuilder bundle) {
         for (Item item : bundle.getLinks()) {
             View v = addItem(vLinks, R.layout.xab_each_link, item);
 
@@ -227,7 +233,7 @@ public final class AboutView extends FrameLayout {
         }
     }
 
-    private void animate(final View v) {
+    private void animate(@NonNull final View v) {
         v.setVisibility(INVISIBLE);
 
         animationDelay += 20;
@@ -241,18 +247,19 @@ public final class AboutView extends FrameLayout {
         }, animationDelay);
     }
 
-    private void loadActions(AboutBuilder bundle) {
+    private void loadActions(@NonNull AboutBuilder bundle) {
         for (Item item : bundle.getActions()) {
             addItem(vActions, R.layout.xab_each_action, item);
         }
     }
 
-    private View addItem(ViewGroup holder, int layout, Item item) {
+    @NonNull
+    private View addItem(@NonNull ViewGroup holder, @LayoutRes int layout, @NonNull Item item) {
         View view = layoutInflater.inflate(layout, null);
         view.setId(item.getId());
 
-        TextView tvLabel = view.findViewById(R.id.label);
-        ImageView ivIcon = view.findViewById(R.id.icon);
+        AppCompatTextView tvLabel = view.findViewById(R.id.label);
+        AppCompatImageView ivIcon = view.findViewById(R.id.icon);
 
         Icon.on(ivIcon).bitmap(item.getIcon()).color(getIconColor()).put();
 
@@ -265,7 +272,7 @@ public final class AboutView extends FrameLayout {
         return view;
     }
 
-    private void setupCard(AboutBuilder bundle) {
+    private void setupCard(@NonNull AboutBuilder bundle) {
         if (!bundle.isShowAsCard()) {
             cvHolder.setCardElevation(0);
             cvHolder.setRadius(0);
@@ -277,15 +284,18 @@ public final class AboutView extends FrameLayout {
         }
     }
 
+    @NonNull
     public CardView getHolder() {
         return cvHolder;
     }
 
-    public View findItem(int id) {
+    @NonNull
+    public View findItem(@IdRes int id) {
         return cvHolder.findViewById(id);
     }
 
-    public View findItem(Item item) {
+    @NonNull
+    public View findItem(@NonNull Item item) {
         return findItem(item.getId());
     }
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_holder"
     style="@style/Card"
     android:layout_margin="10dp"
@@ -11,19 +12,18 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/cover"
             style="@style/Cover"
             android:src="@mipmap/profile_cover" />
 
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingBottom="10dp"
-            android:paddingLeft="3dp"
-            android:paddingRight="3dp">
+            android:paddingHorizontal="3dp">
 
             <com.vansuita.materialabout.views.CircleImageView
                 android:id="@+id/photo"
@@ -31,20 +31,20 @@
                 android:layout_height="@dimen/profile_picture_size"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/profile_picture" />
+                app:srcCompat="@mipmap/profile_picture" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/name"
                 style="@style/Name"
                 android:paddingTop="10dp"
                 android:text="Your Full Name" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/sub_title"
                 style="@style/SubTitle"
                 android:text="Just a sub title" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/brief"
                 style="@style/Brief"
                 android:layout_margin="5dp"
@@ -64,7 +64,7 @@
             </com.vansuita.materialabout.views.AutoFitGridLayout>
 
 
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/app_holder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -81,37 +81,42 @@
                     android:paddingBottom="10dp"
                     android:paddingTop="10dp">
 
-                    <ImageView
+                    <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/app_icon"
                         android:layout_width="@dimen/app_icon_size"
                         android:layout_height="@dimen/app_icon_size"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="15dp"
+                        android:layout_marginEnd="15dp"
                         android:scaleType="centerCrop"
-                        android:src="@mipmap/android" />
+                        app:srcCompat="@mipmap/android" />
 
-                    <LinearLayout
+                    <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_toRightOf="@id/app_icon"
+                        android:layout_toEndOf="@id/app_icon"
                         android:orientation="vertical">
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/app_name"
                             style="@style/Name"
                             android:layout_width="wrap_content"
-                            android:gravity="left"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:layout_gravity="start"
                             android:text="Your App Name" />
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/app_title"
                             style="@style/TextLabel"
-                            android:gravity="left"
+                            android:gravity="start"
+                            android:layout_gravity="start"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
                             android:text="Just a sub title" />
 
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
-                    </LinearLayout>
                 </RelativeLayout>
 
                 <com.vansuita.materialabout.views.AutoFitGridLayout
@@ -123,10 +128,11 @@
                     android:orientation="vertical">
 
                 </com.vansuita.materialabout.views.AutoFitGridLayout>
-            </LinearLayout>
-        </LinearLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </FrameLayout>
-
 
 </androidx.cardview.widget.CardView>

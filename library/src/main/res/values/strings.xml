@@ -1,4 +1,7 @@
-<resources>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
     <string name="github">GitHub</string>
     <string name="facebook">Facebook</string>
     <string name="instagram">Instagram</string>
