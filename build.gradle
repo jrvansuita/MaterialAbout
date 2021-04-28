@@ -7,7 +7,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.1.3'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
 }
 
@@ -24,11 +24,10 @@ ext {
     buildToolsVersion = '30.0.3'
     targetSdkVersion = compileSdkVersion
 
-    appcompatLibVersion = '1.1.0'
+    appcompatLibVersion = '1.2.0'
     cardViewLibVersion = '1.0.0'
-    materialLibVersion = '1.0.0'
+    materialLibVersion = '1.3.0'
     iconHandlerVersion = 'v2.0.0'
-    butterKnifeVersion = '8.8.1'
 }
 
 task clean(type: Delete) {

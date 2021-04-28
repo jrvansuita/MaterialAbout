@@ -24,7 +24,6 @@ android {
 dependencies {
     implementation "androidx.appcompat:appcompat:$appcompatLibVersion"
     implementation "com.google.android.material:material:$materialLibVersion"
-    implementation "com.jakewharton:butterknife:$butterKnifeVersion"
 
     implementation project(':library')
 }
