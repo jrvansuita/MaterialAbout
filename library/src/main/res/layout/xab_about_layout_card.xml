@@ -23,8 +23,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingBottom="10dp"
-            android:paddingLeft="3dp"
-            android:paddingRight="3dp">
+            android:paddingHorizontal="3dp">
 
             <com.vansuita.materialabout.views.CircleImageView
                 android:id="@+id/photo"
@@ -87,7 +86,7 @@
                         android:layout_width="@dimen/app_icon_size"
                         android:layout_height="@dimen/app_icon_size"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="15dp"
+                        android:layout_marginEnd="15dp"
                         android:scaleType="centerCrop"
                         app:srcCompat="@mipmap/android" />
 
@@ -95,22 +94,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_toRightOf="@id/app_icon"
+                        android:layout_toEndOf="@id/app_icon"
                         android:orientation="vertical">
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/app_name"
                             style="@style/Name"
                             android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:gravity="start"
+                            android:layout_gravity="start"
                             android:text="Your App Name" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/app_title"
                             style="@style/TextLabel"
                             android:gravity="start"
+                            android:layout_gravity="start"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
                             android:text="Just a sub title" />
-
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
