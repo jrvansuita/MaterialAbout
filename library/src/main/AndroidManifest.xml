@@ -1,2 +1,32 @@
-<manifest package="com.vansuita.materialabout" />
+<manifest package="com.vansuita.materialabout"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+    Package visibility filtering on Android 30+
+    @link https://g.co/dev/packagevisibility
+    @link https://developer.android.com/training/package-visibility/declaring#communicate-host-app
+    -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.INSERT" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+        </intent>
+
+        <package android:name="com.facebook.katana" />
+        <package android:name="com.instagram.android" />
+        <package android:name="com.twitter.android" />
+        <package android:name="com.google.android.apps.plus" />
+        <package android:name="com.linkedin.android" />
+        <package android:name="com.skype.raider" />
+    </queries>
+
+</manifest>
 
