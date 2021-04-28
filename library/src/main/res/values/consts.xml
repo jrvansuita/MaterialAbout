@@ -39,4 +39,6 @@
     <string name="uri_play_store_apps_list">market://search?q=pub:%s</string>
     <string name="uri_play_store_apps_list_website">https://play.google.com/store/search?q=%s</string>
 
+    <string name="uri_whatsapp">https://wa.me/%1$s?text=%2$s</string>
+
 </resources>

@@ -8,8 +8,11 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import androidx.annotation.NonNull;
+
+import android.text.TextUtils;
 import android.view.View;
 
+import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 
 import com.vansuita.materialabout.R;
@@ -1120,6 +1123,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
+    @Deprecated
     public AboutBuilder addWhatsappLink(int name, int phone) {
         return addWhatsappLink(context.getString(name), context.getString(phone));
     }
@@ -1131,8 +1135,63 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
+    @Deprecated
     public AboutBuilder addWhatsappLink(String name, String phone) {
         return addLink(R.mipmap.whatsapp, R.string.whastapp, util.openAddContact(name, phone));
+    }
+
+    /**
+     * Starts a new direct Whatsapp chat
+     *
+     * @param phone any phone number
+     * @return the same {@link AboutBuilder} instance
+     */
+    @NonNull
+    public AboutBuilder addWhatsAppDirectChat(int phone) {
+        return addWhatsAppDirectChat(context.getString(phone));
+    }
+
+    /**
+     * Starts a new direct Whatsapp chat
+     *
+     * @param phone any phone number
+     * @return the same {@link AboutBuilder} instance
+     *
+     */
+    @NonNull
+    public AboutBuilder addWhatsAppDirectChat(@NonNull String  phone) {
+        return addWhatsAppDirectChat(phone, null);
+    }
+
+    /**
+     * Starts a new direct Whatsapp chat with a default message
+     *
+     * @param phone any phone number
+     * @param message the message to pre-fill
+     * @return the same {@link AboutBuilder} instance
+     */
+    @NonNull
+    public AboutBuilder addWhatsAppDirectChat(int phone, int message) {
+        return addWhatsAppDirectChat(context.getString(phone), context.getString(message));
+    }
+
+    /**
+     * Starts a new direct Whatsapp chat with a default message
+     *
+     * @link https://faq.whatsapp.com/general/chats/how-to-use-click-to-chat
+     * @param phone any phone number
+     * @param message the message to pre-fill
+     * @throws IllegalArgumentException Phone number should be in international format and not contain any brackets, leading zeroes, or dashes.
+     * @return the same {@link AboutBuilder} instance
+     *
+     */
+    @NonNull
+    public AboutBuilder addWhatsAppDirectChat(@NonNull String  phone, @Nullable String message) {
+        if (!TextUtils.isDigitsOnly(phone) || phone.startsWith("0")){
+            throw new IllegalArgumentException("Phone number should be in international format and not contain any brackets, leading zeroes, or dashes.");
+        }
+
+        return addLink(R.mipmap.whatsapp, R.string.whastapp, context.getString(R.string.uri_whatsapp, phone, message == null ? "" : message));
     }
 
     /**
