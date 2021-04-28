@@ -1877,7 +1877,7 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     @NonNull
-    public AboutBuilder addFeedbackAction(@StringRes int email,@StringRes String subject) {
+    public AboutBuilder addFeedbackAction(@StringRes int email,@Nullable String subject) {
         return addFeedbackAction(context.getString(email), subject, null);
     }
 
