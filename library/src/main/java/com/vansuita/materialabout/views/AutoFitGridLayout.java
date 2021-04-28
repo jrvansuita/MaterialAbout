@@ -37,7 +37,7 @@ public final class AutoFitGridLayout extends ViewGroup {
 
     private void refreshNotGoneChildList() {
         if (notGoneViewList == null) {
-            notGoneViewList = new ArrayList<View>();
+            notGoneViewList = new ArrayList<>();
         }
         notGoneViewList.clear();
         int childCount = getChildCount();
@@ -79,11 +79,8 @@ public final class AutoFitGridLayout extends ViewGroup {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         refreshNotGoneChildList();
-        if (childWidth <= 0) {
-            final int parentWidth = MeasureSpec.getSize(widthMeasureSpec);
-            childWidth = (int) (
-                    (parentWidth - (columnCount - 1) * horizontalSpace * 1.0f) / columnCount + 0.5f);
-        }
+        int parentWidth = MeasureSpec.getSize(widthMeasureSpec);
+        childWidth = (int) ((parentWidth - (columnCount - 1) * horizontalSpace * 1.0f) / columnCount + 0.5f);
         int childCount = notGoneViewList.size();
         int line = childCount % columnCount == 0 ? childCount / columnCount
                 : childCount / columnCount + 1;

@@ -8,13 +8,13 @@
 
 
 This is an [**Android**](https://developer.android.com) project. You, as a mobile developer, can use this library to show a material about screen in your apps.
-It was build to make your life easier when introducing you to your users, and also, to create a about screen pattern for material android apps. It's really simple and dynamic, check it out.
+It was built to make your life easier when introducing you to your users, and also, to create an about screen pattern for material android apps. It's really simple and dynamic, check it out.
 
 </br>
 
 ##### Note: If you're missing some feature please let me know. Or even better, create a pull request. Also, I'm needing some help to translate the strings.xml to other languages.
 
-##### Supported Languages until now: 🇺🇸 🇧🇷 🇪🇸 🇮🇹 🇷🇺 🇩🇪 :cn: :tr: 🇺🇦 🇫🇷 🇦🇪 🇰🇷
+##### Supported Languages: 🇺🇸 🇧🇷 🇪🇸 🇮🇹 🇷🇺 🇩🇪 :cn: :tr: 🇺🇦 🇫🇷 🇦🇪 🇰🇷
 
 </br>
 
@@ -33,6 +33,8 @@ It was build to make your life easier when introducing you to your users, and al
 
 
 # Setup
+
+This library requires `minSdkVersion` to be set to `14` or above, like the [Official Support Library](https://developer.android.com/topic/libraries/support-library/index.html#api-versions).
 
 #### Step #1. Add the JitPack repository to your build file:
 
@@ -109,9 +111,9 @@ View lastActionView = view.findItem(builder.getLastAction());
 
 # Used libraries
 
-* com.android.support:appcompat-v7
-* com.android.support:cardview-v7
-* com.github.jrvansuita:IconHandler
+* [com.android.support:appcompat-v7](https://developer.android.com/topic/libraries/support-library/packages.html#v7-appcompat)
+* [com.android.support:cardview-v7](https://developer.android.com/topic/libraries/support-library/packages.html#v7-cardview)
+* [com.github.jrvansuita:IconHandler](https://github.com/jrvansuita/IconHandler)
 
 #
 

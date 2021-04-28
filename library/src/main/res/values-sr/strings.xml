@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="github">GitHub</string>
     <string name="facebook">Facebook</string>
@@ -16,20 +17,19 @@
     <string name="dribbble">Dribbble</string>
     <string name="website">Website</string>
     <string name="email">Email</string>
-    <string name="version">Version %s</string>
+    <string name="version">Verzija %s</string>
     <string name="error">Error</string>
 
-    <string name="rate_five_stars">Rate this app 5 stars</string>
-    <string name="more_apps">More apps from me</string>
-    <string name="share_app">Share this app</string>
-    <string name="update_app">Update this app</string>
-    <string name="feedback_app">Give me some feedback</string>
-    <string name="introduce_app">Introduce the app</string>
-    <string name="changelog">ChangeLog</string>
-    <string name="license">License</string>
-    <string name="remove_ads">Remove ads</string>
-    <string name="donate">Donate</string>
-    <string name="help">Help</string>
-    <string name="privacy">Privacy Policy</string>
-
+    <string name="rate_five_stars">Ocenite aplikaciju sa 5 zvezdica</string>
+    <string name="more_apps">Više mojih aplikacija</string>
+    <string name="share_app">Podelite aplikaciju</string>
+    <string name="update_app">Ažurirajte aplikaciju</string>
+    <string name="feedback_app">Ostavite utisak</string>
+    <string name="introduce_app">Više o aplikaciji</string>
+    <string name="changelog">Promene</string>
+    <string name="license">Licence</string>
+    <string name="remove_ads">Uklonite reklame</string>
+    <string name="donate">Donirajte</string>
+    <string name="help">Pomoć</string>
+    <string name="privacy">Zaštita podataka</string>
 </resources>

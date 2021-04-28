@@ -10,24 +10,26 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.net.Uri;
-import android.support.annotation.ColorInt;
-import android.support.annotation.DimenRes;
-import android.support.annotation.DrawableRes;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.AppCompatImageView;
+import androidx.annotation.ColorInt;
+import androidx.annotation.DimenRes;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.ViewGroup;
 
 import com.vansuita.materialabout.R;
 
-import static com.vansuita.materialabout.views.RoundedDrawable.TAG;
-
 /**
  * Created by jrvansuita on 10/02/17.
  */
 
 public final class CircleImageView extends AppCompatImageView {
+
+    private static final String TAG = "CircleImageView";
 
     public static final float DEFAULT_RADIUS = 0f;
     public static final float DEFAULT_BORDER_WIDTH = 0f;
@@ -36,12 +38,16 @@ public final class CircleImageView extends AppCompatImageView {
     private final float[] mCornerRadii =
             new float[]{DEFAULT_RADIUS, DEFAULT_RADIUS, DEFAULT_RADIUS, DEFAULT_RADIUS};
 
+    @Nullable
     private Drawable mBackgroundDrawable;
+    @NonNull
     private ColorStateList mBorderColor =
             ColorStateList.valueOf(RoundedDrawable.DEFAULT_BORDER_COLOR);
     private float mBorderWidth = DEFAULT_BORDER_WIDTH;
+    @Nullable
     private ColorFilter mColorFilter = null;
     private boolean mColorMod = false;
+    @Nullable
     private Drawable mDrawable;
     private boolean mHasColorFilter = false;
     private boolean mIsOval = false;
@@ -49,19 +55,21 @@ public final class CircleImageView extends AppCompatImageView {
     private int mResource;
     private int mBackgroundResource;
     private ScaleType mScaleType;
+    @NonNull
     private Shader.TileMode mTileModeX = DEFAULT_TILE_MODE;
+    @NonNull
     private Shader.TileMode mTileModeY = DEFAULT_TILE_MODE;
 
 
-    public CircleImageView(Context context) {
+    public CircleImageView(@NonNull Context context) {
         this(context, null);
     }
 
-    public CircleImageView(Context context, AttributeSet attrs) {
+    public CircleImageView(@NonNull Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public CircleImageView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public CircleImageView(@NonNull Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
@@ -95,7 +103,7 @@ public final class CircleImageView extends AppCompatImageView {
     }
 
     @Override
-    public void setScaleType(ScaleType scaleType) {
+    public void setScaleType(@NonNull ScaleType scaleType) {
         assert scaleType != null;
 
         if (mScaleType != scaleType) {
@@ -251,7 +259,7 @@ public final class CircleImageView extends AppCompatImageView {
         }
     }
 
-    private void updateAttrs(Drawable drawable, ScaleType scaleType) {
+    private void updateAttrs(@Nullable Drawable drawable, ScaleType scaleType) {
         if (drawable == null) {
             return;
         }
@@ -311,7 +319,7 @@ public final class CircleImageView extends AppCompatImageView {
         setBorderColor(ColorStateList.valueOf(color));
     }
 
-    public void setBorderColor(ColorStateList colors) {
+    public void setBorderColor(@Nullable ColorStateList colors) {
         if (mBorderColor.equals(colors)) {
             return;
         }

@@ -1,11 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
+
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
+
     defaultConfig {
         applicationId "com.vansuita.materialabout.sample"
-        minSdkVersion 11
+        minSdkVersion 14
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 2
         versionName "1.2"
@@ -20,10 +22,9 @@ android {
 }
 
 dependencies {
-    compile "com.android.support:appcompat-v7:$supportLibVersion"
-    compile "com.android.support:design:$supportLibVersion"
+    implementation "androidx.appcompat:appcompat:$appcompatLibVersion"
+    implementation "com.google.android.material:material:$materialLibVersion"
+    implementation "com.jakewharton:butterknife:$butterKnifeVersion"
 
-    compile 'com.jakewharton:butterknife:8.5.1'
-
-    compile project(':library')
+    implementation project(':library')
 }

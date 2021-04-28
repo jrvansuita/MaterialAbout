@@ -11,6 +11,7 @@ import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.graphics.drawable.shapes.RoundRectShape;
 import android.os.Build;
+import androidx.annotation.NonNull;
 import android.util.StateSet;
 import android.view.View;
 
@@ -22,7 +23,7 @@ import java.util.Arrays;
 
 public final class RippleUtil {
 
-    public static void background(View v, Drawable d) {
+    public static void background(@NonNull View v, Drawable d) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
             v.setBackgroundDrawable(d);
         } else {
@@ -30,16 +31,16 @@ public final class RippleUtil {
         }
     }
 
-    public static void background(View v, Bitmap b) {
+    public static void background(@NonNull View v, Bitmap b) {
         background(v, new BitmapDrawable(v.getResources(), b));
     }
 
-    public static void backgroundRipple(View v, int color) {
+    public static void backgroundRipple(@NonNull View v, int color) {
         RippleUtil.background(v, getAdaptiveRippleDrawable(color));
     }
 
-    public static Drawable getAdaptiveRippleDrawable(
-            int normalColor) {
+    @NonNull
+    public static Drawable getAdaptiveRippleDrawable(int normalColor) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             return new RippleDrawable(ColorStateList.valueOf(darker(normalColor)), getRippleMask(normalColor), null);
         } else {
@@ -47,6 +48,7 @@ public final class RippleUtil {
         }
     }
 
+    @NonNull
     private static Drawable getRippleMask(int color) {
         float[] outerRadii = new float[8];
         // 3 is radius of final ripple,
@@ -60,6 +62,7 @@ public final class RippleUtil {
         return shapeDrawable;
     }
 
+    @NonNull
     private static StateListDrawable getStateListDrawable(
             int normalColor, int pressedColor) {
         StateListDrawable states = new StateListDrawable();

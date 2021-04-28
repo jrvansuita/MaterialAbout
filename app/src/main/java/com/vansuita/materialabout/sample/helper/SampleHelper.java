@@ -12,22 +12,20 @@ import com.vansuita.materialabout.views.AboutView;
 /**
  * Created by jrvansuita on 17/02/17.
  */
-
-public class SampleHelper implements View.OnClickListener{
+public class SampleHelper implements View.OnClickListener {
 
     private Activity activity;
-    private static int theme = R.style.AppThemeDark;
+    public static int theme = R.style.AppThemeDark;
 
     private SampleHelper(Activity activity) {
         this.activity = activity;
     }
 
-    public static SampleHelper with(Activity activity){
+    public static SampleHelper with(Activity activity) {
         return new SampleHelper(activity);
     }
 
-    public SampleHelper init(){
-        activity.setTheme(theme);
+    public SampleHelper init() {
 
         activity.findViewById(R.id.dark).setOnClickListener(this);
         activity.findViewById(R.id.light).setOnClickListener(this);
@@ -37,7 +35,7 @@ public class SampleHelper implements View.OnClickListener{
     }
 
     public void loadAbout() {
-        final FrameLayout flHolder = (FrameLayout) activity.findViewById(R.id.about);
+        final FrameLayout flHolder = activity.findViewById(R.id.about);
 
         AboutBuilder builder = AboutBuilder.with(activity)
                 .setAppIcon(R.mipmap.ic_launcher)
@@ -81,7 +79,6 @@ public class SampleHelper implements View.OnClickListener{
                 .addDonateAction((Intent) null)
                 .setWrapScrollView(true)
                 .setShowAsCard(true);
-
 
         AboutView view = builder.build();
 

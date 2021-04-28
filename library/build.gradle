@@ -3,13 +3,12 @@ apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'com.github.jrvansuita'
 
-
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 9
+        minSdkVersion 14
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
@@ -21,7 +20,7 @@ android {
 }
 
 dependencies {
-    compile "com.android.support:appcompat-v7:$supportLibVersion"
-    compile "com.android.support:cardview-v7:$supportLibVersion"
-    compile 'com.github.jrvansuita:IconHandler:+'
+    implementation "androidx.appcompat:appcompat:$appcompatLibVersion"
+    implementation "androidx.cardview:cardview:$cardViewLibVersion"
+    implementation "com.github.jrvansuita:IconHandler:$iconHandlerVersion"
 }

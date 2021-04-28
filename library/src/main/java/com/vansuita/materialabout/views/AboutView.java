@@ -8,7 +8,9 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Handler;
-import android.support.v7.widget.CardView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,15 +56,15 @@ public final class AboutView extends FrameLayout {
     private int animationDelay = 200;
 
 
-    public AboutView(Context context) {
+    public AboutView(@NonNull Context context) {
         this(context, null);
     }
 
-    public AboutView(Context context, AttributeSet attrs) {
+    public AboutView(@NonNull Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public AboutView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public AboutView(@NonNull Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -88,22 +90,22 @@ public final class AboutView extends FrameLayout {
     }
 
     private void bind() {
-        cvHolder = (CardView) findViewById(R.id.card_holder);
-        ivPhoto = (CircleImageView) findViewById(R.id.photo);
-        ivCover = (ImageView) findViewById(R.id.cover);
-        tvName = (TextView) findViewById(R.id.name);
-        tvSubTitle = (TextView) findViewById(R.id.sub_title);
-        tvBrief = (TextView) findViewById(R.id.brief);
-        tvAppName = (TextView) findViewById(R.id.app_name);
-        tvAppTitle = (TextView) findViewById(R.id.app_title);
-        ivAppIcon = (ImageView) findViewById(R.id.app_icon);
+        cvHolder = findViewById(R.id.card_holder);
+        ivPhoto = findViewById(R.id.photo);
+        ivCover = findViewById(R.id.cover);
+        tvName = findViewById(R.id.name);
+        tvSubTitle = findViewById(R.id.sub_title);
+        tvBrief = findViewById(R.id.brief);
+        tvAppName = findViewById(R.id.app_name);
+        tvAppTitle = findViewById(R.id.app_title);
+        ivAppIcon = findViewById(R.id.app_icon);
 
-        vLinks = (AutoFitGridLayout) findViewById(R.id.links);
-        vActions = (AutoFitGridLayout) findViewById(R.id.actions);
+        vLinks = findViewById(R.id.links);
+        vActions = findViewById(R.id.actions);
         appHolder = findViewById(R.id.app_holder);
     }
 
-    public void build(AboutBuilder bundle) {
+    public void build(@NonNull AboutBuilder bundle) {
         init(bundle);
         bind();
 
@@ -121,13 +123,9 @@ public final class AboutView extends FrameLayout {
         tvAppName.setText(bundle.getAppName());
         tvAppTitle.setText(bundle.getAppTitle());
 
-        setBitmap(ivCover, bundle.getCover());
-        setBitmap(ivPhoto, bundle.getPhoto());
-        setBitmap(ivAppIcon, bundle.getAppIcon());
+        setupBitmaps(bundle);
 
-        setTextColor(tvName, bundle.getNameColor());
-        setTextColor(tvSubTitle, bundle.getSubTitleColor());
-        setTextColor(tvBrief, bundle.getBriefColor());
+        setupTextColors(bundle);
 
         this.iconColor = bundle.getIconColor();
 
@@ -154,14 +152,19 @@ public final class AboutView extends FrameLayout {
         loadActions(bundle);
     }
 
+    private void setupTextColors(AboutBuilder bundle) {
+        setTextColor(tvName, bundle.getNameColor());
+        setTextColor(tvSubTitle, bundle.getSubTitleColor());
+        setTextColor(tvBrief, bundle.getBriefColor());
+    }
 
-    private void setTextColor(TextView tv, int color) {
+    private void setTextColor(@NonNull TextView tv, int color) {
         if (color != 0)
             tv.setTextColor(color);
     }
 
     @SuppressWarnings("ResourceAsColor")
-    private void setDivider(AboutBuilder bundle, View holder) {
+    private void setDivider(AboutBuilder bundle, @NonNull View holder) {
         if (bundle.isShowDivider()) {
 
             int color = bundle.getDividerColor();
@@ -201,7 +204,13 @@ public final class AboutView extends FrameLayout {
         return iconColor;
     }
 
-    private void setBitmap(ImageView iv, Bitmap bitmap) {
+    private void setupBitmaps(AboutBuilder bundle) {
+        setBitmap(ivCover, bundle.getCover());
+        setBitmap(ivPhoto, bundle.getPhoto());
+        setBitmap(ivAppIcon, bundle.getAppIcon());
+    }
+
+    private void setBitmap(@NonNull ImageView iv, @Nullable Bitmap bitmap) {
         if (bitmap == null) {
             iv.setVisibility(GONE);
         } else {
@@ -242,8 +251,8 @@ public final class AboutView extends FrameLayout {
         View view = layoutInflater.inflate(layout, null);
         view.setId(item.getId());
 
-        TextView tvLabel = (TextView) view.findViewById(R.id.label);
-        ImageView ivIcon = (ImageView) view.findViewById(R.id.icon);
+        TextView tvLabel = view.findViewById(R.id.label);
+        ImageView ivIcon = view.findViewById(R.id.icon);
 
         Icon.on(ivIcon).bitmap(item.getIcon()).color(getIconColor()).put();
 
@@ -263,13 +272,14 @@ public final class AboutView extends FrameLayout {
             cvHolder.setUseCompatPadding(false);
             cvHolder.setMaxCardElevation(0);
             cvHolder.setPreventCornerOverlap(false);
+
+            ( (LayoutParams)cvHolder.getLayoutParams()).setMargins(0, 0, 0, 0);
         }
     }
 
     public CardView getHolder() {
         return cvHolder;
     }
-
 
     public View findItem(int id) {
         return cvHolder.findViewById(id);
@@ -278,6 +288,5 @@ public final class AboutView extends FrameLayout {
     public View findItem(Item item) {
         return findItem(item.getId());
     }
-
 
 }
