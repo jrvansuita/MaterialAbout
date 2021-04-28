@@ -17,6 +17,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.core.content.res.ResourcesCompat;
+
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.ViewGroup;
@@ -162,6 +164,7 @@ public final class CircleImageView extends AppCompatImageView {
         setImageDrawable(getDrawable());
     }
 
+    @Nullable
     private Drawable resolveResource() {
         Resources rsrc = getResources();
         if (rsrc == null) {
@@ -172,7 +175,7 @@ public final class CircleImageView extends AppCompatImageView {
 
         if (mResource != 0) {
             try {
-                d = rsrc.getDrawable(mResource);
+                d = ResourcesCompat.getDrawable(rsrc, mResource, getContext().getTheme());
             } catch (Exception e) {
                 mResource = 0;
             }
@@ -200,6 +203,7 @@ public final class CircleImageView extends AppCompatImageView {
         setBackgroundDrawable(mBackgroundDrawable);
     }
 
+    @Nullable
     private Drawable resolveBackgroundResource() {
         Resources rsrc = getResources();
         if (rsrc == null) {
@@ -210,7 +214,7 @@ public final class CircleImageView extends AppCompatImageView {
 
         if (mBackgroundResource != 0) {
             try {
-                d = rsrc.getDrawable(mBackgroundResource);
+                d = ResourcesCompat.getDrawable(rsrc, mBackgroundResource, getContext().getTheme());
             } catch (Exception e) {
                 Log.w(TAG, "Unable to find resource: " + mBackgroundResource, e);
                 // Don't try again.
@@ -234,7 +238,7 @@ public final class CircleImageView extends AppCompatImageView {
     }
 
     @Override
-    public void setColorFilter(ColorFilter cf) {
+    public void setColorFilter(@Nullable ColorFilter cf) {
         if (mColorFilter != cf) {
             mColorFilter = cf;
             mHasColorFilter = true;
@@ -259,7 +263,7 @@ public final class CircleImageView extends AppCompatImageView {
         }
     }
 
-    private void updateAttrs(@Nullable Drawable drawable, ScaleType scaleType) {
+    private void updateAttrs(@Nullable Drawable drawable,@Nullable ScaleType scaleType) {
         if (drawable == null) {
             return;
         }

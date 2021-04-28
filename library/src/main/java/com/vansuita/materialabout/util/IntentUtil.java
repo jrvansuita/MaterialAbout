@@ -6,6 +6,9 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.provider.ContactsContract;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+
 import android.view.View;
 
 import com.vansuita.materialabout.R;
@@ -19,27 +22,31 @@ public final class IntentUtil {
 
     private Context context;
 
-    public IntentUtil(Context context) {
+    public IntentUtil(@NonNull Context context) {
         this.context = context;
     }
 
-    public Intent intent(String url) {
+    @NonNull
+    public Intent intent(@NonNull String url) {
         return intent(uri(url));
     }
 
-    public Uri uri(String url) {
+    public Uri uri(@NonNull String url) {
         return Uri.parse(url);
     }
 
-    public Intent intent(Uri uri) {
+    @NonNull
+    public Intent intent(@NonNull Uri uri) {
         return new Intent(Intent.ACTION_VIEW, uri);
     }
 
-    public View.OnClickListener clickUri(Uri uri) {
+    @NonNull
+    public View.OnClickListener clickUri(@NonNull Uri uri) {
         return clickIntent(intent(uri));
     }
 
-    public View.OnClickListener clickIntent(final Intent intent) {
+    @NonNull
+    public View.OnClickListener clickIntent(@Nullable final Intent intent) {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,7 +55,7 @@ public final class IntentUtil {
         };
     }
 
-    public void open(Intent intent) {
+    public void open(@Nullable Intent intent) {
         try {
             context.startActivity(intent);
         } catch (Throwable e) {
@@ -56,11 +63,12 @@ public final class IntentUtil {
         }
     }
 
-    public void open(Uri uri) {
+    public void open(@Nullable Uri uri) {
         open(intent(uri));
     }
 
-    public Intent openFacebook(String user) {
+    @NonNull
+    public Intent openFacebook(@NonNull String user) {
         try {
             tryPackage(R.string.id_facebook_app);
             return intent(R.string.uri_facebook_app, user);
@@ -69,19 +77,22 @@ public final class IntentUtil {
         }
     }
 
-    public Intent intent(int res, String user) {
+    @NonNull
+    public Intent intent(@StringRes int res,@NonNull String user) {
         return intent(uri(res, user));
     }
 
-    public Uri uri(int res, String user) {
+    @NonNull
+    public Uri uri(@StringRes int res,@NonNull String user) {
         return Uri.parse(context.getString(res, user));
     }
 
-    private void tryPackage(int res) throws PackageManager.NameNotFoundException {
+    private void tryPackage(@StringRes int res) throws PackageManager.NameNotFoundException {
         context.getPackageManager().getPackageInfo(context.getString(res), 0);
     }
 
-    public Intent openInstagram(String user) {
+    @NonNull
+    public Intent openInstagram(@NonNull String user) {
         try {
             tryPackage(R.string.id_instagram_app);
             return intent(R.string.uri_instagram_app, user);
@@ -90,7 +101,8 @@ public final class IntentUtil {
         }
     }
 
-    public Intent openTwitter(String user) {
+    @NonNull
+    public Intent openTwitter(@NonNull String user) {
         try {
             tryPackage(R.string.id_twitter_app);
             return intent(R.string.uri_twitter_app, user);
@@ -99,7 +111,8 @@ public final class IntentUtil {
         }
     }
 
-    public Intent openGooglePlus(String user) {
+    @NonNull
+    public Intent openGooglePlus(@NonNull String user) {
         try {
             tryPackage(R.string.id_google_plus_app);
             return intent(R.string.uri_google_plus_app, user);
@@ -108,7 +121,8 @@ public final class IntentUtil {
         }
     }
 
-    public Intent openGooglePlayDev(String user) {
+    @NonNull
+    public Intent openGooglePlayDev(@NonNull String user) {
         try {
             return intent(R.string.url_google_play_store_developer_page, user);
         } catch (Exception e) {
@@ -116,7 +130,8 @@ public final class IntentUtil {
         }
     }
 
-    public Intent openYoutubeChannel(String user) {
+    @NonNull
+    public Intent openYoutubeChannel(@NonNull String user) {
         try {
             return intent(R.string.url_youtube_channel_website, user);
         } catch (Exception e) {
@@ -124,7 +139,8 @@ public final class IntentUtil {
         }
     }
 
-    public Intent openYoutubeUser(String user) {
+    @NonNull
+    public Intent openYoutubeUser(@NonNull String user) {
         try {
             return intent(R.string.url_youtube_user_website, user);
         } catch (Exception e) {
@@ -132,7 +148,8 @@ public final class IntentUtil {
         }
     }
 
-    public Intent openLinkedIn(String user) {
+    @NonNull
+    public Intent openLinkedIn(@NonNull String user) {
         try {
             tryPackage(R.string.id_linkedin_app);
             return intent(R.string.uri_linkedin_app, user);
@@ -141,8 +158,8 @@ public final class IntentUtil {
         }
     }
 
-
-    public Intent openSkype(String phone) {
+    @NonNull
+    public Intent openSkype(@NonNull String phone) {
         try {
             tryPackage(R.string.id_skype_app);
             return intent(R.string.uri_skype_app, phone);
@@ -152,7 +169,7 @@ public final class IntentUtil {
     }
 
     @NonNull
-    public Intent openAddContact(String name, String phone) {
+    public Intent openAddContact(@NonNull String name,@NonNull String phone) {
         Intent intent = new Intent(Intent.ACTION_INSERT);
         intent.setType(ContactsContract.Contacts.CONTENT_TYPE);
 
@@ -163,7 +180,7 @@ public final class IntentUtil {
     }
 
     @NonNull
-    public Intent sendEmail(String email, String subject, String message) {
+    public Intent sendEmail(@NonNull String email, @Nullable String subject, @Nullable String message) {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
@@ -174,7 +191,7 @@ public final class IntentUtil {
     }
 
     @NonNull
-    public Intent openPlayStoreAppPage(String app) {
+    public Intent openPlayStoreAppPage(@NonNull String app) {
         Intent intent = intent(R.string.uri_play_store_app, app);
         if (intent.resolveActivity(context.getPackageManager()) != null) {
             return intent;
@@ -184,7 +201,7 @@ public final class IntentUtil {
     }
 
     @NonNull
-    public Intent openPlayStoreAppsList(String app) {
+    public Intent openPlayStoreAppsList(@NonNull String app) {
         Intent intent = intent(R.string.uri_play_store_apps_list, app);
         if (intent.resolveActivity(context.getPackageManager()) != null) {
             return intent;
@@ -194,7 +211,7 @@ public final class IntentUtil {
     }
 
     @NonNull
-    public Intent shareThisApp(String subject, String message) {
+    public Intent shareThisApp(@NonNull String subject,@NonNull String message) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);

@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import androidx.annotation.NonNull;
+
 import com.vansuita.materialabout.builder.AboutBuilder;
 import com.vansuita.materialabout.sample.R;
 import com.vansuita.materialabout.views.AboutView;
@@ -17,14 +19,16 @@ public class SampleHelper implements View.OnClickListener {
     private Activity activity;
     public static int theme = R.style.AppThemeDark;
 
-    private SampleHelper(Activity activity) {
+    private SampleHelper(@NonNull Activity activity) {
         this.activity = activity;
     }
 
-    public static SampleHelper with(Activity activity) {
+    @NonNull
+    public static SampleHelper with(@NonNull Activity activity) {
         return new SampleHelper(activity);
     }
 
+    @NonNull
     public SampleHelper init() {
 
         activity.findViewById(R.id.dark).setOnClickListener(this);
@@ -88,30 +92,23 @@ public class SampleHelper implements View.OnClickListener {
 
 
     @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.dark:
-                if (theme != R.style.AppThemeDark) {
-                    theme = R.style.AppThemeDark;
-                    activity.recreate();
-                }
-                break;
-            case R.id.light:
-                if (theme != R.style.AppThemeLight) {
-                    theme = R.style.AppThemeLight;
-                    activity.recreate();
-                }
-                break;
-
-            case R.id.custom:
-                if (theme != R.style.AppThemeCustom) {
-                    theme = R.style.AppThemeCustom;
-                    activity.recreate();
-                }
-                break;
-
-            default:
-                break;
+    public void onClick(@NonNull View view) {
+        if (view.getId() == R.id.dark && theme != R.style.AppThemeDark){
+            theme = R.style.AppThemeDark;
+            activity.recreate();
+            return;
         }
+
+        if (view.getId() == R.id.light && theme != R.style.AppThemeLight){
+            theme = R.style.AppThemeLight;
+            activity.recreate();
+            return;
+        }
+
+        if (view.getId() == R.id.custom && theme != R.style.AppThemeCustom){
+            theme = R.style.AppThemeCustom;
+            activity.recreate();
+        }
+
     }
 }

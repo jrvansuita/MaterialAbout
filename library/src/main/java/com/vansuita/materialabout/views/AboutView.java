@@ -8,6 +8,10 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Handler;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.IdRes;
+import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
@@ -68,7 +72,7 @@ public final class AboutView extends FrameLayout {
         super(context, attrs, defStyleAttr);
     }
 
-    private void init(AboutBuilder bundle) {
+    private void init(@NonNull AboutBuilder bundle) {
         layoutInflater = LayoutInflater.from(getContext());
 
         ViewGroup holder = this;
@@ -152,19 +156,19 @@ public final class AboutView extends FrameLayout {
         loadActions(bundle);
     }
 
-    private void setupTextColors(AboutBuilder bundle) {
+    private void setupTextColors(@NonNull AboutBuilder bundle) {
         setTextColor(tvName, bundle.getNameColor());
         setTextColor(tvSubTitle, bundle.getSubTitleColor());
         setTextColor(tvBrief, bundle.getBriefColor());
     }
 
-    private void setTextColor(@NonNull TextView tv, int color) {
+    private void setTextColor(@NonNull TextView tv, @ColorInt int color) {
         if (color != 0)
             tv.setTextColor(color);
     }
 
     @SuppressWarnings("ResourceAsColor")
-    private void setDivider(AboutBuilder bundle, @NonNull View holder) {
+    private void setDivider(@NonNull AboutBuilder bundle, @NonNull View holder) {
         if (bundle.isShowDivider()) {
 
             int color = bundle.getDividerColor();
@@ -204,7 +208,7 @@ public final class AboutView extends FrameLayout {
         return iconColor;
     }
 
-    private void setupBitmaps(AboutBuilder bundle) {
+    private void setupBitmaps(@NonNull AboutBuilder bundle) {
         setBitmap(ivCover, bundle.getCover());
         setBitmap(ivPhoto, bundle.getPhoto());
         setBitmap(ivAppIcon, bundle.getAppIcon());
@@ -218,7 +222,7 @@ public final class AboutView extends FrameLayout {
         }
     }
 
-    private void loadLinks(AboutBuilder bundle) {
+    private void loadLinks(@NonNull AboutBuilder bundle) {
         for (Item item : bundle.getLinks()) {
             View v = addItem(vLinks, R.layout.xab_each_link, item);
 
@@ -227,7 +231,7 @@ public final class AboutView extends FrameLayout {
         }
     }
 
-    private void animate(final View v) {
+    private void animate(@NonNull final View v) {
         v.setVisibility(INVISIBLE);
 
         animationDelay += 20;
@@ -241,13 +245,14 @@ public final class AboutView extends FrameLayout {
         }, animationDelay);
     }
 
-    private void loadActions(AboutBuilder bundle) {
+    private void loadActions(@NonNull AboutBuilder bundle) {
         for (Item item : bundle.getActions()) {
             addItem(vActions, R.layout.xab_each_action, item);
         }
     }
 
-    private View addItem(ViewGroup holder, int layout, Item item) {
+    @NonNull
+    private View addItem(@NonNull ViewGroup holder, @LayoutRes int layout, @NonNull Item item) {
         View view = layoutInflater.inflate(layout, null);
         view.setId(item.getId());
 
@@ -265,7 +270,7 @@ public final class AboutView extends FrameLayout {
         return view;
     }
 
-    private void setupCard(AboutBuilder bundle) {
+    private void setupCard(@NonNull AboutBuilder bundle) {
         if (!bundle.isShowAsCard()) {
             cvHolder.setCardElevation(0);
             cvHolder.setRadius(0);
@@ -277,15 +282,18 @@ public final class AboutView extends FrameLayout {
         }
     }
 
+    @NonNull
     public CardView getHolder() {
         return cvHolder;
     }
 
-    public View findItem(int id) {
+    @NonNull
+    public View findItem(@IdRes int id) {
         return cvHolder.findViewById(id);
     }
 
-    public View findItem(Item item) {
+    @NonNull
+    public View findItem(@NonNull Item item) {
         return findItem(item.getId());
     }
 

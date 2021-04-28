@@ -11,6 +11,9 @@ import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.graphics.drawable.shapes.RoundRectShape;
 import android.os.Build;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
 import android.util.StateSet;
 import android.view.View;
@@ -35,12 +38,12 @@ public final class RippleUtil {
         background(v, new BitmapDrawable(v.getResources(), b));
     }
 
-    public static void backgroundRipple(@NonNull View v, int color) {
+    public static void backgroundRipple(@NonNull View v, @ColorInt int color) {
         RippleUtil.background(v, getAdaptiveRippleDrawable(color));
     }
 
     @NonNull
-    public static Drawable getAdaptiveRippleDrawable(int normalColor) {
+    public static Drawable getAdaptiveRippleDrawable(@ColorInt int normalColor) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             return new RippleDrawable(ColorStateList.valueOf(darker(normalColor)), getRippleMask(normalColor), null);
         } else {
@@ -49,7 +52,7 @@ public final class RippleUtil {
     }
 
     @NonNull
-    private static Drawable getRippleMask(int color) {
+    private static Drawable getRippleMask(@ColorInt int color) {
         float[] outerRadii = new float[8];
         // 3 is radius of final ripple,
         // instead of 3 you can give required final radius
@@ -77,7 +80,7 @@ public final class RippleUtil {
         return states;
     }
 
-    public static int darker(int color) {
+    public static int darker(@ColorInt int color) {
         int r = Color.red(color);
         int b = Color.blue(color);
         int g = Color.green(color);
@@ -85,7 +88,7 @@ public final class RippleUtil {
         return Color.rgb((int) (r * .9), (int) (g * .9), (int) (b * .9));
     }
 
-    public static boolean isDark(int color) {
+    public static boolean isDark(@ColorInt int color) {
         double darkness = 1 - (0.299 * Color.red(color) + 0.587 * Color.green(color) + 0.114 * Color.blue(color)) / 255;
         return !(darkness < 0.5 || color == 0);
     }

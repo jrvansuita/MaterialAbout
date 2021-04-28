@@ -3,6 +3,9 @@ package com.vansuita.materialabout.builder;
 import android.graphics.Bitmap;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.vansuita.materialabout.views.ViewIdGenerator;
 
 /**
@@ -15,27 +18,30 @@ public final class Item {
     private Bitmap icon;
     private View.OnClickListener onClick;
 
+    @Nullable
     public String getLabel() {
         return label;
     }
 
-    public void setLabel(String label) {
+    public void setLabel(@Nullable String label) {
         this.label = label;
     }
 
+    @Nullable
     public Bitmap getIcon() {
         return icon;
     }
 
-    public void setIcon(Bitmap icon) {
+    public void setIcon(@Nullable Bitmap icon) {
         this.icon = icon;
     }
 
+    @Nullable
     public View.OnClickListener getOnClick() {
         return onClick;
     }
 
-    public void setOnClick(View.OnClickListener onClick) {
+    public void setOnClick(@Nullable View.OnClickListener onClick) {
         this.onClick = onClick;
     }
 
@@ -43,7 +49,7 @@ public final class Item {
         return id;
     }
 
-    public Item(Bitmap icon, String label, View.OnClickListener onClick) {
+    public Item(@Nullable Bitmap icon, @Nullable String label, @Nullable View.OnClickListener onClick) {
         this.id = ViewIdGenerator.generateViewId();
         this.label = label;
         this.icon = icon;
