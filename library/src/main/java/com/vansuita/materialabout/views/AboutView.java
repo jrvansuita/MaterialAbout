@@ -14,6 +14,8 @@ import androidx.annotation.IdRes;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -42,14 +44,14 @@ public final class AboutView extends FrameLayout {
 
     private CardView cvHolder;
     private CircleImageView ivPhoto;
-    private ImageView ivCover;
-    private TextView tvName;
-    private TextView tvSubTitle;
-    private TextView tvBrief;
+    private AppCompatImageView ivCover;
+    private AppCompatTextView tvName;
+    private AppCompatTextView tvSubTitle;
+    private AppCompatTextView tvBrief;
 
-    private TextView tvAppName;
-    private TextView tvAppTitle;
-    private ImageView ivAppIcon;
+    private AppCompatTextView tvAppName;
+    private AppCompatTextView tvAppTitle;
+    private AppCompatImageView ivAppIcon;
 
     private View appHolder;
     private AutoFitGridLayout vLinks;
@@ -162,7 +164,7 @@ public final class AboutView extends FrameLayout {
         setTextColor(tvBrief, bundle.getBriefColor());
     }
 
-    private void setTextColor(@NonNull TextView tv, @ColorInt int color) {
+    private void setTextColor(@NonNull AppCompatTextView tv, @ColorInt int color) {
         if (color != 0)
             tv.setTextColor(color);
     }
@@ -214,7 +216,7 @@ public final class AboutView extends FrameLayout {
         setBitmap(ivAppIcon, bundle.getAppIcon());
     }
 
-    private void setBitmap(@NonNull ImageView iv, @Nullable Bitmap bitmap) {
+    private void setBitmap(@NonNull AppCompatImageView iv, @Nullable Bitmap bitmap) {
         if (bitmap == null) {
             iv.setVisibility(GONE);
         } else {
@@ -256,8 +258,8 @@ public final class AboutView extends FrameLayout {
         View view = layoutInflater.inflate(layout, null);
         view.setId(item.getId());
 
-        TextView tvLabel = view.findViewById(R.id.label);
-        ImageView ivIcon = view.findViewById(R.id.icon);
+        AppCompatTextView tvLabel = view.findViewById(R.id.label);
+        AppCompatImageView ivIcon = view.findViewById(R.id.icon);
 
         Icon.on(ivIcon).bitmap(item.getIcon()).color(getIconColor()).put();
 
