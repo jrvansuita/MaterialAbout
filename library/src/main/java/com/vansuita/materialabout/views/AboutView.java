@@ -17,6 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
+
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -118,13 +119,13 @@ public final class AboutView extends FrameLayout {
         setupCard(bundle);
 
         tvName.setText(bundle.getName());
-        VisibleUtil.handle(tvName, bundle.getName().toString());
+        VisibleUtil.handle(tvName, bundle.getName());
 
         tvSubTitle.setText(bundle.getSubTitle());
-        VisibleUtil.handle(tvSubTitle, bundle.getSubTitle().toString());
+        VisibleUtil.handle(tvSubTitle, bundle.getSubTitle());
 
         tvBrief.setText(bundle.getBrief());
-        VisibleUtil.handle(tvBrief, bundle.getBrief().toString());
+        VisibleUtil.handle(tvBrief, bundle.getBrief());
 
         tvAppName.setText(bundle.getAppName());
         tvAppTitle.setText(bundle.getAppTitle());
@@ -138,7 +139,7 @@ public final class AboutView extends FrameLayout {
         if (bundle.getBackgroundColor() != 0)
             cvHolder.setCardBackgroundColor(bundle.getBackgroundColor());
 
-        VisibleUtil.handle(appHolder, bundle.getAppName().toString());
+        VisibleUtil.handle(appHolder, bundle.getAppName());
 
         if (appHolder.getVisibility() == VISIBLE)
             setDivider(bundle, appHolder);
