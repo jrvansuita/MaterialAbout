@@ -12,7 +12,7 @@ import android.view.View;
 
 public final class VisibleUtil {
 
-    public static void handle(@NonNull View v, @Nullable String s) {
+    public static void handle(@NonNull View v, @Nullable CharSequence s) {
         v.setVisibility(TextUtils.isEmpty(s) ? View.GONE : View.VISIBLE);
     }
 }
