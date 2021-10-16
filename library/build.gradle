@@ -22,5 +22,5 @@ android {
 dependencies {
     implementation "androidx.appcompat:appcompat:$appcompatLibVersion"
     implementation "androidx.cardview:cardview:$cardViewLibVersion"
-    implementation "com.github.jrvansuita:IconHandler:$iconHandlerVersion"
+    implementation "com.github.ItsCalebJones:IconHandler:$iconHandlerVersion"
 }
