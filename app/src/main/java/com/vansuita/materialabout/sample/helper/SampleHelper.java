@@ -61,7 +61,6 @@ public class SampleHelper implements View.OnClickListener {
                 .addGooglePlusLink("+JuniorVansuita")
                 .addYoutubeChannelLink("CaseyNeistat")
                 .addDribbbleLink("user")
-                .addLinkedInLink("arleu-cezar-vansuita-júnior-83769271")
                 .addEmailLink("vansuita.jr@gmail.com")
                 .addWhatsAppDirectChat( "554799650629")
                 //.addWhatsappLink("Jr", "+554799650629")
