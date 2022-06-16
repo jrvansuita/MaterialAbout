@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'com.github.jrvansuita'
 
@@ -10,13 +9,12 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
     }
 
     sourceSets {
         main.res.srcDirs 'res'
     }
+    namespace 'com.vansuita.materialabout'
 }
 
 dependencies {

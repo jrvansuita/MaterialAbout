@@ -58,7 +58,6 @@ public class SampleHelper implements View.OnClickListener {
                 .addFacebookLink("user")
                 .addTwitterLink("user")
                 .addInstagramLink("jnrvans")
-                .addGooglePlusLink("+JuniorVansuita")
                 .addYoutubeChannelLink("CaseyNeistat")
                 .addDribbbleLink("user")
                 .addEmailLink("vansuita.jr@gmail.com")

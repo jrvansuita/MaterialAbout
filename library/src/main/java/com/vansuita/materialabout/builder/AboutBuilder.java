@@ -974,30 +974,6 @@ public final class AboutBuilder {
     }
 
     /**
-     * Adds a Google Plus profile link on the links section
-     *
-     * @param user a Google Plus user name
-     * @return the same {@link AboutBuilder} instance
-     */
-    @NonNull
-    @Deprecated
-    public AboutBuilder addGooglePlusLink(@StringRes int user) {
-        return addGooglePlusLink(context.getString(user));
-    }
-
-    /**
-     * Adds a Google Plus profile link on the links section
-     *
-     * @param user a Google Plus user name or id
-     * @return the same {@link AboutBuilder} instance
-     */
-    @NonNull
-    @Deprecated
-    public AboutBuilder addGooglePlusLink(@NonNull String user) {
-        return addLink(R.mipmap.google_plus, R.string.google_plus, util.openGooglePlus(user));
-    }
-
-    /**
      * Adds a Google Play Store profile link on the links section
      *
      * @param user a Google Play Store user name or id

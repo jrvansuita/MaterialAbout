@@ -4,7 +4,13 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/MaterialAbout.iml" filepath="$PROJECT_DIR$/.idea/modules/MaterialAbout.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MaterialAbout.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MaterialAbout.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MaterialAbout.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MaterialAbout.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MaterialAbout.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MaterialAbout.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MaterialAbout.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MaterialAbout.app.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/MaterialAbout.library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/MaterialAbout.library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/MaterialAbout.library.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/MaterialAbout.library.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/MaterialAbout.library.main.iml" filepath="$PROJECT_DIR$/.idea/modules/library/MaterialAbout.library.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/MaterialAbout.library.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/MaterialAbout.library.unitTest.iml" />
     </modules>
   </component>
 </project>
